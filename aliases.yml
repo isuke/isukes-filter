@@ -1,0 +1,112 @@
+NormalCurrencies:
+  - Scroll of Wisdom
+  - Portal Scroll
+
+MagicCurrencies:
+  - Armourer's Scrap
+  - Blacksmith's Whetstone
+  - Orb of Transmutation
+  - Orb of Augmentation
+  - Orb of Alteration
+  - Orb of Chance
+  - Chromatic Orb
+  - Jeweller's Orb
+
+RareCurrencies:
+  - Glassblower's Bauble
+  - Cartographer's Chisel
+  - Gemcutter's Prism
+  - Orb of Alchemy
+  - Chaos Orb
+  - Blessed Orb
+  - Orb of Scouring
+  - Orb of Fusing
+  - Orb of Regret
+  - Vaal Orb
+
+UniqueCurrencies:
+  - Divine Orb
+  - Exalted Orb
+  - Regal Orb
+  - Mirror of Kalandra
+
+DropOnlyGems:
+  - Vaal
+  - Added Chaos Damage
+  - Enhance
+  - Enlighten
+  - Empower
+  - Detonate Mines
+  - Portal
+
+TwoHandWeapons: &TwoHandWeapons
+  - Bows
+  - Staves
+  - Two Hand Swords
+  - Two Hand Axes
+  - Two Hand Maces
+  - Fishing Rods
+
+OneHandWeapons: &OneHandWeapons
+  - Claws
+  - Daggers
+  - Wands
+  - One Hand Swords
+  - Thrusting One Hand Swords
+  - One Hand Axes
+  - One Hand Maces
+  - Sceptres
+
+Weapons: &Weapons
+  - *OneHandWeapons
+  - *TwoHandWeapons
+
+Gears: &Gears
+  - Gloves
+  - Boots
+  - Body Armours
+  - Helmets
+  - Shields
+
+Accessories: &Accessories
+  - Belts
+  - Quivers
+  - Amulets
+  - Rings
+
+Equipments:
+  - *Weapons
+  - *Gears
+  - *Accessories
+
+SixSockets:
+  - *TwoHandWeapons
+  - Body Armours
+
+FourSockets:
+  - Gloves
+  - Boots
+  - Helmets
+
+ThreeSockets:
+  - *OneHandWeapons
+  - Shields
+
+LabyrinthItems:
+  - Offering to the Goddess
+  - Bane of the Loyal
+  - Orb of Elemental Dispersion
+  - Sand of Eternity
+  - Portal Shredder
+  - Heart of the Gargoyle
+  - Cogs of Disruption
+  - Absorption
+  - Rod of Detonation
+  - Golden Key
+  - Silver Key
+  - Treasure Key
+
+AtlasItems:
+  - Shaper's Orb
+  - Cartographer's Sextant
+  - Cartographer's Seal
