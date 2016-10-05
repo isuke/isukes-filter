@@ -39,6 +39,102 @@ DropOnlyGems:
   - Detonate Mines
   - Portal
 
+MagicDivinations:
+  - The Aesthete
+  - The Arena Champion
+  - The Avenger
+  - Blind Venture
+  - The Body
+  - Boundless Realms
+  - The Calling
+  - Coveted Possession
+  - The Cursed King
+  - The Encroaching Darkness
+  - The Fletcher
+  - Gemcutter's Promise
+  - The Gladiator
+  - Glimmer of Hope
+  - Grave Knowledge
+  - Hope
+  - Humility
+  - The Inventor
+  - Jack in the Box
+  - The Jester
+  - Lost Worlds
+  - Lucky Connections
+  - Lysah's Respite
+  - Merciless Armament
+  - Rats
+  - The Risk
+  - The Road to Power
+  - Scholar of the Seas
+  - The Soul
+  - The Spoiled Prince
+  - The Survivalist
+  - Time-Lost Relic
+  - Tranquillity
+  - The Tyrant
+  - The Union
+  - The Wind
+  - The Wrath
+  - Fox
+  - Lucky Deck
+  - Treasure Hunter
+  - Vinia's Token
+  - Trial
+  - Death
+  - Dialla's Subjugation
+
+RareDivinations:
+  - The Cartographer
+  - The Chains that Bind
+  - Chaotic Disposition
+  - Emperor of Purity
+  - The Harvester
+  - The Hoarder
+  - The King's Heart
+  - Last Hope
+  - Mawr Blaidd
+  - The Penitent
+  - Pride Before the Fall
+  - The Scavenger
+  - The Sephirot
+  - The Valkyrie
+  - The Vast
+  - The Warlord
+  - The Wolf
+  - Stormcaller
+  - Earth Drinker
+  - The Surveyor
+  - The Void
+
+UniqueDivinations:
+  - The Doctor
+  - The Fiend
+  - House of Mirrors
+  - Hunter's Reward
+  - Abandoned Wealth
+  - The Artist
+  - Bowyer's Dream
+  - The Brittle Emperor
+  - The Celestial Justicar
+  - The Dapper Prodigy
+  - The Dark Mage
+  - The Devastator
+  - The Dragon's Heart
+  - The Ethereal
+  - The Formless Sea
+  - Heterochromia
+  - The Hunger
+  - The Immortal
+  - The Last One Standing
+  - The Offering
+  - The Queen
+  - The Thaumaturgist
+  - Wealth and Power
+  - The Enlightened
+
+
 TwoHandWeapons: &TwoHandWeapons
   - Bows
   - Staves

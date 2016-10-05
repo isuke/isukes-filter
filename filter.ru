@@ -54,18 +54,12 @@ Valiables = {
   filter "#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     # Currency #################################################################
     f.group 'Currency' do |g|
-      g.element 'Normal Currencies' do |e|
+      g.element 'UniqueCurrencies' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'NormalCurrencies'
-        e.set_font_size        = DefaultFontSize
-      end
-      g.element 'Magic Currencies' do |e|
-        e.showable             = true
-        e.klass                = 'Currency'
-        e.base_type            = 'MagicCurrencies'
-        e.set_font_size        = DefaultFontSize
-        e.set_border_color     = MagicColor
+        e.base_type            = 'UniqueCurrencies'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_border_color     = UniqueColor
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
@@ -74,12 +68,18 @@ Valiables = {
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
       end
-      g.element 'UniqueCurrencies' do |e|
+      g.element 'Magic Currencies' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'UniqueCurrencies'
-        e.set_font_size        = ExtraLargeFontSize
-        e.set_border_color     = UniqueColor
+        e.base_type            = 'MagicCurrencies'
+        e.set_font_size        = DefaultFontSize
+        e.set_border_color     = MagicColor
+      end
+      g.element 'Normal Currencies' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'NormalCurrencies'
+        e.set_font_size        = DefaultFontSize
       end
     end
 
@@ -229,6 +229,36 @@ Valiables = {
           e.quality              = '> 0'
           e.set_background_color = DarkYellow
         end
+      end
+    end
+
+    # Divination #################################################################
+    f.group 'Divination' do |g|
+      g.element 'UniqueDivinations' do |e|
+        e.showable             = true
+        e.klass                = 'Divination'
+        e.base_type            = 'UniqueDivinations'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_border_color     = UniqueColor
+      end
+      g.element 'RareDivinations' do |e|
+        e.showable             = true
+        e.klass                = 'Divination'
+        e.base_type            = 'RareDivinations'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = RareColor
+      end
+      g.element 'Magic Divinations' do |e|
+        e.showable             = true
+        e.klass                = 'Divination'
+        e.base_type            = 'MagicDivinations'
+        e.set_font_size        = DefaultFontSize
+        e.set_border_color     = MagicColor
+      end
+      g.element 'Normal Divinations' do |e|
+        e.showable             = true
+        e.klass                = 'Divination'
+        e.set_font_size        = DefaultFontSize
       end
     end
 
