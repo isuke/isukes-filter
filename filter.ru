@@ -1,5 +1,5 @@
 PoeVersion         = '2.4'
-FilterVersion      = '1.0'
+FilterVersion      = '1.1'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -247,7 +247,7 @@ Valiables = {
     f.group 'Special Equipment' do |g|
       g.element do |e|
         e.showable = true
-        e.base_type = '"Sacrificial Garb"'
+        e.base_type = '"Sacrificial Garb" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
       end
