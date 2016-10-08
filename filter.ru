@@ -277,7 +277,7 @@ Valiables = {
     f.group 'Special Equipment' do |g|
       g.element do |e|
         e.showable = true
-        e.base_type = '"Sacrificial Garb" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"'
+        e.base_type = '"Sacrificial Garb" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt"'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
       end
@@ -289,7 +289,7 @@ Valiables = {
         e.showable = true
         e.rarity         = '= Normal'
         e.klass          = '"Belts" "Amulet" "Rings"'
-        e.base_type      = '"Diamond Ring" "Two-Stone Ring" "Crystal Belt"'
+        e.base_type      = '"Amulet" "Diamond Ring" "Two-Stone Ring"'
         e.set_text_color       = "#{MagicColor} 200"
         e.set_border_color     = "#{MagicColor} 200"
         e.set_background_color = "#{Black} 200"
