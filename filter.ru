@@ -219,14 +219,13 @@ Valiables = {
           e.set_font_size        = LargeFontSize
         end
       end
-
       g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
+        m.element 'High Tier' do |e|
+          e.drop_level           = '>= 78'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
+        m.element 'Middle Tier' do |e|
+          e.drop_level           = '>= 73'
           e.set_background_color = DarkYellow
         end
       end
