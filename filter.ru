@@ -1,5 +1,5 @@
 PoeVersion         = '2.4'
-FilterVersion      = '1.1'
+FilterVersion      = '1.2pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
