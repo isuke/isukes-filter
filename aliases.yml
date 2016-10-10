@@ -135,6 +135,44 @@ UniqueDivinations:
   - Wealth and Power
   - The Enlightened
 
+SpecialEquipments:
+  - Sacrificial Garb
+  - Bone Helmet
+  - Two-Toned Boots
+  - Spiked Gloves
+  - Gripped Gloves
+  - Fingerless Silk Gloves
+  - Marble Amulet
+  - Blue Pearl Amulet
+  - Vanguard Belt
+  - Crystal Belt
+  - Opal Ring
+  - Steel Ring
+
+GoodAmulets: &GoodAmulets
+  - Amber Amulet
+  - Jade Amulet
+  - Lapis Amulet
+  - Agate Amulet
+  - Citrine Amulet
+  - Turquoise Amulet
+  - Onyx Amulet
+
+GoodBelts: &GoodBelts
+  - Rustic Sash
+  - Heavy Belt
+  - Leather Belt
+
+GoodRings: &GoodRings
+  - Coral Ring
+  - Diamond Ring
+  - Two-Stone Ring
+
+GoodAccessories:
+  - *GoodAmulets
+  - *GoodBelts
+  - *GoodRings
+
 TwoHandWeapons: &TwoHandWeapons
   - Bows
   - Staves
@@ -187,42 +225,6 @@ FourSockets:
 ThreeSockets:
   - *OneHandWeapons
   - Shields
-
-SpecialEquipments:
-  - Sacrificial Garb
-  - Two-Toned Boots
-  - Spiked Gloves
-  - Gripped Gloves
-  - Fingerless Silk Gloves
-  - Marble Amulet
-  - Blue Pearl Amulet
-  - Crystal Belt
-  - Opal Ring
-  - Steel Ring
-
-GoodAmulets: &GoodAmulets
-  - Amber Amulet
-  - Jade Amulet
-  - Lapis Amulet
-  - Agate Amulet
-  - Citrine Amulet
-  - Turquoise Amulet
-  - Onyx Amulet
-
-GoodBelts: &GoodBelts
-  - Rustic Sash
-  - Heavy Belt
-  - Leather Belt
-
-GoodRings: &GoodRings
-  - Coral Ring
-  - Diamond Ring
-  - Two-Stone Ring
-
-GoodAccessories:
-  - *GoodAmulets
-  - *GoodBelts
-  - *GoodRings
 
 LabyrinthItems:
   - Offering to the Goddess
