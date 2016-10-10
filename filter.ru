@@ -232,7 +232,7 @@ Valiables = {
       end
     end
 
-    # Divination #################################################################
+    # Divination ###############################################################
     f.group 'Divination' do |g|
       g.element 'UniqueDivinations' do |e|
         e.showable             = true
@@ -262,7 +262,7 @@ Valiables = {
       end
     end
 
-    # Vendor Recipe ###########################################################
+    # Vendor Recipe ############################################################
     f.group 'Vendor Recipe' do |g|
       g.element do |e|
         e.showable = true
@@ -277,7 +277,7 @@ Valiables = {
     f.group 'Special Equipment' do |g|
       g.element do |e|
         e.showable = true
-        e.base_type = '"Sacrificial Garb" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt"'
+        e.base_type = 'SpecialEquipments'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
       end
@@ -288,23 +288,10 @@ Valiables = {
       g.element do |e|
         e.showable = true
         e.rarity         = '= Normal'
-        e.klass          = '"Belts" "Amulet" "Rings"'
-        e.base_type      = '"Amulet" "Diamond Ring" "Two-Stone Ring"'
+        e.base_type      = 'GoodAccessories'
         e.set_text_color       = "#{MagicColor} 200"
         e.set_border_color     = "#{MagicColor} 200"
         e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Normal Accessories #######################################################
-    f.group 'Normal Accessories' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.klass          = '"Belts" "Amulet" "Rings"'
-        e.set_text_color       = "#{NormalColor} 120"
-        e.set_border_color     = "#{NormalColor} 120"
-        e.set_background_color = "#{Black} 120"
       end
     end
 
@@ -400,7 +387,7 @@ Valiables = {
     f.group 'Atlas Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = "AtlasItems"
+        e.base_type = 'AtlasItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkOrange
       end
@@ -410,7 +397,7 @@ Valiables = {
     f.group 'Prophecy Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = '"Silver Coin" "Prophecy"'
+        e.base_type = 'ProphecyItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkBlue
       end

@@ -134,7 +134,6 @@ UniqueDivinations:
   - Wealth and Power
   - The Enlightened
 
-
 TwoHandWeapons: &TwoHandWeapons
   - Bows
   - Staves
@@ -188,6 +187,42 @@ ThreeSockets:
   - *OneHandWeapons
   - Shields
 
+SpecialEquipments:
+  - Sacrificial Garb
+  - Two-Toned Boots
+  - Spiked Gloves
+  - Gripped Gloves
+  - Fingerless Silk Gloves
+  - Marble Amulet
+  - Blue Pearl Amulet
+  - Crystal Belt
+  - Opal Ring
+  - Steel Ring
+
+GoodAmulets: &GoodAmulets
+  - Amber Amulet
+  - Jade Amulet
+  - Lapis Amulet
+  - Agate Amulet
+  - Citrine Amulet
+  - Turquoise Amulet
+  - Onyx Amulet
+
+GoodBelts: &GoodBelts
+  - Rustic Sash
+  - Heavy Belt
+  - Leather Belt
+
+GoodRings: &GoodRings
+  - Coral Ring
+  - Diamond Ring
+  - Two-Stone Ring
+
+GoodAccessories:
+  - *GoodAmulets
+  - *GoodBelts
+  - *GoodRings
+
 LabyrinthItems:
   - Offering to the Goddess
   - Bane of the Loyal
@@ -206,3 +241,7 @@ AtlasItems:
   - Shaper's Orb
   - Cartographer's Sextant
   - Cartographer's Seal
+
+ProphecyItems:
+  - Silver Coin
+  - Prophecy
