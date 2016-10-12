@@ -4,6 +4,7 @@ DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
 Red             = '255   0   0'
+LightGreen      = '165 255  30'
 Green           = '  0 255   0'
 Blue            = '100 100 255'
 Purple          = '160   0 160'
@@ -27,6 +28,7 @@ ManaFlaskColor    = Red
 HybridFlaskColor  = Red
 UtilityFlaskColor = Green
 MapColor          = White
+JewelColor        = LightGreen
 
 Valiables = {
   low: {
@@ -227,6 +229,34 @@ Valiables = {
         m.element 'Middle Tier' do |e|
           e.drop_level           = '>= 73'
           e.set_background_color = DarkYellow
+        end
+      end
+    end
+
+    # Jewel ####################################################################
+    f.group 'Jewel' do |g|
+      g.element 'Jewel' do |e|
+        e.showable             = true
+        e.klass                = 'Jewel'
+        e.set_text_color       = JewelColor
+        e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Unique' do |e|
+          e.rarity               = '= Unique'
+          e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
+        end
+        m.element 'Rare' do |e|
+          e.rarity               = '= Rare'
+          e.set_border_color     = RareColor
+          e.set_font_size        = LargeFontSize
+        end
+        m.element 'Magic' do |e|
+          e.rarity               = '= Magic'
+          e.set_border_color     = MagicColor
+          e.set_font_size        = DefaultFontSize
         end
       end
     end
