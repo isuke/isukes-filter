@@ -62,6 +62,7 @@ Valiables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
+        e.play_alert_sound     = '6 300'
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
