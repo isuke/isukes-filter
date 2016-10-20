@@ -1,9 +1,10 @@
 PoeVersion         = '2.4'
-FilterVersion      = '1.1'
+FilterVersion      = '1.2pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
 Red             = '255   0   0'
+LightGreen      = '165 255  30'
 Green           = '  0 255   0'
 Blue            = '100 100 255'
 Purple          = '160   0 160'
@@ -27,6 +28,7 @@ ManaFlaskColor    = Red
 HybridFlaskColor  = Red
 UtilityFlaskColor = Green
 MapColor          = White
+JewelColor        = LightGreen
 
 Valiables = {
   low: {
@@ -60,6 +62,7 @@ Valiables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
+        e.play_alert_sound     = '6 300'
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
@@ -219,20 +222,47 @@ Valiables = {
           e.set_font_size        = LargeFontSize
         end
       end
-
       g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
+        m.element 'High Tier' do |e|
+          e.drop_level           = '>= 78'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
+        m.element 'Middle Tier' do |e|
+          e.drop_level           = '>= 73'
           e.set_background_color = DarkYellow
         end
       end
     end
 
-    # Divination #################################################################
+    # Jewel ####################################################################
+    f.group 'Jewel' do |g|
+      g.element 'Jewel' do |e|
+        e.showable             = true
+        e.klass                = 'Jewel'
+        e.set_text_color       = JewelColor
+        e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Unique' do |e|
+          e.rarity               = '= Unique'
+          e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
+        end
+        m.element 'Rare' do |e|
+          e.rarity               = '= Rare'
+          e.set_border_color     = RareColor
+          e.set_font_size        = LargeFontSize
+        end
+        m.element 'Magic' do |e|
+          e.rarity               = '= Magic'
+          e.set_border_color     = MagicColor
+          e.set_font_size        = DefaultFontSize
+        end
+      end
+    end
+
+    # Divination ###############################################################
     f.group 'Divination' do |g|
       g.element 'UniqueDivinations' do |e|
         e.showable             = true
@@ -262,7 +292,7 @@ Valiables = {
       end
     end
 
-    # Vendor Recipe ###########################################################
+    # Vendor Recipe ############################################################
     f.group 'Vendor Recipe' do |g|
       g.element do |e|
         e.showable = true
@@ -277,7 +307,7 @@ Valiables = {
     f.group 'Special Equipment' do |g|
       g.element do |e|
         e.showable = true
-        e.base_type = '"Sacrificial Garb" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt"'
+        e.base_type = 'SpecialEquipments'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
       end
@@ -288,23 +318,10 @@ Valiables = {
       g.element do |e|
         e.showable = true
         e.rarity         = '= Normal'
-        e.klass          = '"Belts" "Amulet" "Rings"'
-        e.base_type      = '"Amulet" "Diamond Ring" "Two-Stone Ring"'
+        e.base_type      = 'GoodAccessories'
         e.set_text_color       = "#{MagicColor} 200"
         e.set_border_color     = "#{MagicColor} 200"
         e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Normal Accessories #######################################################
-    f.group 'Normal Accessories' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.klass          = '"Belts" "Amulet" "Rings"'
-        e.set_text_color       = "#{NormalColor} 120"
-        e.set_border_color     = "#{NormalColor} 120"
-        e.set_background_color = "#{Black} 120"
       end
     end
 
@@ -400,7 +417,7 @@ Valiables = {
     f.group 'Atlas Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = "AtlasItems"
+        e.base_type = 'AtlasItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkOrange
       end
@@ -410,7 +427,7 @@ Valiables = {
     f.group 'Prophecy Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = '"Silver Coin" "Prophecy"'
+        e.base_type = 'ProphecyItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkBlue
       end
