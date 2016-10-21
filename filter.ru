@@ -376,12 +376,34 @@ Valiables = {
         end
       end
       g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
+        m.element 'High DropLevel Weapons' do |e|
+          e.klass                = 'Weapons'
+          e.drop_level           = '> 69'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
+        m.element 'Middle DropLevel Weapons' do |e|
+          e.klass                = 'Weapons'
+          e.drop_level           = '> 65'
+          e.set_background_color = DarkYellow
+        end
+        m.element 'High DropLevel Gears1' do |e|
+          e.klass                = '"Body Armours" "Helmets" "Shields"'
+          e.drop_level           = '> 68'
+          e.set_background_color = DarkRed
+        end
+        m.element 'Middle DropLevel Gears1' do |e|
+          e.klass                = '"Body Armours" "Helmets" "Shields"'
+          e.drop_level           = '> 64'
+          e.set_background_color = DarkYellow
+        end
+        m.element 'High DropLevel Gears2' do |e|
+          e.klass                = '"Gloves" "Boots"'
+          e.drop_level           = '> 64'
+          e.set_background_color = DarkRed
+        end
+        m.element 'Middle DropLevel Gears2' do |e|
+          e.klass                = '"Gloves" "Boots"'
+          e.drop_level           = '> 57'
           e.set_background_color = DarkYellow
         end
       end
