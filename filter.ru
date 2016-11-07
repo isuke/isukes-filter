@@ -30,6 +30,8 @@ HybridFlaskColor  = Red
 UtilityFlaskColor = Green
 MapColor          = White
 JewelColor        = LightGreen
+HighLevelAlertSound = '6 300'
+MiddleLevelAlertSound = '3 300'
 
 Valiables = {
   low: {
@@ -63,7 +65,7 @@ Valiables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
-        e.play_alert_sound     = '6 300'
+        e.play_alert_sound     = HighLevelAlertSound
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
@@ -116,6 +118,7 @@ Valiables = {
         e.base_type = 'SpecialEquipments'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
+        e.play_alert_sound = MiddleLevelAlertSound
       end
     end
 
@@ -309,14 +312,14 @@ Valiables = {
 
     # Divination ###############################################################
     f.group 'Divination' do |g|
-      g.element 'UniqueDivinations' do |e|
+      g.element 'Unique Divinations' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'UniqueDivinations'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
       end
-      g.element 'RareDivinations' do |e|
+      g.element 'Rare Divinations' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'RareDivinations'
@@ -420,10 +423,17 @@ Valiables = {
         end
       end
       g.mixin do |m|
-        m.element 'Linked Sockets L' do |e|
-          e.linked_sockets   = '>= 5'
+        m.element 'Linked Sockets LL' do |e|
+          e.linked_sockets   = '= 6'
           e.set_font_size    = ExtraLargeFontSize
           e.set_border_color = UniqueColor
+          e.play_alert_sound = HighLevelAlertSound
+        end
+        m.element 'Linked Sockets L' do |e|
+          e.linked_sockets   = '= 5'
+          e.set_font_size    = ExtraLargeFontSize
+          e.set_border_color = UniqueColor
+          e.play_alert_sound = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
           e.sockets          = ">= #{Valiables[level][:show_socket_num]}"
