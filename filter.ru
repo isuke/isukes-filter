@@ -11,6 +11,7 @@ Purple          = '160   0 160'
 DarkRed         = ' 70   0   0'
 DarkGreen       = '  0  70   0'
 DarkBlue        = '  0   0  85'
+BlueGray        = ' 90  95 120'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
@@ -83,6 +84,50 @@ Valiables = {
         e.klass                = 'Currency'
         e.base_type            = 'NormalCurrencies'
         e.set_font_size        = DefaultFontSize
+      end
+    end
+
+    # Vendor Recipe ############################################################
+    f.group 'Vendor Recipe' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = DarkPurple
+      end
+    end
+
+    # Chance Items #############################################################
+    f.group 'Chance Items' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = 'ChanceItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = BlueGray
+      end
+    end
+
+    # Special Equipment ########################################################
+    f.group 'Special Equipment' do |g|
+      g.element do |e|
+        e.showable = true
+        e.base_type = 'SpecialEquipments'
+        e.set_border_color = UniqueColor
+        e.set_font_size    = ExtraLargeFontSize
+      end
+    end
+
+    # Good Accessories #########################################################
+    f.group 'Good Accessories' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity         = '= Normal'
+        e.base_type      = 'GoodAccessories'
+        e.set_text_color       = "#{MagicColor} 200"
+        e.set_border_color     = "#{MagicColor} 200"
+        e.set_background_color = "#{Black} 200"
       end
     end
 
@@ -289,39 +334,6 @@ Valiables = {
         e.showable             = true
         e.klass                = 'Divination'
         e.set_font_size        = DefaultFontSize
-      end
-    end
-
-    # Vendor Recipe ############################################################
-    f.group 'Vendor Recipe' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = DarkPurple
-      end
-    end
-
-    # Special Equipment ########################################################
-    f.group 'Special Equipment' do |g|
-      g.element do |e|
-        e.showable = true
-        e.base_type = 'SpecialEquipments'
-        e.set_border_color = UniqueColor
-        e.set_font_size    = ExtraLargeFontSize
-      end
-    end
-
-    # Good Accessories #########################################################
-    f.group 'Good Accessories' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.base_type      = 'GoodAccessories'
-        e.set_text_color       = "#{MagicColor} 200"
-        e.set_border_color     = "#{MagicColor} 200"
-        e.set_background_color = "#{Black} 200"
       end
     end
 
