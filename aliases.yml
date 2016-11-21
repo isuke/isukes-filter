@@ -226,6 +226,18 @@ ThreeSockets:
   - *OneHandWeapons
   - Shields
 
+ChanceItems:
+  - Assassin's Garb
+  - Glorious Plate
+  - Prophecy Wand
+  - Sapphire Flask
+  - Occultist's Vestment
+  - Deicide Mask
+  - Sorcerer Boots
+  - Jewelled Foil
+  - Agate Amulet
+  - Leather Belt
+
 LabyrinthItems:
   - Offering to the Goddess
   - Bane of the Loyal

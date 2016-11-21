@@ -1,5 +1,5 @@
 PoeVersion         = '2.4'
-FilterVersion      = '1.2'
+FilterVersion      = '1.3pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -11,6 +11,7 @@ Purple          = '160   0 160'
 DarkRed         = ' 70   0   0'
 DarkGreen       = '  0  70   0'
 DarkBlue        = '  0   0  85'
+BlueGray        = ' 90  95 120'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
@@ -29,6 +30,8 @@ HybridFlaskColor  = Red
 UtilityFlaskColor = Green
 MapColor          = White
 JewelColor        = LightGreen
+HighLevelAlertSound = '6 300'
+MiddleLevelAlertSound = '3 300'
 
 Valiables = {
   low: {
@@ -62,7 +65,7 @@ Valiables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
-        e.play_alert_sound     = '6 300'
+        e.play_alert_sound     = HighLevelAlertSound
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
@@ -83,6 +86,51 @@ Valiables = {
         e.klass                = 'Currency'
         e.base_type            = 'NormalCurrencies'
         e.set_font_size        = DefaultFontSize
+      end
+    end
+
+    # Vendor Recipe ############################################################
+    f.group 'Vendor Recipe' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = DarkPurple
+      end
+    end
+
+    # Chance Items #############################################################
+    f.group 'Chance Items' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = 'ChanceItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = BlueGray
+      end
+    end
+
+    # Special Equipment ########################################################
+    f.group 'Special Equipment' do |g|
+      g.element do |e|
+        e.showable = true
+        e.base_type = 'SpecialEquipments'
+        e.set_border_color = UniqueColor
+        e.set_font_size    = ExtraLargeFontSize
+        e.play_alert_sound = MiddleLevelAlertSound
+      end
+    end
+
+    # Good Accessories #########################################################
+    f.group 'Good Accessories' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity         = '= Normal'
+        e.base_type      = 'GoodAccessories'
+        e.set_text_color       = "#{MagicColor} 200"
+        e.set_border_color     = "#{MagicColor} 200"
+        e.set_background_color = "#{Black} 200"
       end
     end
 
@@ -264,14 +312,14 @@ Valiables = {
 
     # Divination ###############################################################
     f.group 'Divination' do |g|
-      g.element 'UniqueDivinations' do |e|
+      g.element 'Unique Divinations' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'UniqueDivinations'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
       end
-      g.element 'RareDivinations' do |e|
+      g.element 'Rare Divinations' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'RareDivinations'
@@ -289,39 +337,6 @@ Valiables = {
         e.showable             = true
         e.klass                = 'Divination'
         e.set_font_size        = DefaultFontSize
-      end
-    end
-
-    # Vendor Recipe ############################################################
-    f.group 'Vendor Recipe' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = DarkPurple
-      end
-    end
-
-    # Special Equipment ########################################################
-    f.group 'Special Equipment' do |g|
-      g.element do |e|
-        e.showable = true
-        e.base_type = 'SpecialEquipments'
-        e.set_border_color = UniqueColor
-        e.set_font_size    = ExtraLargeFontSize
-      end
-    end
-
-    # Good Accessories #########################################################
-    f.group 'Good Accessories' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.base_type      = 'GoodAccessories'
-        e.set_text_color       = "#{MagicColor} 200"
-        e.set_border_color     = "#{MagicColor} 200"
-        e.set_background_color = "#{Black} 200"
       end
     end
 
@@ -376,20 +391,49 @@ Valiables = {
         end
       end
       g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
+        m.element 'High DropLevel Weapons' do |e|
+          e.klass                = 'Weapons'
+          e.drop_level           = '> 69'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
+        m.element 'Middle DropLevel Weapons' do |e|
+          e.klass                = 'Weapons'
+          e.drop_level           = '> 65'
+          e.set_background_color = DarkYellow
+        end
+        m.element 'High DropLevel Gears1' do |e|
+          e.klass                = '"Body Armours" "Helmets" "Shields"'
+          e.drop_level           = '> 68'
+          e.set_background_color = DarkRed
+        end
+        m.element 'Middle DropLevel Gears1' do |e|
+          e.klass                = '"Body Armours" "Helmets" "Shields"'
+          e.drop_level           = '> 64'
+          e.set_background_color = DarkYellow
+        end
+        m.element 'High DropLevel Gears2' do |e|
+          e.klass                = '"Gloves" "Boots"'
+          e.drop_level           = '> 64'
+          e.set_background_color = DarkRed
+        end
+        m.element 'Middle DropLevel Gears2' do |e|
+          e.klass                = '"Gloves" "Boots"'
+          e.drop_level           = '> 57'
           e.set_background_color = DarkYellow
         end
       end
       g.mixin do |m|
-        m.element 'Linked Sockets L' do |e|
-          e.linked_sockets   = '>= 5'
+        m.element 'Linked Sockets LL' do |e|
+          e.linked_sockets   = '= 6'
           e.set_font_size    = ExtraLargeFontSize
           e.set_border_color = UniqueColor
+          e.play_alert_sound = HighLevelAlertSound
+        end
+        m.element 'Linked Sockets L' do |e|
+          e.linked_sockets   = '= 5'
+          e.set_font_size    = ExtraLargeFontSize
+          e.set_border_color = UniqueColor
+          e.play_alert_sound = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
           e.sockets          = ">= #{Valiables[level][:show_socket_num]}"
