@@ -162,7 +162,8 @@ Value when selling.
 | Dark Green       | Labyrinth Items                           |
 | Dark Orange      | Atlas Items                               |
 | Dark Blue        | Prophecy Items                            |
-| Purple           | League Items (Different for each leagues) |
+| Purple           | Essence Items                             |
+| Brown            | League Items (Different for each leagues) |
 
 - Chance Items
   - Assassin's Garb

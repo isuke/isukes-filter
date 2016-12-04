@@ -1,5 +1,5 @@
-PoeVersion         = '2.4'
-FilterVersion      = '1.3'
+PoeVersion         = '2.5'
+FilterVersion      = '1.0pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -12,6 +12,7 @@ DarkRed         = ' 70   0   0'
 DarkGreen       = '  0  70   0'
 DarkBlue        = '  0   0  85'
 BlueGray        = ' 90  95 120'
+Brown            = '139  69  19'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
@@ -477,13 +478,23 @@ Valiables = {
       end
     end
 
+    # Essence Item ##############################################################
+    f.group 'Essence Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = Purple
+      end
+    end
+
     # League Item ##############################################################
     f.group 'League Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = '"Perandus Coin" "Essence" "Remnant of Corruption"'
+        e.base_type = 'LeagueItems'
         e.set_font_size        = DefaultFontSize
-        e.set_background_color = Purple
+        e.set_background_color = Brown
       end
     end
 
