@@ -1,5 +1,5 @@
 PoeVersion         = '2.5'
-FilterVersion      = '1.0'
+FilterVersion      = '2.0pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -35,29 +35,40 @@ HighLevelAlertSound = '6 300'
 MiddleLevelAlertSound = '3 300'
 
 Valiables = {
-  low: {
-    hide_rarity_level: 'Normal',
-    small_flask_size: '"Small"',
-    large_flask_size: '"Medium" "Large" "Greater" "Grand" "Giant" "Colossal" "Sacred" "Hallowed" "Sanctified" "Divine" "Eternal"',
+  C: {
+    show_rarity_level: 'Magic',
+    show_flask_drop_level: 3,
+    show_quality_flask: true,
+    show_rare_equipement: true,
     show_socket_num: 4,
   },
-  middle: {
-    hide_rarity_level: 'Magic',
-    small_flask_size: '"Small" "Medium" "Large" "Greater" "Grand"',
-    large_flask_size: '"Giant" "Colossal" "Sacred" "Hallowed" "Sanctified" "Divine" "Eternal"',
-    show_socket_num: 5,
+  B: {
+    show_rarity_level: 'Rare',
+    show_flask_drop_level: 30,
+    show_quality_flask: true,
+    show_rare_equipement: true,
+    show_socket_num: 6,
   },
-  high: {
-    hide_rarity_level: 'Magic',
-    small_flask_size: '"Small" "Medium" "Large" "Greater" "Grand" "Giant" "Colossal" "Sacred" "Hallowed" "Sanctified" "Divine" "Eternal"',
-    large_flask_size: '',
+  A: {
+    show_rarity_level: 'Rare',
+    show_flask_drop_level: 100,
+    show_quality_flask: true,
+    show_rare_equipement: true,
+    show_socket_num: 6,
+  },
+  S: {
+    show_rarity_level: 'Rare',
+    show_flask_drop_level: 100,
+    show_quality_flask: false,
+    show_rare_equipement: false,
     show_socket_num: 6,
   }
 }
 
 ################################################################################
-%i(low middle high).each do |level|
-  filter "#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
+%i(C B A S).each do |level|
+  valiable = Valiables[level]
+  filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     # Currency #################################################################
     f.group 'Currency' do |g|
       g.element 'UniqueCurrencies' do |e|
@@ -96,19 +107,9 @@ Valiables = {
         e.showable = true
         e.rarity    = '= Normal'
         e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.corrupted            = 'False'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkPurple
-      end
-    end
-
-    # Chance Items #############################################################
-    f.group 'Chance Items' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = 'ChanceItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = BlueGray
       end
     end
 
@@ -123,14 +124,41 @@ Valiables = {
       end
     end
 
-    # Good Accessories #########################################################
-    f.group 'Good Accessories' do |g|
+    # Good Accessory ###########################################################
+    f.group 'Good Accessory' do |g|
       g.element do |e|
         e.showable = true
         e.rarity         = '= Normal'
         e.base_type      = 'GoodAccessories'
-        e.set_text_color       = "#{MagicColor} 200"
-        e.set_border_color     = "#{MagicColor} 200"
+        e.corrupted      = 'False'
+        e.set_text_color       = "#{Purple} 200"
+        e.set_border_color     = "#{Purple} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+    end
+
+    # Chance Item ##############################################################
+    f.group 'Chance Item' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = 'ChanceItems'
+        e.corrupted = 'False'
+        e.set_text_color       = "#{BlueGray} 200"
+        e.set_border_color     = "#{BlueGray} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+    end
+
+    # Good ES Armour ###########################################################
+    f.group 'Good ES Armour' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity         = '= Normal'
+        e.base_type      = 'GoodESArmours'
+        e.corrupted      = 'False'
+        e.set_text_color       = "#{DarkOrange} 200"
+        e.set_border_color     = "#{DarkOrange} 200"
         e.set_background_color = "#{Black} 200"
       end
     end
@@ -140,9 +168,9 @@ Valiables = {
       g.element do |e|
         e.showable             = false
         e.klass                = 'Flasks'
-        e.quality              = '= 0'
+        e.quality              = '= 0' if valiable[:show_quality_flask]
         e.rarity               = '< Unique'
-        e.base_type            = Valiables[level][:small_flask_size]
+        e.drop_level           = "< #{valiable[:show_flask_drop_level]}"
       end
     end
 
@@ -234,10 +262,15 @@ Valiables = {
       end
 
       g.mixin do |m|
-        m.element 'Drop Only' do |e|
+        m.element 'Rare Only' do |e|
           e.base_type            = 'DropOnlyGems'
-          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = RareColor
+          e.set_font_size        = LargeFontSize
+        end
+        m.element 'Unique Only' do |e|
+          e.base_type            = 'DropOnlyGems'
           e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
         end
       end
       g.mixin do |m|
@@ -313,28 +346,29 @@ Valiables = {
 
     # Divination ###############################################################
     f.group 'Divination' do |g|
-      g.element 'Unique Divinations' do |e|
+      g.element 'Unique Divination' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'UniqueDivinations'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
+        e.play_alert_sound     = MiddleLevelAlertSound
       end
-      g.element 'Rare Divinations' do |e|
+      g.element 'Rare Divination' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'RareDivinations'
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
       end
-      g.element 'Magic Divinations' do |e|
+      g.element 'Magic Divination' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.base_type            = 'MagicDivinations'
         e.set_font_size        = DefaultFontSize
         e.set_border_color     = MagicColor
       end
-      g.element 'Normal Divinations' do |e|
+      g.element 'Normal Divination' do |e|
         e.showable             = true
         e.klass                = 'Divination'
         e.set_font_size        = DefaultFontSize
@@ -346,30 +380,42 @@ Valiables = {
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.rarity         = "<= #{Valiables[level][:hide_rarity_level]}"
-        e.sockets        = "< #{Valiables[level][:show_socket_num]}"
+        e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '< 3'
+        if valiable[:show_rare_equipement]
+          e.rarity       = "< #{valiable[:show_rarity_level]}"
+        else
+          e.drop_level   = '<= 57'
+        end
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.rarity         = "<= #{Valiables[level][:hide_rarity_level]}"
-        e.sockets        = "< #{Valiables[level][:show_socket_num]}"
+        e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 3'
         e.socket_group   = 'RR GG BB'
+        if valiable[:show_rare_equipement]
+          e.rarity       = "< #{valiable[:show_rarity_level]}"
+        else
+          e.drop_level   = '<= 57'
+        end
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.rarity         = "<= #{Valiables[level][:hide_rarity_level]}"
-        e.sockets        = "< #{Valiables[level][:show_socket_num]}"
+        e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 4'
         e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
+        if valiable[:show_rare_equipement]
+          e.rarity       = "< #{valiable[:show_rarity_level]}"
+        else
+          e.drop_level   = '<= 57'
+        end
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Accessories'
-        e.rarity         = "<= #{Valiables[level][:hide_rarity_level]}"
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
     end
 
@@ -392,32 +438,32 @@ Valiables = {
         end
       end
       g.mixin do |m|
-        m.element 'High DropLevel Weapons' do |e|
+        m.element 'High DropLevel Weapon' do |e|
           e.klass                = 'Weapons'
           e.drop_level           = '> 69'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle DropLevel Weapons' do |e|
+        m.element 'Middle DropLevel Weapon' do |e|
           e.klass                = 'Weapons'
           e.drop_level           = '> 65'
           e.set_background_color = DarkYellow
         end
-        m.element 'High DropLevel Gears1' do |e|
+        m.element 'High DropLevel Gear1' do |e|
           e.klass                = '"Body Armours" "Helmets" "Shields"'
           e.drop_level           = '> 68'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle DropLevel Gears1' do |e|
+        m.element 'Middle DropLevel Gear1' do |e|
           e.klass                = '"Body Armours" "Helmets" "Shields"'
           e.drop_level           = '> 64'
           e.set_background_color = DarkYellow
         end
-        m.element 'High DropLevel Gears2' do |e|
+        m.element 'High DropLevel Gear2' do |e|
           e.klass                = '"Gloves" "Boots"'
           e.drop_level           = '> 64'
           e.set_background_color = DarkRed
         end
-        m.element 'Middle DropLevel Gears2' do |e|
+        m.element 'Middle DropLevel Gear2' do |e|
           e.klass                = '"Gloves" "Boots"'
           e.drop_level           = '> 57'
           e.set_background_color = DarkYellow
@@ -437,7 +483,7 @@ Valiables = {
           e.play_alert_sound = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
-          e.sockets          = ">= #{Valiables[level][:show_socket_num]}"
+          e.sockets          = ">= #{valiable[:show_socket_num]}"
           e.set_font_size    = LargeFontSize
           e.set_border_color = RareColor
         end
@@ -488,11 +534,11 @@ Valiables = {
       end
     end
 
-    # League Item ##############################################################
-    f.group 'League Item' do |g|
+    # Breach Item ##############################################################
+    f.group 'Breach Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = 'LeagueItems'
+        e.base_type = 'BreachItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = Brown
       end

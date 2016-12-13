@@ -31,14 +31,20 @@ UniqueCurrencies:
   - Regal Orb
   - Mirror of Kalandra
 
-DropOnlyGems:
+RareGems: &RareGems
   - Vaal
   - Added Chaos Damage
+  - Detonate Mines
+  - Portal
+
+UniqueGems: &UniqueGems
   - Enhance
   - Enlighten
   - Empower
-  - Detonate Mines
-  - Portal
+
+DropOnlyGems:
+  - *RareGems
+  - *UniqueGems
 
 MagicDivinations:
   - The Aesthete
@@ -69,17 +75,14 @@ MagicDivinations:
   - The Risk
   - The Road to Power
   - Scholar of the Seas
-  - The Soul
   - The Spoiled Prince
   - The Survivalist
-  - Time-Lost Relic
   - Tranquillity
   - The Tyrant
   - The Union
   - The Wind
   - The Wrath
   - Fox
-  - Lucky Deck
   - Treasure Hunter
   - Vinia's Token
   - Trial
@@ -87,53 +90,58 @@ MagicDivinations:
   - Dialla's Subjugation
 
 RareDivinations:
-  - The Cartographer
-  - The Chains that Bind
-  - Chaotic Disposition
-  - Emperor of Purity
-  - The Harvester
-  - The Hoarder
+  - The Hunger
+  - Bowyer's Dream
+  - Heterochromia
+  - Pride Before the Fall
+  - The Enlightened
   - The King's Heart
   - Last Hope
-  - Mawr Blaidd
-  - The Penitent
-  - Pride Before the Fall
-  - The Scavenger
-  - The Sephirot
+  - The Celestial Justicar
+  - The Demoness
+  - The Dapper Prodigy
   - The Valkyrie
   - The Vast
-  - The Warlord
+  - The Sephirot
   - The Wolf
+  - The Dark Mage
+  - The Void
+  - The Hoarder
+  - Time-Lost Relic
+  - Chaotic Disposition
+  - The Soul
+  - Lucky Deck
+  - The Chains that Bind
+  - The Harvester
+  - The Cartographer
+  - Emperor of Purity
+  - The Penitent
+  - The Scavenger
+  - The Warlord
   - Stormcaller
   - Earth Drinker
   - The Surveyor
   - The Void
 
 UniqueDivinations:
-  - The Doctor
-  - The Fiend
-  - House of Mirrors
-  - Hunter's Reward
-  - Abandoned Wealth
-  - The Artist
-  - Bowyer's Dream
-  - The Brittle Emperor
-  - The Celestial Justicar
-  - The Dapper Prodigy
-  - The Dark Mage
   - The Devastator
-  - The Dragon's Heart
-  - The Ethereal
-  - The Formless Sea
-  - Heterochromia
-  - The Hunger
-  - The Immortal
+  - The Doctor
+  - House of Mirrors
+  - The Fiend
+  - Hunter's Reward
+  - Mawr Blaidd
   - The Last One Standing
+  - The Dragon's Heart
   - The Offering
   - The Queen
-  - The Thaumaturgist
+  - The Ethereal
+  - Abandoned Wealth
+  - The Brittle Emperor
   - Wealth and Power
-  - The Enlightened
+  - The Thaumaturgist
+  - The Immortal
+  - The Formless Sea
+  - The Artist
 
 SpecialEquipments:
   - Sacrificial Garb
@@ -172,6 +180,13 @@ GoodAccessories:
   - *GoodAmulets
   - *GoodBelts
   - *GoodRings
+
+GoodESArmours:
+  - Vaal Regalia
+  - Sorcerer Boots
+  - Sorcerer Gloves
+  - Hubris Circlet
+  - Titanium Spirit Shield
 
 TwoHandWeapons: &TwoHandWeapons
   - Bows
@@ -265,7 +280,7 @@ EssenceItems:
   - Essence
   - Remnant of Corruption
 
-LeagueItems:
+BreachItems:
   - Splinter of Xoph
   - Splinter of Tul
   - Splinter of Esh
