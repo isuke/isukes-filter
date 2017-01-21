@@ -19,22 +19,23 @@ created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 
 ## Kind of Files
 
-filter is exist 3 types (`Low`/`Middle`/`High`).
+filter is exist 4 types (`C`/`B`/`A`/`S`).
 You can use it properly by your level.
 
-| Your Level                                 | Filer file                                                          |
-| ------------------------------------------ | ------------------------------------------------------------------- |
-| From start to the Lioneye's Watch          | not use filter.                                                     |
-| From The Lioneye's Watch to about Level 20 | use `Low.filter`. display magic items.                              |
-| From about Level 20 to about Level 60      | use `Middle.filter`. hide magic items. hide small flasks.           |
-| Level 60 or later                          | use `High.filter`. hide non quality life and magic flasks. hide 5s. |
+| Your Level                                 | Filer file                                                           |
+| ------------------------------------------ | -------------------------------------------------------------------- |
+| From start to the Lioneye's Watch          | not use filter or use `<default>`.                                   |
+| From The Lioneye's Watch to about Level 30 | use `C.filter`. display magic items.                                 |
+| From about Level 30 to about Level 65      | use `B.filter`. hide magic items. hide small flasks.                 |
+| From about Level 65 to about Level 90      | use `A.filter`. hide non quality life and magic flasks.              |
+| Level 90 or later                          | use `S.filter`. hide low drop level rare items.                      |
 
 ## explain
 
 ### Mechanism
 
 The following settings are merged.
-For example, Rare Bow of High Drop Level and 6L is displayed font color yellow, background color red and border color Orange (Yeay!).
+For example, Rare Bow of High Drop Level and 6L is displayed by font color yellow, background color red and border color Orange (Yeay!).
 If you want rara and high tier map you find font color white, background color red and border color yellow Item (Great!).
 
 ### Font Color
@@ -94,14 +95,15 @@ The meaning of *item reality* depends on the item.
 
 ##### Gems
 
-- Unique
+- Rare
   - Vaal Gems
   - Added Chaos Damage
+  - Detonate Mines
+  - Portal
+- Unique
   - Enhance
   - Enlighten
   - Empower
-  - Detonate Mines
-  - Portal
 
 ##### Flasks
 
@@ -126,19 +128,20 @@ Value when selling.
   - 6L
   - Special Equipments
 
-- Special Equipments
-  - Sacrificial Garb
-  - Bone Helmet
-  - Two-Toned Boots
-  - Spiked Gloves
-  - Gripped Gloves
-  - Fingerless Silk Gloves
-  - Marble Amulet
-  - Blue Pearl Amulet
-  - Vanguard Belt
-  - Crystal Belt
-  - Opal Ring
-  - Steel Ring
+###### Special Equipments
+
+- Sacrificial Garb
+- Bone Helmet
+- Two-Toned Boots
+- Spiked Gloves
+- Gripped Gloves
+- Fingerless Silk Gloves
+- Marble Amulet
+- Blue Pearl Amulet
+- Vanguard Belt
+- Crystal Belt
+- Opal Ring
+- Steel Ring
 
 ### Background Color
 
@@ -158,24 +161,12 @@ Value when selling.
 | Background Color | Represents                                |
 | ---------------- | ----------------------------------------- |
 | Dark Purple      | Hammer (for Cartographer's Chisel)        |
-| Blue Gray        | Chance Items                              |
 | Dark Green       | Labyrinth Items                           |
 | Dark Orange      | Atlas Items                               |
 | Dark Blue        | Prophecy Items                            |
 | Purple           | Essence Items                             |
-| Brown            | League Items (Different for each leagues) |
+| Brown            | Breach Items                              |
 
-- Chance Items
-  - Assassin's Garb
-  - Glorious Plate
-  - Prophecy Wand
-  - Sapphire Flask
-  - Occultist's Vestment
-  - Deicide Mask
-  - Sorcerer Boots
-  - Jewelled Foil
-  - Agate Amulet
-  - Leather Belt
 - Labyrinth Items
   - Offering to the Goddess
   - Bane of the Loyal
@@ -196,10 +187,28 @@ Value when selling.
 - Prophecy Items
   - Silver Coin
   - Prophecy
+- Breach Items
+  - Splinter of Xoph
+  - Splinter of Tul
+  - Splinter of Esh
+  - Splinter of Uul-Netol
+  - Splinter of Chayula
+  - Blessing of Xoph
+  - Blessing of Tul
+  - Blessing of Esh
+  - Blessing of Uul-Netol
+  - Blessing of Chayula
+  - Xoph's Breachstone
+  - Tul's Breachstone
+  - Esh's Breachstone
+  - Uul-Netol's Breachstone
+  - Chayula's Breachstone
 
 ### Others
 
-Normal Good accessories displeyed small.
+#### Good accessories
+
+Normal Good accessories displeyed small and purple.
 You can use essence to this item for chaos receipe or craft.
 
 - Good Accessories
@@ -217,3 +226,29 @@ You can use essence to this item for chaos receipe or craft.
   - Diamond Ring
   - Two-Stone Ring
 
+#### Chance Items
+
+Normal Change Items dispalyed small and blue gray for chance.
+
+- Chance Items
+  - Assassin's Garb
+  - Glorious Plate
+  - Prophecy Wand
+  - Sapphire Flask
+  - Occultist's Vestment
+  - Deicide Mask
+  - Sorcerer Boots
+  - Jewelled Foil
+  - Agate Amulet
+  - Leather Belt
+
+#### Good ES armours
+
+Normal Good ES armours displayed small and dark orange for craft.
+
+- GoodESArmours:
+  - Vaal Regalia
+  - Sorcerer Boots
+  - Sorcerer Gloves
+  - Hubris Circlet
+  - Titanium Spirit Shield
