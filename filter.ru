@@ -1,5 +1,5 @@
-PoeVersion         = '2.5'
-FilterVersion      = '2.0'
+PoeVersion         = '2.6'
+FilterVersion      = '2.0pre'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -12,7 +12,7 @@ DarkRed         = ' 70   0   0'
 DarkGreen       = '  0  70   0'
 DarkBlue        = '  0   0  85'
 BlueGray        = ' 90  95 120'
-Brown            = '139  69  19'
+Brown           = '139  69  19'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
@@ -539,6 +539,16 @@ Valiables = {
       g.element do |e|
         e.showable  = true
         e.base_type = 'BreachItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = Brown
+      end
+    end
+
+    # Legacy Item ##############################################################
+    f.group 'Legacy Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'LegacyItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = Brown
       end
