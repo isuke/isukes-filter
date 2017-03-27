@@ -230,15 +230,7 @@ You can use essence to this item for chaos receipe or craft.
 Normal Change Items dispalyed small and blue gray for chance.
 
 - Chance Items
-  - Assassin's Garb
-  - Glorious Plate
-  - Prophecy Wand
-  - Sapphire Flask
-  - Occultist's Vestment
-  - Deicide Mask
   - Sorcerer Boots
-  - Jewelled Foil
-  - Agate Amulet
   - Leather Belt
 
 #### Good ES armours
