@@ -382,11 +382,7 @@ Valiables = {
         e.klass          = 'Weapons Gears'
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '< 3'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
@@ -394,11 +390,7 @@ Valiables = {
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 3'
         e.socket_group   = 'RR GG BB'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
@@ -406,16 +398,41 @@ Valiables = {
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 4'
         e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Accessories'
         e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+
+      unless valiable[:show_rare_equipement]
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '< 3'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 3'
+          e.socket_group   = 'RR GG BB'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 4'
+          e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
       end
     end
 
