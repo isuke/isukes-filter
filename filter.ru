@@ -1,5 +1,5 @@
 PoeVersion         = '2.6'
-FilterVersion      = '2.0'
+FilterVersion      = '2.1'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -494,6 +494,25 @@ Valiables = {
       end
     end
 
+    # Legacy Item ##############################################################
+    f.group 'Legacy Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'LegacyItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = Brown
+      end
+    end
+    f.group 'Ancient Reliquary Key' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = '"Ancient Reliquary Key"'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = Brown
+        e.play_alert_sound = HighLevelAlertSound
+      end
+    end
+
     # Labyrinth Item ###########################################################
     f.group 'Labyrinth Item' do |g|
       g.element do |e|
@@ -539,16 +558,6 @@ Valiables = {
       g.element do |e|
         e.showable  = true
         e.base_type = 'BreachItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = Brown
-      end
-    end
-
-    # Legacy Item ##############################################################
-    f.group 'Legacy Item' do |g|
-      g.element do |e|
-        e.showable  = true
-        e.base_type = 'LegacyItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = Brown
       end
