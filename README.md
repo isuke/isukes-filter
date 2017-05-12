@@ -6,7 +6,7 @@ created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 
 [DOWNLOAD](https://github.com/isuke/isukes-filter/releases)
 
-# Screenshots
+## Screenshots
 
 ### before
 
@@ -15,7 +15,6 @@ created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 ### after
 
 ![after1](https://raw.githubusercontent.com/isuke/isukes-filter/images/after1.jpg)
-
 
 ## Kind of Files
 
@@ -231,15 +230,7 @@ You can use essence to this item for chaos receipe or craft.
 Normal Change Items dispalyed small and blue gray for chance.
 
 - Chance Items
-  - Assassin's Garb
-  - Glorious Plate
-  - Prophecy Wand
-  - Sapphire Flask
-  - Occultist's Vestment
-  - Deicide Mask
   - Sorcerer Boots
-  - Jewelled Foil
-  - Agate Amulet
   - Leather Belt
 
 #### Good ES armours
@@ -252,3 +243,11 @@ Normal Good ES armours displayed small and dark orange for craft.
   - Sorcerer Gloves
   - Hubris Circlet
   - Titanium Spirit Shield
+
+## Development
+
+
+```
+bundle install
+poe_filter_generator generate filter.ru . aliases.yml
+```

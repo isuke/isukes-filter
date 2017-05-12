@@ -1,5 +1,5 @@
 PoeVersion         = '2.6'
-FilterVersion      = '2.0'
+FilterVersion      = '2.1'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -382,11 +382,7 @@ Valiables = {
         e.klass          = 'Weapons Gears'
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '< 3'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
@@ -394,11 +390,7 @@ Valiables = {
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 3'
         e.socket_group   = 'RR GG BB'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
@@ -406,16 +398,41 @@ Valiables = {
         e.sockets        = "< #{valiable[:show_socket_num]}"
         e.linked_sockets = '= 4'
         e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-        if valiable[:show_rare_equipement]
-          e.rarity       = "< #{valiable[:show_rarity_level]}"
-        else
-          e.drop_level   = '<= 57'
-        end
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Accessories'
         e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+
+      unless valiable[:show_rare_equipement]
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '< 3'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 3'
+          e.socket_group   = 'RR GG BB'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 4'
+          e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
+          e.drop_level     = '<= 57'
+          e.rarity         = '< Unique'
+        end
       end
     end
 
@@ -494,6 +511,25 @@ Valiables = {
       end
     end
 
+    # Legacy Item ##############################################################
+    f.group 'Legacy Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'LegacyItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = Brown
+      end
+    end
+    f.group 'Ancient Reliquary Key' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = '"Ancient Reliquary Key"'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = Brown
+        e.play_alert_sound = HighLevelAlertSound
+      end
+    end
+
     # Labyrinth Item ###########################################################
     f.group 'Labyrinth Item' do |g|
       g.element do |e|
@@ -539,16 +575,6 @@ Valiables = {
       g.element do |e|
         e.showable  = true
         e.base_type = 'BreachItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = Brown
-      end
-    end
-
-    # Legacy Item ##############################################################
-    f.group 'Legacy Item' do |g|
-      g.element do |e|
-        e.showable  = true
-        e.base_type = 'LegacyItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = Brown
       end
