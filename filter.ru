@@ -1,21 +1,24 @@
-PoeVersion         = '2.6'
+PoeVersion         = '3.0'
 FilterVersion      = '2.1'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
-Red             = '255   0   0'
 LightGreen      = '165 255  30'
+LightPurple     = '190 159 212'
+Red             = '255   0   0'
 Green           = '  0 255   0'
 Blue            = '100 100 255'
 Purple          = '160   0 160'
 DarkRed         = ' 70   0   0'
 DarkGreen       = '  0  70   0'
 DarkBlue        = '  0   0  85'
+DarkBlue2       = ' 20 152  75'
 BlueGray        = ' 90  95 120'
 Brown           = '139  69  19'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
+DarkOrange2     = '221  12  82'
 Black           = '  0   0   0'
 White           = '255 255 255'
 NormalColor     = '200 200 200'
@@ -151,17 +154,17 @@ Valiables = {
     end
 
     # Good ES Armour ###########################################################
-    f.group 'Good ES Armour' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.base_type      = 'GoodESArmours'
-        e.corrupted      = 'False'
-        e.set_text_color       = "#{DarkOrange} 200"
-        e.set_border_color     = "#{DarkOrange} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
+    # f.group 'Good ES Armour' do |g|
+    #   g.element do |e|
+    #     e.showable = true
+    #     e.rarity         = '= Normal'
+    #     e.base_type      = 'GoodESArmours'
+    #     e.corrupted      = 'False'
+    #     e.set_text_color       = "#{DarkOrange} 200"
+    #     e.set_border_color     = "#{DarkOrange} 200"
+    #     e.set_background_color = "#{Black} 200"
+    #   end
+    # end
 
     # Hide Flask ###############################################################
     f.group 'Hide Flask' do |g|
@@ -511,25 +514,6 @@ Valiables = {
       end
     end
 
-    # Legacy Item ##############################################################
-    f.group 'Legacy Item' do |g|
-      g.element do |e|
-        e.showable  = true
-        e.base_type = 'LegacyItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = Brown
-      end
-    end
-    f.group 'Ancient Reliquary Key' do |g|
-      g.element do |e|
-        e.showable  = true
-        e.base_type = '"Ancient Reliquary Key"'
-        e.set_font_size        = LargeFontSize
-        e.set_background_color = Brown
-        e.play_alert_sound = HighLevelAlertSound
-      end
-    end
-
     # Labyrinth Item ###########################################################
     f.group 'Labyrinth Item' do |g|
       g.element do |e|
@@ -547,6 +531,22 @@ Valiables = {
         e.base_type = 'AtlasItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkOrange
+      end
+    end
+
+    # Oriath Item ###############################################################
+    f.group 'Oriath Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.klass = 'Pantheon Soul'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = DarkOrange2
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'OriathItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = DarkOrange2
       end
     end
 
@@ -577,6 +577,16 @@ Valiables = {
         e.base_type = 'BreachItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = Brown
+      end
+    end
+
+    # Harbinger Item ##############################################################
+    f.group 'Harbinger Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'HarbingerItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = DarkBlue2
       end
     end
 
