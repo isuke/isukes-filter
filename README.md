@@ -162,9 +162,11 @@ Value when selling.
 | Dark Purple      | Hammer (for Cartographer's Chisel)        |
 | Dark Green       | Labyrinth Items                           |
 | Dark Orange      | Atlas Items                               |
+| Dark Orange      | Oriath Items                              |
 | Dark Blue        | Prophecy Items                            |
 | Purple           | Essence Items                             |
 | Brown            | Breach Items                              |
+| Dark Blue        | Harbinger Items                           |
 
 - Labyrinth Items
   - Offering to the Goddess
@@ -183,6 +185,9 @@ Value when selling.
   - Shaper's Orb
   - Cartographer's Sextant
   - Cartographer's Seal
+- OriathItems:
+  - Divine Vessel
+  - Pantheon Soul
 - Prophecy Items
   - Silver Coin
   - Prophecy
@@ -202,6 +207,23 @@ Value when selling.
   - Esh's Breachstone
   - Uul-Netol's Breachstone
   - Chayula's Breachstone
+- Harbinger Items
+  - Orb of Annulment
+  - Orb of Binding
+  - Orb of Horizons
+  - Harbinger's Orb
+  - Engineer's Orb
+  - Ancient Orb
+  - Annulment Shard
+  - Binding Shard
+  - Horizon Shard
+  - Harbinger's Shard
+  - Engineer's Shard
+  - Ancient Shard
+  - Chaos Shard
+  - Mirror Shard
+  - Exalted Shard
+  - Regal Shard
 
 ### Others
 

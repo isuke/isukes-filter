@@ -264,6 +264,9 @@ AtlasItems:
   - Cartographer's Sextant
   - Cartographer's Seal
 
+OriathItems:
+  - Divine Vessel
+
 ProphecyItems:
   - Silver Coin
   - Prophecy
@@ -289,21 +292,20 @@ BreachItems:
   - Uul-Netol's Breachstone
   - Chayula's Breachstone
 
-LegacyItems:
-  - Domination Leaguestone
-  - Anarchy Leaguestone
-  - Ambush Leaguestone
-  - Talisman Leaguestone
-  - Tempest Leaguestone
-  - Perandus Leaguestone
-  - Nemesis Leaguestone
-  - Prophecy Leaguestone
-  - Torment Leaguestone
-  - Invasion Leaguestone
-  - Breach Leaguestone
-  - Essence Leaguestone
-  - Warbands Leaguestone
-  - Rampage Leaguestone
-  - Bloodlines Leaguestone
-  - Beyond Leaguestone
-  - Onslaught Leaguestone
+HarbingerItems:
+  - Orb of Annulment
+  - Orb of Binding
+  - Orb of Horizons
+  - Harbinger's Orb
+  - Engineer's Orb
+  - Ancient Orb
+  - Annulment Shard
+  - Binding Shard
+  - Horizon Shard
+  - Harbinger's Shard
+  - Engineer's Shard
+  - Ancient Shard
+  - Chaos Shard
+  - Mirror Shard
+  - Exalted Shard
+  - Regal Shard
