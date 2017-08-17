@@ -588,6 +588,13 @@ Valiables = {
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkBlue2
       end
+      g.element do |e|
+        e.showable  = true
+        e.klass = 'Piece'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = DarkBlue2
+        e.set_border_color     = UniqueColor
+      end
     end
 
     # Quest Item ###############################################################
