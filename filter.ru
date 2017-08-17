@@ -1,5 +1,5 @@
 PoeVersion         = '3.0'
-FilterVersion      = '2.1'
+FilterVersion      = '2.2'
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -587,6 +587,13 @@ Valiables = {
         e.base_type = 'HarbingerItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = DarkBlue2
+      end
+      g.element do |e|
+        e.showable  = true
+        e.klass = 'Piece'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = DarkBlue2
+        e.set_border_color     = UniqueColor
       end
     end
 
