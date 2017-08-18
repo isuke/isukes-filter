@@ -80,7 +80,7 @@ Valiables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.play_alert_sound_positional = HighLevelAlertSound
       end
       g.element 'RareCurrencies' do |e|
         e.showable             = true
@@ -123,7 +123,7 @@ Valiables = {
         e.base_type = 'SpecialEquipments'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
-        e.play_alert_sound = MiddleLevelAlertSound
+        e.play_alert_sound_positional = MiddleLevelAlertSound
       end
     end
 
@@ -355,7 +355,7 @@ Valiables = {
         e.base_type            = 'UniqueDivinations'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound_positional = MiddleLevelAlertSound
       end
       g.element 'Rare Divination' do |e|
         e.showable             = true
@@ -494,13 +494,13 @@ Valiables = {
           e.linked_sockets   = '= 6'
           e.set_font_size    = ExtraLargeFontSize
           e.set_border_color = UniqueColor
-          e.play_alert_sound = HighLevelAlertSound
+          e.play_alert_sound_positional = HighLevelAlertSound
         end
         m.element 'Linked Sockets L' do |e|
           e.linked_sockets   = '= 5'
           e.set_font_size    = ExtraLargeFontSize
           e.set_border_color = UniqueColor
-          e.play_alert_sound = MiddleLevelAlertSound
+          e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
           e.sockets          = ">= #{valiable[:show_socket_num]}"
