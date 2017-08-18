@@ -55,101 +55,84 @@ DropOnlyGems:
   - *UniqueGems
 
 MagicDivinations:
-  - The Aesthete
-  - The Arena Champion
-  - The Avenger
+  - Anarchy's Price
+  - Avenger
+  - Birth of the Three
   - Blind Venture
-  - The Body
-  - Boundless Realms
-  - The Calling
-  - Coveted Possession
-  - The Cursed King
-  - The Encroaching Darkness
-  - The Fletcher
+  - Doedre's Madness
+  - Earth Drinker
+  - Encroaching Darkness
   - Gemcutter's Promise
-  - The Gladiator
-  - Glimmer of Hope
+  - Glimmer
   - Grave Knowledge
   - Hope
   - Humility
-  - The Inventor
   - Jack in the Box
-  - The Jester
+  - Lingering Remnants
   - Lost Worlds
   - Lucky Connections
-  - Lysah's Respite
-  - Merciless Armament
-  - Rats
-  - The Risk
-  - The Road to Power
   - Scholar of the Seas
-  - The Spoiled Prince
-  - The Survivalist
-  - Tranquillity
-  - The Tyrant
+  - The Arena Champion
+  - The Body
+  - The Calling
+  - The Cartographer
+  - The Demoness
+  - The Drunken Aristocrat
+  - The Explorer
+  - The Fletcher
+  - The Hoarder
+  - The Inventor
+  - The Mercenary
+  - The Penitent
+  - The Scholar
+  - The Siren
+  - The Soul
+  - The Trial
   - The Union
   - The Wind
-  - The Wrath
-  - Fox
-  - Treasure Hunter
-  - Vinia's Token
-  - Trial
-  - Death
-  - Dialla's Subjugation
+  - Time-Lost Relic
+  - Volatile Power
 
 RareDivinations:
-  - The Hunger
   - Bowyer's Dream
+  - Chaotic Disposition
   - Heterochromia
-  - Pride Before the Fall
-  - The Enlightened
-  - The King's Heart
   - Last Hope
+  - Pride Before the Fall
+  - The Artist
+  - The Brittle Emperor
   - The Celestial Justicar
-  - The Demoness
-  - The Dapper Prodigy
+  - The Chains that Bind
+  - The Enlightened
+  - The Formless Sea
+  - The Harvester
+  - The Hunger
+  - The King's Heart
+  - The Offering
+  - The Saint's Treasure
+  - The Sephirot
+  - The Spark and the Flame
+  - The Standoff
+  - The Thaumaturgist
   - The Valkyrie
   - The Vast
-  - The Sephirot
-  - The Wolf
-  - The Dark Mage
   - The Void
-  - The Hoarder
-  - Time-Lost Relic
-  - Chaotic Disposition
-  - The Soul
-  - Lucky Deck
-  - The Chains that Bind
-  - The Harvester
-  - The Cartographer
-  - Emperor of Purity
-  - The Penitent
-  - The Scavenger
-  - The Warlord
-  - Stormcaller
-  - Earth Drinker
-  - The Surveyor
-  - The Void
+  - The Wolven King's Bite
 
 UniqueDivinations:
-  - The Devastator
-  - The Doctor
+  - Abandoned Wealth
+  - Doctor
+  - Fiend
   - House of Mirrors
-  - The Fiend
   - Hunter's Reward
   - Mawr Blaidd
-  - The Last One Standing
   - The Dragon's Heart
-  - The Offering
-  - The Queen
   - The Ethereal
-  - Abandoned Wealth
-  - The Brittle Emperor
-  - Wealth and Power
-  - The Thaumaturgist
   - The Immortal
-  - The Formless Sea
-  - The Artist
+  - The Last One Standing
+  - The Polymath
+  - The Queen
+  - Wealth and Power
 
 SpecialEquipments:
   - Sacrificial Garb
