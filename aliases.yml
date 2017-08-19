@@ -18,6 +18,7 @@ MagicCurrencies:
 RareCurrencies:
   - Alchemy Shard
   - Chaos Shard
+  - Regal Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -29,14 +30,13 @@ RareCurrencies:
   - Orb of Regret
   - Vaal Orb
   - Perandus Coin
+  - Regal Orb
 
 UniqueCurrencies:
   - Mirror Shard
   - Exalted Shard
-  - Regal Shard
   - Divine Orb
   - Exalted Orb
-  - Regal Orb
   - Mirror of Kalandra
 
 RareGems: &RareGems
