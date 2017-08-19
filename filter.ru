@@ -409,6 +409,17 @@ Valiables = {
       end
     end
 
+    # Fishing Rod ##############################################################
+    f.group 'Fishing Rod' do |g|
+      g.element do |e|
+        e.showable             = true
+        e.klass                = 'Fishing Rods'
+        e.set_border_color     = UniqueColor
+        e.set_font_size        = ExtraLargeFontSize
+        e.play_alert_sound_positional = HighLevelAlertSound
+      end
+    end
+
     # Hide Equipment ###########################################################
     f.group 'Hide Equipment' do |g|
       g.element do |e|
