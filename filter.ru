@@ -439,6 +439,36 @@ Valiables = {
       end
     end
 
+    # Unique Equipment #########################################################
+    f.group 'Unique Equipment' do |g|
+      g.element 'Unique Equipment' do |e|
+        e.showable             = true
+        e.rarity               = '= Unique'
+        e.klass                = 'Equipments'
+      end
+
+      g.mixin do |m|
+        m.element 'Best' do |e|
+          e.rarity               = '= Unique'
+          e.base_type            = 'BestUniquBaseTypes'
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_background_color = DarkRed
+          e.play_alert_sound_positional = HighLevelAlertSound
+        end
+        m.element 'Good' do |e|
+          e.rarity               = '= Unique'
+          e.base_type            = 'GoodUniquBaseTypes'
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_background_color = DarkYellow
+          e.play_alert_sound_positional = MiddleLevelAlertSound
+        end
+        m.element 'Normal' do |e|
+          e.rarity               = '= Unique'
+          e.set_font_size        = LargeFontSize
+        end
+      end
+    end
+
     # Equipment ################################################################
     f.group 'Equipment' do |g|
       g.element 'Equipment' do |e|
@@ -448,10 +478,6 @@ Valiables = {
       end
 
       g.mixin do |m|
-        g.element 'Unique' do |e|
-          e.rarity               = '= Unique'
-          e.set_font_size        = ExtraLargeFontSize
-        end
         g.element 'Rare' do |e|
           e.rarity               = '= Rare'
           e.set_font_size        = LargeFontSize
