@@ -265,15 +265,16 @@ Valiables = {
       end
 
       g.mixin do |m|
-        m.element 'Rare Only' do |e|
-          e.base_type            = 'DropOnlyGems'
+        m.element 'Rare' do |e|
+          e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
         end
-        m.element 'Unique Only' do |e|
-          e.base_type            = 'DropOnlyGems'
+        m.element 'Unique' do |e|
+          e.base_type            = 'UniqueGems'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound_positional = MiddleLevelAlertSound
         end
       end
       g.mixin do |m|
