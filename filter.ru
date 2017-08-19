@@ -501,11 +501,34 @@ Valiables = {
       end
     end
 
-    # Equipment ################################################################
-    f.group 'Equipment' do |g|
-      g.element 'Equipment' do |e|
+    # Accessory ################################################################
+    f.group 'Accessory' do |g|
+      g.element 'Accessory' do |e|
         e.showable             = true
-        e.klass                = 'Equipments'
+        e.klass                = 'Accessories'
+        e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Rare' do |e|
+          e.klass                = 'Amulets Rings Belts'
+          e.rarity               = '= Rare'
+          e.set_background_color = MiddleTierColor
+        end
+      end
+      g.mixin do |m|
+        m.element 'Good' do |e|
+          e.base_type            = 'GoodAccessories'
+          e.set_background_color = HighTierColor
+        end
+      end
+    end
+
+    # Weapon And Gear ##########################################################
+    f.group 'Weapon And Gear' do |g|
+      g.element 'Weapon And Gear' do |e|
+        e.showable             = true
+        e.klass                = 'Weapons Gears'
         e.set_font_size        = DefaultFontSize
       end
 
