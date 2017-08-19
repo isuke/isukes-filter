@@ -163,6 +163,17 @@ Valiables = {
         e.set_border_color     = "#{VendorRecipeColor} 200"
         e.set_background_color = "#{Black} 200"
       end
+
+      g.mixin do |m|
+        m.element 'High Quality' do |e|
+          e.quality              = '>= 10'
+          e.set_background_color = HighTierColor
+        end
+        m.element 'Middle Quality' do |e|
+          e.quality              = '> 0'
+          e.set_background_color = MiddleTierColor
+        end
+      end
     end
 
     # Special Equipment ########################################################
