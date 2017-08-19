@@ -3,6 +3,7 @@ PoeVersion         = '3.0'
 FilterVersion      = '3.0'
 
 # Font Size
+SmallFontSize      = 32
 DefaultFontSize    = 39
 LargeFontSize      = 42
 ExtraLargeFontSize = 45
@@ -52,7 +53,7 @@ UtilityFlaskColor  = Green2
 MapColor           = White
 JewelColor         = MossGreen2
 MapFragmentColor   = Brown3
-VendorRecipeColor  = Red1
+VendorRecipeColor  = Red3
 GoodAccessoryColor = Purple2
 ChanceItemColor    = BluePurple3
 LabyrinthItemColor = Green1
@@ -141,8 +142,10 @@ Valiables = {
         e.rarity    = '= Normal'
         e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
         e.corrupted            = 'False'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = VendorRecipeColor
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{VendorRecipeColor} 200"
+        e.set_border_color     = "#{VendorRecipeColor} 200"
+        e.set_background_color = "#{Black} 200"
       end
     end
 
@@ -164,6 +167,7 @@ Valiables = {
         e.rarity         = '= Normal'
         e.base_type      = 'GoodAccessories'
         e.corrupted      = 'False'
+        e.set_font_size        = SmallFontSize
         e.set_text_color       = "#{GoodAccessoryColor} 200"
         e.set_border_color     = "#{GoodAccessoryColor} 200"
         e.set_background_color = "#{Black} 200"
@@ -177,6 +181,7 @@ Valiables = {
         e.rarity    = '= Normal'
         e.base_type = 'ChanceItems'
         e.corrupted = 'False'
+        e.set_font_size        = SmallFontSize
         e.set_text_color       = "#{ChanceItemColor} 200"
         e.set_border_color     = "#{ChanceItemColor} 200"
         e.set_background_color = "#{Black} 200"
@@ -649,7 +654,7 @@ Valiables = {
         e.klass                = 'Map Fragment'
         e.set_text_color       = MapFragmentColor
         e.set_border_color     = MapFragmentColor
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = LargeFontSize
       end
     end
 
