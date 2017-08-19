@@ -15,6 +15,7 @@ DarkBlue        = '  0   0  85'
 DarkBlue2       = ' 20 152  75'
 BlueGray        = ' 90  95 120'
 Brown           = '139  69  19'
+FleshColor      = '254 191 128'
 DarkPurple      = ' 50  10  35'
 DarkYellow      = ' 70  70   0'
 DarkOrange      = '175  65  10'
@@ -34,6 +35,7 @@ HybridFlaskColor  = Red
 UtilityFlaskColor = Green
 MapColor          = White
 JewelColor        = LightGreen
+MapFragmentColor  = FleshColor
 HighLevelAlertSound = '6 300'
 MiddleLevelAlertSound = '3 300'
 
@@ -621,6 +623,17 @@ Valiables = {
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = DarkBlue2
         e.set_border_color     = UniqueColor
+      end
+    end
+
+    # Map Fragment #############################################################
+    f.group 'Map Fragment' do |g|
+      g.element 'Map Fragment' do |e|
+        e.showable             = true
+        e.klass                = 'Map Fragment'
+        e.set_text_color       = MapFragmentColor
+        e.set_border_color     = MapFragmentColor
+        e.set_font_size        = DefaultFontSize
       end
     end
 
