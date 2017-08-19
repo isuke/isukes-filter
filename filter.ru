@@ -76,6 +76,7 @@ Valiables = {
     show_quality_flask: true,
     show_rare_equipement: true,
     show_socket_num: 4,
+    show_normal_currency: true,
   },
   B: {
     show_rarity_level: 'Rare',
@@ -83,6 +84,7 @@ Valiables = {
     show_quality_flask: true,
     show_rare_equipement: true,
     show_socket_num: 6,
+    show_normal_currency: true,
   },
   A: {
     show_rarity_level: 'Rare',
@@ -90,6 +92,7 @@ Valiables = {
     show_quality_flask: true,
     show_rare_equipement: true,
     show_socket_num: 6,
+    show_normal_currency: true,
   },
   S: {
     show_rarity_level: 'Rare',
@@ -97,6 +100,7 @@ Valiables = {
     show_quality_flask: false,
     show_rare_equipement: false,
     show_socket_num: 6,
+    show_normal_currency: false,
   }
 }
 
@@ -104,6 +108,17 @@ Valiables = {
 %i(C B A S).each do |level|
   valiable = Valiables[level]
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
+    # Hide Currency ############################################################
+    f.group 'Hide Currency' do |g|
+      unless valiable[:show_rare_equipement]
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Currency'
+          e.base_type            = 'NormalCurrencies'
+        end
+      end
+    end
+
     # Currency #################################################################
     f.group 'Currency' do |g|
       g.element 'Currency' do |e|
