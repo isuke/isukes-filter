@@ -65,8 +65,9 @@ BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 
 # Sound
-HighLevelAlertSound = '6 300'
+HighLevelAlertSound   = '6 300'
 MiddleLevelAlertSound = '3 300'
+LowLevelAlertSound    = '7 300'
 
 Valiables = {
   C: {
@@ -156,7 +157,7 @@ Valiables = {
         e.base_type = 'SpecialEquipments'
         e.set_border_color = UniqueColor
         e.set_font_size    = ExtraLargeFontSize
-        e.play_alert_sound_positional = MiddleLevelAlertSound
+        e.play_alert_sound_positional = LowLevelAlertSound
       end
     end
 
@@ -218,6 +219,7 @@ Valiables = {
           e.rarity               = '= Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
       end
       g.mixin do |m|
@@ -264,6 +266,7 @@ Valiables = {
           e.rarity               = '= Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
       end
       g.mixin do |m|
@@ -292,6 +295,7 @@ Valiables = {
           e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueGems'
@@ -357,6 +361,7 @@ Valiables = {
           e.rarity               = '= Unique'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = '= Rare'
@@ -384,17 +389,19 @@ Valiables = {
           e.base_type            = 'UniqueDivinations'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound_positional = HighLevelAlertSound
         end
         m.element 'Rare Divination' do |e|
           e.base_type            = 'RareDivinations'
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
+          e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Magic Divination' do |e|
           e.base_type            = 'MagicDivinations'
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
         m.element 'Normal Divination' do |e|
           e.set_font_size        = DefaultFontSize
@@ -489,6 +496,7 @@ Valiables = {
         m.element 'Normal' do |e|
           e.rarity               = '= Unique'
           e.set_font_size        = LargeFontSize
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
       end
     end
@@ -597,6 +605,7 @@ Valiables = {
         e.base_type = 'OriathItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = OriathItemColor
+        e.play_alert_sound_positional = LowLevelAlertSound
       end
     end
 
