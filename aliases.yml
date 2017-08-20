@@ -54,85 +54,102 @@ DropOnlyGems:
   - *RareGems
   - *UniqueGems
 
-MagicDivinations:
-  - Anarchy's Price
-  - Avenger
-  - Birth of the Three
-  - Blind Venture
-  - Doedre's Madness
+MagicDivinations: # 1c+
+  - Atziri's Arsenal
+  - Chaotic Disposition
+  - Dialla's Subjugation
   - Earth Drinker
-  - Encroaching Darkness
+  - Emperor of Purity
   - Gemcutter's Promise
-  - Glimmer
-  - Grave Knowledge
-  - Hope
+  - Heterochromia
   - Humility
   - Jack in the Box
   - Lingering Remnants
-  - Lost Worlds
   - Lucky Connections
+  - Lucky Deck
+  - Lysah's Respite
+  - Merciless Armament
+  - Rats
   - Scholar of the Seas
-  - The Arena Champion
+  - The Aesthete
+  - The Artist
+  - The Battle Born
   - The Body
-  - The Calling
   - The Cartographer
-  - The Demoness
-  - The Drunken Aristocrat
-  - The Explorer
+  - The Cataclysm
+  - The Chains that Bind
+  - The Cursed King
+  - The Dapper Prodigy
+  - The Dark Mage
+  - The Dragon
+  - The Encroaching Darkness
+  - The Ethereal
   - The Fletcher
+  - The Forsaken
+  - The Gladiator
+  - The Harvester
   - The Hoarder
   - The Inventor
-  - The Mercenary
+  - The Jester
+  - The Lion
+  - The Pact
   - The Penitent
-  - The Scholar
-  - The Siren
+  - The Poet
+  - The Porcupine
+  - The Risk
+  - The Road to Power
+  - The Saint's Treasure
+  - The Scavenger
+  - The Sephirot
   - The Soul
+  - The Spoiled Prince
+  - The Stormcaller
+  - The Surveyor
+  - The Throne
   - The Trial
+  - The Tyrant
   - The Union
+  - The Valkyrie
+  - The Valley of Steel Boxes
+  - The Vast
+  - The Void
+  - The Warlord
   - The Wind
+  - The Wrath
+  - The Wretched
   - Time-Lost Relic
-  - Volatile Power
+  - Vinia's Token
 
-RareDivinations:
+RareDivinations: # 10c+
+  - Abandoned Wealth
   - Bowyer's Dream
-  - Chaotic Disposition
-  - Heterochromia
   - Last Hope
-  - Pride Before the Fall
-  - The Artist
   - The Brittle Emperor
   - The Celestial Justicar
-  - The Chains that Bind
+  - The Dragon's Heart
   - The Enlightened
   - The Formless Sea
-  - The Harvester
   - The Hunger
-  - The King's Heart
+  - The Immortal
+  - The Last One Standing
   - The Offering
-  - The Saint's Treasure
-  - The Sephirot
+  - The Polymath
   - The Spark and the Flame
   - The Standoff
   - The Thaumaturgist
-  - The Valkyrie
-  - The Vast
-  - The Void
+  - The Wolf
   - The Wolven King's Bite
+  - Wealth and Power
 
-UniqueDivinations:
-  - Abandoned Wealth
-  - Doctor
-  - Fiend
+UniqueDivinations: # 1ex+
   - House of Mirrors
   - Hunter's Reward
   - Mawr Blaidd
-  - The Dragon's Heart
-  - The Ethereal
-  - The Immortal
-  - The Last One Standing
-  - The Polymath
+  - Pride Before the Fall
+  - The Doctor
+  - The Fiend
+  - The King's Heart
   - The Queen
-  - Wealth and Power
 
 SpecialGears:
   - Two-Toned Boots
