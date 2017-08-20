@@ -121,33 +121,37 @@ Valiables = {
 
     # Currency #################################################################
     f.group 'Currency' do |g|
-      g.element 'Currency' do |e|
+      g.element 'Unique Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.set_text_color       = CurrencyColor
+        e.base_type            = 'UniqueCurrencies'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_border_color     = UniqueColor
+        e.play_alert_sound_positional = HighLevelAlertSound
       end
-
-      g.mixin do |m|
-        m.element 'Unique' do |e|
-          e.base_type            = 'UniqueCurrencies'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = HighLevelAlertSound
-        end
-        m.element 'Rare' do |e|
-          e.base_type            = 'RareCurrencies'
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = RareColor
-        end
-        m.element 'Magic' do |e|
-          e.base_type            = 'MagicCurrencies'
-          e.set_font_size        = DefaultFontSize
-          e.set_border_color     = MagicColor
-        end
-        m.element 'Normal' do |e|
-          e.base_type            = 'NormalCurrencies'
-          e.set_font_size        = DefaultFontSize
-        end
+      g.element 'Rare Currency' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.set_text_color       = CurrencyColor
+        e.base_type            = 'RareCurrencies'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = RareColor
+      end
+      g.element 'Magic Currency' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.set_text_color       = CurrencyColor
+        e.base_type            = 'MagicCurrencies'
+        e.set_font_size        = DefaultFontSize
+        e.set_border_color     = MagicColor
+      end
+      g.element 'Normal Currency' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.set_text_color       = CurrencyColor
+        e.base_type            = 'NormalCurrencies'
+        e.set_font_size        = DefaultFontSize
       end
     end
 
