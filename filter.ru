@@ -56,6 +56,8 @@ MapFragmentColor   = Brown3
 VendorRecipeColor  = Red3
 GoodAccessoryColor = Purple2
 ChanceItemColor    = BluePurple3
+SpecialGearColor      = Blue1
+SpecialAccessoryColor = Blue1
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
 OriathItemColor    = Purple3
@@ -184,14 +186,27 @@ Valiables = {
       end
     end
 
-    # Special Equipment ########################################################
-    f.group 'Special Equipment' do |g|
+    # Special Gear #############################################################
+    f.group 'Special Gear' do |g|
       g.element do |e|
-        e.showable = true
-        e.base_type = 'SpecialEquipments'
-        e.set_border_color = UniqueColor
-        e.set_font_size    = ExtraLargeFontSize
+        e.showable             = true
+        e.base_type            = 'SpecialGears'
+        e.set_background_color = SpecialGearColor
+        e.set_border_color     = MagicColor
+        e.set_font_size        = DefaultFontSize
         e.play_alert_sound_positional = LowLevelAlertSound
+      end
+    end
+
+    # Special Accessory #############################################################
+    f.group 'Special Accessory' do |g|
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = 'SpecialAccessories'
+        e.set_background_color = SpecialAccessoryColor
+        e.set_border_color     = UniqueColor
+        e.set_font_size        = ExtraLargeFontSize
+        e.play_alert_sound_positional = HighLevelAlertSound
       end
     end
 

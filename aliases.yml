@@ -134,17 +134,19 @@ UniqueDivinations:
   - The Queen
   - Wealth and Power
 
-SpecialEquipments:
-  - Sacrificial Garb
-  - Bone Helmet
+SpecialGears:
   - Two-Toned Boots
   - Spiked Gloves
   - Gripped Gloves
   - Fingerless Silk Gloves
+  - Crystal Belt
+  - Sacrificial Garb
+  - Bone Helmet
+
+SpecialAccessories:
   - Marble Amulet
   - Blue Pearl Amulet
   - Vanguard Belt
-  - Crystal Belt
   - Opal Ring
   - Steel Ring
 
