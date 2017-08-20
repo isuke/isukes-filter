@@ -27,15 +27,23 @@ You can use it properly by your level.
 | From The Lioneye's Watch to about Level 30 | use `C.filter`. display magic items.                                 |
 | From about Level 30 to about Level 65      | use `B.filter`. hide magic items. hide small flasks.                 |
 | From about Level 65 to about Level 90      | use `A.filter`. hide non quality life and magic flasks.              |
-| Level 90 or later                          | use `S.filter`. hide low drop level rare items.                      |
+| Level 90 or later                          | use `S.filter`. hide Scroll. Hide Rare Equipment.                    |
 
-## explain
+## Explain
 
 ### Mechanism
 
-The following settings are merged.
-For example, Rare Bow of High Drop Level and 6L is displayed by font color yellow, background color red and border color Orange (Yeay!).
-If you want rara and high tier map you find font color white, background color red and border color yellow Item (Great!).
+**The following settings are merged.**
+
+#### For example, `Rare Bow of High Drop Level and 6L`
+- font color yellow
+- background color red
+- border color orange
+
+#### For example, `rara and high tier map`
+- font color white
+- background color red
+- border color yellow
 
 ### Font Color
 
@@ -44,15 +52,14 @@ If you want rara and high tier map you find font color white, background color r
 | Font Color                   | Represents           |
 | ---------------------------- | -------------------- |
 | Gray (Default Color)         | Currency             |
-| Red                          | Life and Magic Flask |
+| Red                          | Life, Magic and Hybrid Flask |
 | Green                        | Utility Flask        |
-| Purple                       | Hybrid Flask         |
 | Green (Default Color)        | Gem                  |
 | White                        | Map                  |
-| Light Green                  | Jewel                |
+| Moss Green                   | Jewel                |
 | Light Blue (Default Color)   | Divination Card      |
 | Orange (Default Color)       | Unique Equipments    |
-| Yellow (Default Color)       | Rara Equipments      |
+| Yellow (Default Color)       | Rare Equipments      |
 | Light Purple (Default Color) | Magic Equipments     |
 | Green (Default Color)        | Quest Item           |
 
@@ -65,7 +72,13 @@ The meaning of *item reality* depends on the item.
 
 ##### Currencies
 
+- Normal
+  - Scroll Fragment
+  - Scroll of Wisdom
+  - Portal Scroll
 - Magic
+  - Alteration Shard
+  - Transmutation Shard
   - Armourer's Scrap
   - Blacksmith's Whetstone
   - Orb of Transmutation
@@ -74,7 +87,10 @@ The meaning of *item reality* depends on the item.
   - Orb of Chance
   - Chromatic Orb
   - Jeweller's Orb
-- Rara
+- Rare
+  - Alchemy Shard
+  - Chaos Shard
+  - Regal Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -86,10 +102,12 @@ The meaning of *item reality* depends on the item.
   - Orb of Regret
   - Vaal Orb
   - Perandus Coin
+  - Regal Orb
 - Unique
+  - Mirror Shard
+  - Exalted Shard
   - Divine Orb
   - Exalted Orb
-  - Regal Orb
   - Mirror of Kalandra
 
 ##### Gems
@@ -120,27 +138,11 @@ Value when selling.
 
 - Magic
   - RGB Sockets (for Chromatic Orb)
-- Rara
+- Rare
   - 6S (for Jeweller's Orb)
 - Unique
   - 5L
   - 6L
-  - Special Equipments
-
-###### Special Equipments
-
-- Sacrificial Garb
-- Bone Helmet
-- Two-Toned Boots
-- Spiked Gloves
-- Gripped Gloves
-- Fingerless Silk Gloves
-- Marble Amulet
-- Blue Pearl Amulet
-- Vanguard Belt
-- Crystal Belt
-- Opal Ring
-- Steel Ring
 
 ### Background Color
 
@@ -154,20 +156,38 @@ Value when selling.
 | Rad              | Map                  | High Tier            |
 | Yellow           | Equipment            | Middle Drop Level    |
 | Rad              | Equipment            | High Drop Level      |
+| Yellow           | Accessory            | Amulets, Rings and Belts |
+| Rad              | Accessory            | Good Accessory       |
 
 #### Other Background Color Represents Kind of Items
 
 | Background Color | Represents                                |
 | ---------------- | ----------------------------------------- |
-| Dark Purple      | Hammer (for Cartographer's Chisel)        |
+| Dark Red         | Hammer (for Cartographer's Chisel)        |
+| Dark Blue        | Special Gear                              |
+| Dark Blue        | Special Accessory                         |
 | Dark Green       | Labyrinth Items                           |
-| Dark Orange      | Atlas Items                               |
-| Dark Orange      | Oriath Items                              |
-| Dark Blue        | Prophecy Items                            |
-| Purple           | Essence Items                             |
-| Brown            | Breach Items                              |
-| Dark Blue        | Harbinger Items                           |
+| Brown            | Atlas Items                               |
+| Light Purple     | Oriath Items                              |
+| Purple           | Prophecy Items                            |
+| Bule Purple      | Essence Items                             |
+| Dark Brown       | Breach Items                              |
+| Light Moss Green | Harbinger Items                           |
 
+- Special Gear
+  - Two-Toned Boots
+  - Spiked Gloves
+  - Gripped Gloves
+  - Fingerless Silk Gloves
+  - Crystal Belt
+  - Sacrificial Garb
+  - Bone Helmet
+- Special Accessory
+  - Marble Amulet
+  - Blue Pearl Amulet
+  - Vanguard Belt
+  - Opal Ring
+  - Steel Ring
 - Labyrinth Items
   - Offering to the Goddess
   - Bane of the Loyal
@@ -220,10 +240,6 @@ Value when selling.
   - Harbinger's Shard
   - Engineer's Shard
   - Ancient Shard
-  - Chaos Shard
-  - Mirror Shard
-  - Exalted Shard
-  - Regal Shard
 
 ### Others
 
@@ -249,25 +265,13 @@ You can use essence to this item for chaos receipe or craft.
 
 #### Chance Items
 
-Normal Change Items dispalyed small and blue gray for chance.
+Normal Change Items dispalyed small and light blue purple for chance.
 
 - Chance Items
   - Sorcerer Boots
   - Leather Belt
 
-#### Good ES armours
-
-Normal Good ES armours displayed small and dark orange for craft.
-
-- GoodESArmours:
-  - Vaal Regalia
-  - Sorcerer Boots
-  - Sorcerer Gloves
-  - Hubris Circlet
-  - Titanium Spirit Shield
-
 ## Development
-
 
 ```
 bundle install
