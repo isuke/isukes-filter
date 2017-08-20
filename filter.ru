@@ -77,6 +77,7 @@ Valiables = {
     show_rare_equipement: true,
     show_socket_num: 4,
     show_normal_currency: true,
+    show_gem: true,
   },
   B: {
     show_rarity_level: 'Rare',
@@ -85,6 +86,7 @@ Valiables = {
     show_rare_equipement: true,
     show_socket_num: 6,
     show_normal_currency: true,
+    show_gem: true,
   },
   A: {
     show_rarity_level: 'Rare',
@@ -93,6 +95,7 @@ Valiables = {
     show_rare_equipement: true,
     show_socket_num: 6,
     show_normal_currency: true,
+    show_gem: false,
   },
   S: {
     show_rarity_level: 'Rare',
@@ -101,6 +104,7 @@ Valiables = {
     show_rare_equipement: false,
     show_socket_num: 6,
     show_normal_currency: false,
+    show_gem: false,
   }
 }
 
@@ -450,67 +454,6 @@ Valiables = {
       end
     end
 
-    # Hide Equipment ###########################################################
-    f.group 'Hide Equipment' do |g|
-      g.element do |e|
-        e.showable       = false
-        e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
-        e.linked_sockets = '< 3'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
-      end
-      g.element do |e|
-        e.showable       = false
-        e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
-        e.linked_sockets = '= 3'
-        e.socket_group   = 'RR GG BB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
-      end
-      g.element do |e|
-        e.showable       = false
-        e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
-        e.linked_sockets = '= 4'
-        e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
-      end
-      g.element do |e|
-        e.showable       = false
-        e.klass          = 'Accessories'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
-      end
-
-      unless valiable[:show_rare_equipement]
-        g.element do |e|
-          e.showable       = false
-          e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
-          e.linked_sockets = '< 3'
-          e.drop_level     = '<= 57'
-          e.rarity         = '< Unique'
-        end
-        g.element do |e|
-          e.showable       = false
-          e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
-          e.linked_sockets = '= 3'
-          e.socket_group   = 'RR GG BB'
-          e.drop_level     = '<= 57'
-          e.rarity         = '< Unique'
-        end
-        g.element do |e|
-          e.showable       = false
-          e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
-          e.linked_sockets = '= 4'
-          e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-          e.drop_level     = '<= 57'
-          e.rarity         = '< Unique'
-        end
-      end
-    end
-
     # Unique Equipment #########################################################
     f.group 'Unique Equipment' do |g|
       g.element 'Unique Equipment' do |e|
@@ -565,6 +508,64 @@ Valiables = {
       end
     end
 
+    # Hide Equipment ###########################################################
+    f.group 'Hide Equipment' do |g|
+      g.element do |e|
+        e.showable       = false
+        e.klass          = 'Weapons Gears'
+        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.linked_sockets = '< 3'
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+      g.element do |e|
+        e.showable       = false
+        e.klass          = 'Weapons Gears'
+        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.linked_sockets = '= 3'
+        e.socket_group   = 'RR GG BB'
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+      g.element do |e|
+        e.showable       = false
+        e.klass          = 'Weapons Gears'
+        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.linked_sockets = '= 4'
+        e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+      g.element do |e|
+        e.showable       = false
+        e.klass          = 'Accessories'
+        e.rarity         = "< #{valiable[:show_rarity_level]}"
+      end
+
+      unless valiable[:show_rare_equipement]
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '< 3'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 3'
+          e.socket_group   = 'RR GG BB'
+          e.rarity         = '< Unique'
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Weapons Gears'
+          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.linked_sockets = '= 4'
+          e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
+          e.rarity         = '< Unique'
+        end
+      end
+    end
+
     # Weapon And Gear ##########################################################
     f.group 'Weapon And Gear' do |g|
       g.element 'Weapon And Gear' do |e|
@@ -573,12 +574,6 @@ Valiables = {
         e.set_font_size        = DefaultFontSize
       end
 
-      g.mixin do |m|
-        g.element 'Rare' do |e|
-          e.rarity               = '= Rare'
-          e.set_font_size        = LargeFontSize
-        end
-      end
       g.mixin do |m|
         m.element 'High DropLevel Weapon' do |e|
           e.klass                = 'Weapons'
