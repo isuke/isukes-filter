@@ -500,29 +500,6 @@ Valiables = {
       end
     end
 
-    # Accessory ################################################################
-    f.group 'Accessory' do |g|
-      g.element 'Accessory' do |e|
-        e.showable             = true
-        e.klass                = 'Accessories'
-        e.set_font_size        = DefaultFontSize
-      end
-
-      g.mixin do |m|
-        m.element 'Rare' do |e|
-          e.klass                = 'Amulets Rings Belts'
-          e.rarity               = '= Rare'
-          e.set_background_color = MiddleTierColor
-        end
-      end
-      g.mixin do |m|
-        m.element 'Good' do |e|
-          e.base_type            = 'GoodAccessories'
-          e.set_background_color = HighTierColor
-        end
-      end
-    end
-
     # Hide Equipment ###########################################################
     f.group 'Hide Equipment' do |g|
       g.element do |e|
@@ -577,6 +554,29 @@ Valiables = {
           e.linked_sockets = '= 4'
           e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
           e.rarity         = '< Unique'
+        end
+      end
+    end
+
+    # Accessory ################################################################
+    f.group 'Accessory' do |g|
+      g.element 'Accessory' do |e|
+        e.showable             = true
+        e.klass                = 'Accessories'
+        e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Rare' do |e|
+          e.klass                = 'Amulets Rings Belts'
+          e.rarity               = ">= #{valiable[:show_rarity_level]}"
+          e.set_background_color = MiddleTierColor
+        end
+      end
+      g.mixin do |m|
+        m.element 'Good' do |e|
+          e.base_type            = 'GoodAccessories'
+          e.set_background_color = HighTierColor
         end
       end
     end
