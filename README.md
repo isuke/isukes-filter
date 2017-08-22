@@ -163,7 +163,6 @@ Value when selling.
 
 | Background Color | Represents                                |
 | ---------------- | ----------------------------------------- |
-| Dark Red         | Hammer (for Cartographer's Chisel)        |
 | Dark Blue        | Special Gear                              |
 | Dark Blue        | Special Accessory                         |
 | Dark Green       | Labyrinth Items                           |
@@ -270,6 +269,14 @@ Normal Change Items dispalyed small and light blue purple for chance.
 - Chance Items
   - Sorcerer Boots
   - Leather Belt
+
+#### Chisel Recipe
+
+Hammer for Cartographer's Chisel displayed small and light red.
+
+#### Chaos/Regal Recipe (`S` filter only)
+
+Chaos/Regal Recipe Item displayed small and light blue.
 
 ## Development
 

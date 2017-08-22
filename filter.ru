@@ -53,7 +53,9 @@ UtilityFlaskColor  = Green2
 MapColor           = White
 JewelColor         = MossGreen2
 MapFragmentColor   = Brown3
-VendorRecipeColor  = Red3
+ChiselRecipeColor  = Red3
+ChaosRecipeColor   = Blue3
+RegalRecipeColor   = Blue3
 GoodAccessoryColor = Purple2
 ChanceItemColor    = BluePurple3
 SpecialGearColor      = Blue1
@@ -162,16 +164,16 @@ Valiables = {
       end
     end
 
-    # Vendor Recipe ############################################################
-    f.group 'Vendor Recipe' do |g|
+    # Chisel Recipe ############################################################
+    f.group 'Chisel Recipe' do |g|
       g.element do |e|
         e.showable = true
         e.rarity    = '= Normal'
         e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
         e.corrupted            = 'False'
         e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{VendorRecipeColor} 200"
-        e.set_border_color     = "#{VendorRecipeColor} 200"
+        e.set_text_color       = "#{ChiselRecipeColor} 200"
+        e.set_border_color     = "#{ChiselRecipeColor} 200"
         e.set_background_color = "#{Black} 200"
       end
 
@@ -463,10 +465,68 @@ Valiables = {
     f.group 'Fishing Rod' do |g|
       g.element do |e|
         e.showable             = true
-        e.klass                = 'Fishing Rods'
+        e.klass                = '"Fishing Rods"'
         e.set_border_color     = UniqueColor
         e.set_font_size        = ExtraLargeFontSize
         e.play_alert_sound_positional = HighLevelAlertSound
+      end
+    end
+
+    # Regal Recipe #############################################################
+    f.group 'Regal Recipe' do |g|
+      unless valiable[:show_rare_equipement]
+        g.element 'Regal Recipe' do |e|
+          e.showable             = true
+          e.rarity               = 'Rare'
+          e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+          e.item_level           = '>= 75'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{RegalRecipeColor} 200"
+          e.set_border_color     = "#{RegalRecipeColor} 200"
+          e.set_background_color = "#{HighTierColor} 200"
+        end
+
+        g.element 'Regal Recipe' do |e|
+          e.showable             = true
+          e.rarity               = 'Rare'
+          e.klass                = '"Shields"'
+          e.height               = '<= 2'
+          e.width                = '<= 2'
+          e.item_level           = '>= 75'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{RegalRecipeColor} 200"
+          e.set_border_color     = "#{RegalRecipeColor} 200"
+          e.set_background_color = "#{HighTierColor} 200"
+        end
+      end
+    end
+
+    # Chaos Recipe #############################################################
+    f.group 'Chaos Recipe' do |g|
+      unless valiable[:show_rare_equipement]
+        g.element 'Chaos Recipe' do |e|
+          e.showable             = true
+          e.rarity               = 'Rare'
+          e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+          e.item_level           = '>= 60'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{ChaosRecipeColor} 200"
+          e.set_border_color     = "#{ChaosRecipeColor} 200"
+          e.set_background_color = "#{HighTierColor} 200"
+        end
+
+        g.element 'Chaos Recipe' do |e|
+          e.showable             = true
+          e.rarity               = 'Rare'
+          e.klass                = '"Shields"'
+          e.height               = '<= 2'
+          e.width                = '<= 2'
+          e.item_level           = '>= 60'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{ChaosRecipeColor} 200"
+          e.set_border_color     = "#{ChaosRecipeColor} 200"
+          e.set_background_color = "#{HighTierColor} 200"
+        end
       end
     end
 
