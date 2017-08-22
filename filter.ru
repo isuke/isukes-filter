@@ -512,7 +512,7 @@ Valiables = {
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
-          e.set_background_color = "#{HighTierColor} 200"
+          e.set_background_color = "#{MiddleTierColor} 200"
         end
 
         g.element 'Chaos Recipe' do |e|
@@ -525,7 +525,7 @@ Valiables = {
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
-          e.set_background_color = "#{HighTierColor} 200"
+          e.set_background_color = "#{MiddleTierColor} 200"
         end
       end
     end
@@ -616,6 +616,11 @@ Valiables = {
           e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
           e.rarity         = '< Unique'
         end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Quivers'
+          e.rarity         = '< Unique'
+        end
       end
     end
 
@@ -628,16 +633,14 @@ Valiables = {
       end
 
       g.mixin do |m|
-        m.element 'Rare' do |e|
-          e.klass                = 'Amulets Rings Belts'
-          e.rarity               = ">= #{valiable[:show_rarity_level]}"
-          e.set_background_color = MiddleTierColor
-        end
-      end
-      g.mixin do |m|
         m.element 'Good' do |e|
           e.base_type            = 'GoodAccessories'
           e.set_background_color = HighTierColor
+        end
+
+        m.element 'Belt Amulet Ring' do |e|
+          e.klass                = '"Belts" "Amulets" "Rings"'
+          e.set_background_color = MiddleTierColor
         end
       end
     end
