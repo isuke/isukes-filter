@@ -67,9 +67,10 @@ BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 
 # Sound
-HighLevelAlertSound   = '6 300'
-MiddleLevelAlertSound = '3 300'
-LowLevelAlertSound    = '7 300'
+HighLevelAlertSound   =  '6 300'
+MiddleLevelAlertSound =  '3 300'
+LowLevelAlertSound    =  '7 300'
+ErrorAlertSound       = '12 300'
 
 Valiables = {
   C: {
@@ -752,11 +753,12 @@ Valiables = {
       end
     end
 
-    # Default ##################################################################
-    f.group 'Default' do |g|
+    # Error ####################################################################
+    f.group 'Error' do |g|
       g.element do |e|
         e.showable = true
         e.set_font_size        = DefaultFontSize
+        e.play_alert_sound_positional = ErrorAlertSound
       end
     end
   end
