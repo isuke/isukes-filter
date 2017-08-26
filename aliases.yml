@@ -18,6 +18,7 @@ MagicCurrencies:
 RareCurrencies:
   - Alchemy Shard
   - Chaos Shard
+  - Regal Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -29,14 +30,13 @@ RareCurrencies:
   - Orb of Regret
   - Vaal Orb
   - Perandus Coin
+  - Regal Orb
 
 UniqueCurrencies:
   - Mirror Shard
   - Exalted Shard
-  - Regal Shard
   - Divine Orb
   - Exalted Orb
-  - Regal Orb
   - Mirror of Kalandra
 
 RareGems: &RareGems
@@ -54,114 +54,116 @@ DropOnlyGems:
   - *RareGems
   - *UniqueGems
 
-MagicDivinations:
-  - The Aesthete
-  - The Arena Champion
-  - The Avenger
-  - Blind Venture
-  - The Body
-  - Boundless Realms
-  - The Calling
-  - Coveted Possession
-  - The Cursed King
-  - The Encroaching Darkness
-  - The Fletcher
+MagicDivinations: # 1c+
+  - Atziri's Arsenal
+  - Chaotic Disposition
+  - Dialla's Subjugation
+  - Earth Drinker
+  - Emperor of Purity
   - Gemcutter's Promise
-  - The Gladiator
-  - Glimmer of Hope
-  - Grave Knowledge
-  - Hope
+  - Heterochromia
   - Humility
-  - The Inventor
   - Jack in the Box
-  - The Jester
-  - Lost Worlds
+  - Lingering Remnants
   - Lucky Connections
+  - Lucky Deck
   - Lysah's Respite
   - Merciless Armament
   - Rats
+  - Scholar of the Seas
+  - The Aesthete
+  - The Artist
+  - The Battle Born
+  - The Body
+  - The Cartographer
+  - The Cataclysm
+  - The Chains that Bind
+  - The Cursed King
+  - The Dapper Prodigy
+  - The Dark Mage
+  - The Dragon
+  - The Encroaching Darkness
+  - The Ethereal
+  - The Fletcher
+  - The Forsaken
+  - The Gladiator
+  - The Harvester
+  - The Hoarder
+  - The Inventor
+  - The Jester
+  - The Lion
+  - The Pact
+  - The Penitent
+  - The Poet
+  - The Porcupine
   - The Risk
   - The Road to Power
-  - Scholar of the Seas
+  - The Saint's Treasure
+  - The Scavenger
+  - The Sephirot
+  - The Soul
   - The Spoiled Prince
-  - The Survivalist
-  - Tranquillity
+  - The Stormcaller
+  - The Surveyor
+  - The Throne
+  - The Trial
   - The Tyrant
   - The Union
+  - The Valkyrie
+  - The Valley of Steel Boxes
+  - The Vast
+  - The Void
+  - The Warlord
   - The Wind
   - The Wrath
-  - Fox
-  - Treasure Hunter
-  - Vinia's Token
-  - Trial
-  - Death
-  - Dialla's Subjugation
-
-RareDivinations:
-  - The Hunger
-  - Bowyer's Dream
-  - Heterochromia
-  - Pride Before the Fall
-  - The Enlightened
-  - The King's Heart
-  - Last Hope
-  - The Celestial Justicar
-  - The Demoness
-  - The Dapper Prodigy
-  - The Valkyrie
-  - The Vast
-  - The Sephirot
-  - The Wolf
-  - The Dark Mage
-  - The Void
-  - The Hoarder
+  - The Wretched
   - Time-Lost Relic
-  - Chaotic Disposition
-  - The Soul
-  - Lucky Deck
-  - The Chains that Bind
-  - The Harvester
-  - The Cartographer
-  - Emperor of Purity
-  - The Penitent
-  - The Scavenger
-  - The Warlord
-  - Stormcaller
-  - Earth Drinker
-  - The Surveyor
-  - The Void
+  - Vinia's Token
 
-UniqueDivinations:
-  - The Devastator
-  - The Doctor
+RareDivinations: # 10c+
+  - Abandoned Wealth
+  - Bowyer's Dream
+  - Last Hope
+  - The Brittle Emperor
+  - The Celestial Justicar
+  - The Dragon's Heart
+  - The Enlightened
+  - The Formless Sea
+  - The Hunger
+  - The Immortal
+  - The Last One Standing
+  - The Offering
+  - The Polymath
+  - The Spark and the Flame
+  - The Standoff
+  - The Thaumaturgist
+  - The Wolf
+  - The Wolven King's Bite
+  - Wealth and Power
+
+UniqueDivinations: # 1ex+
   - House of Mirrors
-  - The Fiend
   - Hunter's Reward
   - Mawr Blaidd
-  - The Last One Standing
-  - The Dragon's Heart
-  - The Offering
+  - Pride Before the Fall
+  - The Doctor
+  - The Fiend
+  - The King's Heart
   - The Queen
-  - The Ethereal
-  - Abandoned Wealth
-  - The Brittle Emperor
-  - Wealth and Power
-  - The Thaumaturgist
-  - The Immortal
-  - The Formless Sea
-  - The Artist
 
-SpecialEquipments:
-  - Sacrificial Garb
-  - Bone Helmet
+SpecialGears:
   - Two-Toned Boots
   - Spiked Gloves
   - Gripped Gloves
   - Fingerless Silk Gloves
+  - Crystal Belt
+  - Sacrificial Garb
+  - Bone Helmet
+
+SpecialAccessories:
   - Marble Amulet
   - Blue Pearl Amulet
   - Vanguard Belt
-  - Crystal Belt
   - Opal Ring
   - Steel Ring
 
@@ -195,6 +197,73 @@ GoodESArmours:
   - Sorcerer Gloves
   - Hubris Circlet
   - Titanium Spirit Shield
+
+GoodUniquBaseTypes:
+  - Abyssal Axe
+  - Ancient Gauntlets
+  - Champion Kite Shield
+  - Conjurer Boots
+  - Deerskin Gloves
+  - Desert Brigandine
+  - Ebony Tower Shield
+  - Ezomyte Burgonet
+  - Fiend Dagger
+  - Full Wyrmscale
+  - Gladiator Plate
+  - Goathide Boots
+  - Gold Ring
+  - Golden Plate
+  - Hubris Circlet
+  - Imperial Bow
+  - Imperial Skean
+  - Imperial Staff
+  - Ironscale Gauntlets
+  - Jasper Chopper
+  - Judgement Staff
+  - Lacquered Garb
+  - Lacquered Helmet
+  - Leather Cap
+  - Murder Boots
+  - Nightmare Bascinet
+  - Nubuck Boots
+  - Onyx Amulet
+  - Paua Ring
+  - Penetrating Arrow Quiver
+  - Reinforced Greaves
+  - Sharkskin Boots
+  - Siege Axe
+  - Sinner Tricorne
+  - Slaughter Knife
+  - Spine Bow
+  - Strapped Mitts
+  - Terror Claw
+  - Titanium Spirit Shield
+  - Two-Stone Ring
+  - Ursine Pelt
+  - Vaal Axe
+  - Vaal Gauntlets
+  - Vaal Mask
+  - Vaal Sceptre
+  - Varnished Coat
+  - Vile Staff
+  - Void Axe
+
+BestUniquBaseTypes:
+  - Assassin's Garb
+  - Clasped Mitts
+  - Close Helmet
+  - Crusader Boots
+  - Deicide Mask
+  - Glorious Plate
+  - Jewelled Foil
+  - Legion Gloves
+  - Occultist's Vestment
+  - Prophecy Wand
+  - Rawhide Boots
+  - Sacrificial Garb
+  - Sharkskin Tunic
+  - Sorcerer Boots
+  - Vaal Regalia
 
 TwoHandWeapons: &TwoHandWeapons
   - Bows
