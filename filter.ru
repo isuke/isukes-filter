@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.0'
-FilterVersion      = '3.0'
+FilterVersion      = '3.1'
 
 # Font Size
 SmallFontSize      = 32
@@ -118,8 +118,8 @@ Valiables = {
   valiable = Valiables[level]
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     # Hide Currency ############################################################
-    f.group 'Hide Currency' do |g|
-      unless valiable[:show_rare_equipement]
+    unless valiable[:show_rare_equipement]
+      f.group 'Hide Currency' do |g|
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
@@ -461,6 +461,16 @@ Valiables = {
       end
     end
 
+    f.group 'Stacked Deck' do |g|
+      g.element 'Stacked Deck' do |e|
+        e.showable             = true
+        e.base_type            = 'Stacked Deck'
+        e.set_font_size        = LargeFontSize
+        e.set_text_color       = DivinationCardColor
+        e.set_border_color     = DivinationCardColor
+      end
+    end
+
     # Fishing Rod ##############################################################
     f.group 'Fishing Rod' do |g|
       g.element do |e|
@@ -502,8 +512,8 @@ Valiables = {
     end
 
     # Chaos Recipe #############################################################
-    f.group 'Chaos Recipe' do |g|
-      unless valiable[:show_rare_equipement]
+    unless valiable[:show_rare_equipement]
+      f.group 'Chaos Recipe' do |g|
         g.element 'Chaos Recipe' do |e|
           e.showable             = true
           e.rarity               = 'Rare'
