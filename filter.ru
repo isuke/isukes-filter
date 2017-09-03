@@ -461,6 +461,16 @@ Valiables = {
       end
     end
 
+    f.group 'Stacked Deck' do |g|
+      g.element 'Stacked Deck' do |e|
+        e.showable             = true
+        e.base_type            = 'Stacked Deck'
+        e.set_font_size        = LargeFontSize
+        e.set_text_color       = DivinationCardColor
+        e.set_border_color     = DivinationCardColor
+      end
+    end
+
     # Fishing Rod ##############################################################
     f.group 'Fishing Rod' do |g|
       g.element do |e|
