@@ -56,6 +56,7 @@ MapFragmentColor   = Brown3
 ChiselRecipeColor  = Red3
 ChaosRecipeColor   = Blue3
 RegalRecipeColor   = Blue3
+ChromaticRecipeColor = Green3
 GoodAccessoryColor = Purple2
 ChanceItemColor    = BluePurple3
 SpecialGearColor      = Blue1
@@ -483,26 +484,30 @@ Valiables = {
     end
 
     # Regal Recipe #############################################################
-    f.group 'Regal Recipe' do |g|
-      unless valiable[:show_rare_equipement]
-        g.element 'Regal Recipe' do |e|
+    unless valiable[:show_rare_equipement]
+      f.group 'Regal Recipe' do |g|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
           e.item_level           = '>= 75'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{RegalRecipeColor} 200"
           e.set_border_color     = "#{RegalRecipeColor} 200"
           e.set_background_color = "#{HighTierColor} 200"
         end
 
-        g.element 'Regal Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Shields"'
           e.height               = '<= 2'
           e.width                = '<= 2'
           e.item_level           = '>= 75'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{RegalRecipeColor} 200"
           e.set_border_color     = "#{RegalRecipeColor} 200"
@@ -514,28 +519,64 @@ Valiables = {
     # Chaos Recipe #############################################################
     unless valiable[:show_rare_equipement]
       f.group 'Chaos Recipe' do |g|
-        g.element 'Chaos Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
           e.item_level           = '>= 60'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
           e.set_background_color = "#{MiddleTierColor} 200"
         end
 
-        g.element 'Chaos Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Shields"'
           e.height               = '<= 2'
           e.width                = '<= 2'
           e.item_level           = '>= 60'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
           e.set_background_color = "#{MiddleTierColor} 200"
+        end
+      end
+    end
+
+    # Chromatic Recipe #########################################################
+    unless variable[:show_large_rgb_equipement]
+      f.group 'Chromatic Recipe' do |g|
+        g.element do |e|
+          e.showable       = true
+          e.klass          = '"Gloves" "Boots" "Helmets" "Claws" "Daggers" "Wands"'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{ChaosRecipeColor} 200"
+          e.set_border_color     = "#{ChaosRecipeColor} 200"
+          # e.set_background_color = "#{MiddleTierColor} 200"
+        end
+        g.element do |e|
+          e.showable       = true
+          e.klass          = 'Shields'
+          e.height         = '<= 2'
+          e.width          = '<= 2'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{ChaosRecipeColor} 200"
+          e.set_border_color     = "#{ChaosRecipeColor} 200"
+          # e.set_background_color = "#{MiddleTierColor} 200"
         end
       end
     end
@@ -601,8 +642,35 @@ Valiables = {
         e.klass          = 'Accessories'
         e.rarity         = "< #{valiable[:show_rarity_level]}"
       end
+    end
 
-      unless valiable[:show_rare_equipement]
+    # Hide Large RGB Equipment #################################################
+    unless valiable[:show_large_rgb_equipement]
+      f.group 'Hide Large RGB Equipment' do |g|
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'SixSockets'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Shields'
+          e.height         = '> 2'
+          e.width          = '> 2'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+        end
+      end
+    end
+
+    # Hide Rare Equipment ######################################################
+    unless valiable[:show_rare_equipement]
+      f.group 'Hide Rare Equipment' do |g|
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
