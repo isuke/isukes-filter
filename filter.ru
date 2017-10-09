@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.0'
-FilterVersion      = '3.1'
+FilterVersion      = '3.2'
 
 # Font Size
 SmallFontSize      = 32
@@ -56,6 +56,7 @@ MapFragmentColor   = Brown3
 ChiselRecipeColor  = Red3
 ChaosRecipeColor   = Blue3
 RegalRecipeColor   = Blue3
+ChromaticRecipeColor = Green3
 GoodAccessoryColor = Purple2
 ChanceItemColor    = BluePurple3
 SpecialGearColor      = Blue1
@@ -74,7 +75,7 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 ErrorAlertSound       = '12 300'
 
-Valiables = {
+Variables = {
   C: {
     show_rarity_level: 'Magic',
     show_flask_drop_level: 3,
@@ -115,10 +116,10 @@ Valiables = {
 
 ################################################################################
 %i(C B A S).each do |level|
-  valiable = Valiables[level]
+  variable = Variables[level]
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     # Hide Currency ############################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Hide Currency' do |g|
         g.element do |e|
           e.showable             = false
@@ -245,10 +246,10 @@ Valiables = {
     f.group 'Hide Flask' do |g|
       g.element do |e|
         e.showable             = false
-        e.klass                = 'Flasks'
-        e.quality              = '= 0' if valiable[:show_quality_flask]
+        e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
+        e.quality              = '= 0' if variable[:show_quality_flask]
         e.rarity               = '< Unique'
-        e.drop_level           = "< #{valiable[:show_flask_drop_level]}"
+        e.drop_level           = "< #{variable[:show_flask_drop_level]}"
       end
     end
 
@@ -461,6 +462,7 @@ Valiables = {
       end
     end
 
+    # Stacked Deck #############################################################
     f.group 'Stacked Deck' do |g|
       g.element 'Stacked Deck' do |e|
         e.showable             = true
@@ -483,26 +485,30 @@ Valiables = {
     end
 
     # Regal Recipe #############################################################
-    f.group 'Regal Recipe' do |g|
-      unless valiable[:show_rare_equipement]
-        g.element 'Regal Recipe' do |e|
+    unless variable[:show_rare_equipement]
+      f.group 'Regal Recipe' do |g|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
           e.item_level           = '>= 75'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{RegalRecipeColor} 200"
           e.set_border_color     = "#{RegalRecipeColor} 200"
           e.set_background_color = "#{HighTierColor} 200"
         end
 
-        g.element 'Regal Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Shields"'
           e.height               = '<= 2'
           e.width                = '<= 2'
           e.item_level           = '>= 75'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{RegalRecipeColor} 200"
           e.set_border_color     = "#{RegalRecipeColor} 200"
@@ -512,30 +518,64 @@ Valiables = {
     end
 
     # Chaos Recipe #############################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Chaos Recipe' do |g|
-        g.element 'Chaos Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
           e.item_level           = '>= 60'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
           e.set_background_color = "#{MiddleTierColor} 200"
         end
 
-        g.element 'Chaos Recipe' do |e|
+        g.element do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.klass                = '"Shields"'
           e.height               = '<= 2'
           e.width                = '<= 2'
           e.item_level           = '>= 60'
+          e.sockets              = "< 6"
+          e.linked_sockets       = '< 5'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
           e.set_background_color = "#{MiddleTierColor} 200"
+        end
+      end
+    end
+
+    # Chromatic Recipe #########################################################
+    unless variable[:show_large_rgb_equipement]
+      f.group 'Chromatic Recipe' do |g|
+        g.element do |e|
+          e.showable         = true
+          e.klass            = '"Gloves" "Boots" "Helmets" "Claws" "Daggers" "Wands"'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
+        end
+        g.element do |e|
+          e.showable         = true
+          e.klass            = 'Shields'
+          e.height           = '<= 2'
+          e.width            = '<= 2'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
         end
       end
     end
@@ -576,44 +616,71 @@ Valiables = {
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '< 3'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '= 3'
         e.socket_group   = 'RR GG BB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '= 4'
         e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Accessories'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
+    end
 
-      unless valiable[:show_rare_equipement]
+    # Hide Large RGB Equipment #################################################
+    unless variable[:show_large_rgb_equipement]
+      f.group 'Hide Large RGB Equipment' do |g|
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'SixSockets'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+        end
+        g.element do |e|
+          e.showable       = false
+          e.klass          = 'Shields'
+          e.height         = '> 2'
+          e.width          = '> 2'
+          e.sockets        = "< 6"
+          e.linked_sockets = '< 5'
+          e.socket_group   = 'RGB'
+          e.rarity         = "< Unique"
+        end
+      end
+    end
+
+    # Hide Rare Equipment ######################################################
+    unless variable[:show_rare_equipement]
+      f.group 'Hide Rare Equipment' do |g|
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '< 3'
           e.rarity         = '< Unique'
         end
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '= 3'
           e.socket_group   = 'RR GG BB'
           e.rarity         = '< Unique'
@@ -621,7 +688,7 @@ Valiables = {
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '= 4'
           e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
           e.rarity         = '< Unique'
@@ -709,7 +776,7 @@ Valiables = {
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
-          e.sockets          = ">= #{valiable[:show_socket_num]}"
+          e.sockets          = ">= #{variable[:show_socket_num]}"
           e.set_font_size    = LargeFontSize
           e.set_border_color = RareColor
         end
@@ -723,8 +790,8 @@ Valiables = {
     # Labyrinth Item ###########################################################
     f.group 'Labyrinth Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'LabyrinthItems'
+        e.showable             = true
+        e.base_type            = 'LabyrinthItems'
         e.set_font_size        = LargeFontSize
         e.set_background_color = LabyrinthItemColor
       end
@@ -733,8 +800,8 @@ Valiables = {
     # Atlas Item ###############################################################
     f.group 'Atlas Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'AtlasItems'
+        e.showable             = true
+        e.base_type            = 'AtlasItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
       end
@@ -743,16 +810,16 @@ Valiables = {
     # Oriath Item ###############################################################
     f.group 'Oriath Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.klass = 'Pantheon Soul'
+        e.showable             = true
+        e.klass                = 'Pantheon Soul'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = OriathItemColor
       end
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'OriathItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = OriathItemColor
+        e.showable                    = true
+        e.base_type                   = 'OriathItems'
+        e.set_font_size               = DefaultFontSize
+        e.set_background_color        = OriathItemColor
         e.play_alert_sound_positional = LowLevelAlertSound
       end
     end
@@ -830,7 +897,7 @@ Valiables = {
     f.group 'Error' do |g|
       g.element do |e|
         e.showable = true
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size               = DefaultFontSize
         e.play_alert_sound_positional = ErrorAlertSound
       end
     end
