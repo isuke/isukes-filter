@@ -245,7 +245,7 @@ Valiables = {
     f.group 'Hide Flask' do |g|
       g.element do |e|
         e.showable             = false
-        e.klass                = 'Flasks'
+        e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
         e.quality              = '= 0' if valiable[:show_quality_flask]
         e.rarity               = '< Unique'
         e.drop_level           = "< #{valiable[:show_flask_drop_level]}"
