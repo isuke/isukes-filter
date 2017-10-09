@@ -1,4 +1,6 @@
 NormalCurrencies:
+  - Armourer's Scrap
+  - Blacksmith's Whetstone
   - Scroll Fragment
   - Scroll of Wisdom
   - Portal Scroll
@@ -6,8 +8,6 @@ NormalCurrencies:
 MagicCurrencies:
   - Alteration Shard
   - Transmutation Shard
-  - Armourer's Scrap
-  - Blacksmith's Whetstone
   - Orb of Transmutation
   - Orb of Augmentation
   - Orb of Alteration
@@ -38,6 +38,7 @@ UniqueCurrencies:
   - Divine Orb
   - Exalted Orb
   - Mirror of Kalandra
+  - Albino Rhoa Feather
 
 RareGems: &RareGems
   - Vaal
