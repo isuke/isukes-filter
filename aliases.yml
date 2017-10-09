@@ -60,100 +60,112 @@ VendorOnlyGems:
 
 MagicDivinations: # 1c+
   - Atziri's Arsenal
+  - Audacity
+  - Blind Venture
   - Chaotic Disposition
   - Dialla's Subjugation
   - Earth Drinker
   - Emperor of Purity
+  - Emperor's Luck
   - Gemcutter's Promise
-  - Heterochromia
+  - Gift of the Gemling Queen
+  - Hope
+  - Hubris
   - Humility
+  - Hunter's Resolve
   - Jack in the Box
   - Lingering Remnants
   - Lucky Connections
   - Lucky Deck
   - Lysah's Respite
   - Merciless Armament
+  - Mitts
   - Rats
   - Scholar of the Seas
+  - Shard of Fate
   - The Aesthete
-  - The Artist
+  - The Arena Champion
+  - The Avenger
   - The Battle Born
   - The Body
+  - The Calling
   - The Cartographer
   - The Cataclysm
   - The Chains that Bind
   - The Cursed King
   - The Dapper Prodigy
   - The Dark Mage
-  - The Dragon
+  - The Doppelganger
   - The Encroaching Darkness
+  - The Enlightened
   - The Ethereal
-  - The Fletcher
+  - The Formless Sea
   - The Forsaken
+  - The Fox
+  - The Garish Power
+  - The Gentleman
   - The Gladiator
-  - The Harvester
   - The Hoarder
   - The Inventor
   - The Jester
   - The Lion
-  - The Pact
+  - The Offering
+  - The One With All
   - The Penitent
-  - The Poet
+  - The Polymath
   - The Porcupine
   - The Risk
   - The Road to Power
-  - The Saint's Treasure
   - The Scavenger
-  - The Sephirot
   - The Soul
-  - The Spoiled Prince
   - The Stormcaller
-  - The Surveyor
   - The Throne
-  - The Trial
+  - The Traitor
   - The Tyrant
   - The Union
-  - The Valkyrie
   - The Valley of Steel Boxes
-  - The Vast
   - The Void
   - The Warlord
-  - The Wind
   - The Wrath
   - The Wretched
-  - Time-Lost Relic
+  - Treasure Hunter
   - Vinia's Token
 
 RareDivinations: # 10c+
   - Abandoned Wealth
   - Bowyer's Dream
+  - Heterochromia
   - Last Hope
+  - Pride Before the Fall
+  - The Artist
   - The Brittle Emperor
   - The Celestial Justicar
   - The Dragon's Heart
-  - The Enlightened
-  - The Formless Sea
+  - The Fletcher
   - The Hunger
-  - The Immortal
+  - The King's Heart
   - The Last One Standing
-  - The Offering
-  - The Polymath
-  - The Spark and the Flame
+  - The Saint's Treasure
+  - The Sephirot
   - The Standoff
   - The Thaumaturgist
+  - The Valkyrie
+  - The Vast
+  - The Wind
   - The Wolf
   - The Wolven King's Bite
+  - Time-Lost Relic
   - Wealth and Power
 
 UniqueDivinations: # 1ex+
   - House of Mirrors
   - Hunter's Reward
   - Mawr Blaidd
-  - Pride Before the Fall
   - The Doctor
   - The Fiend
-  - The King's Heart
+  - The Immortal
   - The Queen
+  - The Spark and the Flame
 
 SpecialGears:
   - Two-Toned Boots
