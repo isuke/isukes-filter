@@ -75,7 +75,7 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 ErrorAlertSound       = '12 300'
 
-Valiables = {
+Variables = {
   C: {
     show_rarity_level: 'Magic',
     show_flask_drop_level: 3,
@@ -116,10 +116,10 @@ Valiables = {
 
 ################################################################################
 %i(C B A S).each do |level|
-  valiable = Valiables[level]
+  variable = Variables[level]
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     # Hide Currency ############################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Hide Currency' do |g|
         g.element do |e|
           e.showable             = false
@@ -247,9 +247,9 @@ Valiables = {
       g.element do |e|
         e.showable             = false
         e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
-        e.quality              = '= 0' if valiable[:show_quality_flask]
+        e.quality              = '= 0' if variable[:show_quality_flask]
         e.rarity               = '< Unique'
-        e.drop_level           = "< #{valiable[:show_flask_drop_level]}"
+        e.drop_level           = "< #{variable[:show_flask_drop_level]}"
       end
     end
 
@@ -484,7 +484,7 @@ Valiables = {
     end
 
     # Regal Recipe #############################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Regal Recipe' do |g|
         g.element do |e|
           e.showable             = true
@@ -517,7 +517,7 @@ Valiables = {
     end
 
     # Chaos Recipe #############################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Chaos Recipe' do |g|
         g.element do |e|
           e.showable             = true
@@ -617,35 +617,35 @@ Valiables = {
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '< 3'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '= 3'
         e.socket_group   = 'RR GG BB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Weapons Gears'
-        e.sockets        = "< #{valiable[:show_socket_num]}"
+        e.sockets        = "< #{variable[:show_socket_num]}"
         e.linked_sockets = '= 4'
         e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
       g.element do |e|
         e.showable       = false
         e.klass          = 'Accessories'
-        e.rarity         = "< #{valiable[:show_rarity_level]}"
+        e.rarity         = "< #{variable[:show_rarity_level]}"
       end
     end
 
     # Hide Large RGB Equipment #################################################
-    unless valiable[:show_large_rgb_equipement]
+    unless variable[:show_large_rgb_equipement]
       f.group 'Hide Large RGB Equipment' do |g|
         g.element do |e|
           e.showable       = false
@@ -669,19 +669,19 @@ Valiables = {
     end
 
     # Hide Rare Equipment ######################################################
-    unless valiable[:show_rare_equipement]
+    unless variable[:show_rare_equipement]
       f.group 'Hide Rare Equipment' do |g|
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '< 3'
           e.rarity         = '< Unique'
         end
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '= 3'
           e.socket_group   = 'RR GG BB'
           e.rarity         = '< Unique'
@@ -689,7 +689,7 @@ Valiables = {
         g.element do |e|
           e.showable       = false
           e.klass          = 'Weapons Gears'
-          e.sockets        = "< #{valiable[:show_socket_num]}"
+          e.sockets        = "< #{variable[:show_socket_num]}"
           e.linked_sockets = '= 4'
           e.socket_group   = 'RRR GGG BBB RRGG RRBB GGBB'
           e.rarity         = '< Unique'
@@ -777,7 +777,7 @@ Valiables = {
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
-          e.sockets          = ">= #{valiable[:show_socket_num]}"
+          e.sockets          = ">= #{variable[:show_socket_num]}"
           e.set_font_size    = LargeFontSize
           e.set_border_color = RareColor
         end
