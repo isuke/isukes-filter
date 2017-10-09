@@ -462,6 +462,7 @@ Variables = {
       end
     end
 
+    # Stacked Deck #############################################################
     f.group 'Stacked Deck' do |g|
       g.element 'Stacked Deck' do |e|
         e.showable             = true
@@ -553,30 +554,28 @@ Variables = {
     unless variable[:show_large_rgb_equipement]
       f.group 'Chromatic Recipe' do |g|
         g.element do |e|
-          e.showable       = true
-          e.klass          = '"Gloves" "Boots" "Helmets" "Claws" "Daggers" "Wands"'
-          e.sockets        = "< 6"
-          e.linked_sockets = '< 5'
-          e.socket_group   = 'RGB'
-          e.rarity         = "< Unique"
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{ChaosRecipeColor} 200"
-          e.set_border_color     = "#{ChaosRecipeColor} 200"
-          # e.set_background_color = "#{MiddleTierColor} 200"
+          e.showable         = true
+          e.klass            = '"Gloves" "Boots" "Helmets" "Claws" "Daggers" "Wands"'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
         end
         g.element do |e|
-          e.showable       = true
-          e.klass          = 'Shields'
-          e.height         = '<= 2'
-          e.width          = '<= 2'
-          e.sockets        = "< 6"
-          e.linked_sockets = '< 5'
-          e.socket_group   = 'RGB'
-          e.rarity         = "< Unique"
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{ChaosRecipeColor} 200"
-          e.set_border_color     = "#{ChaosRecipeColor} 200"
-          # e.set_background_color = "#{MiddleTierColor} 200"
+          e.showable         = true
+          e.klass            = 'Shields'
+          e.height           = '<= 2'
+          e.width            = '<= 2'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
         end
       end
     end
@@ -791,8 +790,8 @@ Variables = {
     # Labyrinth Item ###########################################################
     f.group 'Labyrinth Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'LabyrinthItems'
+        e.showable             = true
+        e.base_type            = 'LabyrinthItems'
         e.set_font_size        = LargeFontSize
         e.set_background_color = LabyrinthItemColor
       end
@@ -801,8 +800,8 @@ Variables = {
     # Atlas Item ###############################################################
     f.group 'Atlas Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'AtlasItems'
+        e.showable             = true
+        e.base_type            = 'AtlasItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
       end
@@ -811,16 +810,16 @@ Variables = {
     # Oriath Item ###############################################################
     f.group 'Oriath Item' do |g|
       g.element do |e|
-        e.showable  = true
-        e.klass = 'Pantheon Soul'
+        e.showable             = true
+        e.klass                = 'Pantheon Soul'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = OriathItemColor
       end
       g.element do |e|
-        e.showable  = true
-        e.base_type = 'OriathItems'
-        e.set_font_size        = DefaultFontSize
-        e.set_background_color = OriathItemColor
+        e.showable                    = true
+        e.base_type                   = 'OriathItems'
+        e.set_font_size               = DefaultFontSize
+        e.set_background_color        = OriathItemColor
         e.play_alert_sound_positional = LowLevelAlertSound
       end
     end
@@ -898,7 +897,7 @@ Variables = {
     f.group 'Error' do |g|
       g.element do |e|
         e.showable = true
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size               = DefaultFontSize
         e.play_alert_sound_positional = ErrorAlertSound
       end
     end
