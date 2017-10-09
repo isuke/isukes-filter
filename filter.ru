@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.0'
-FilterVersion      = '3.1'
+FilterVersion      = '3.2'
 
 # Font Size
 SmallFontSize      = 32

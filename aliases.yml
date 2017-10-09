@@ -54,6 +54,10 @@ DropOnlyGems:
   - *RareGems
   - *UniqueGems
 
+VendorOnlyGems:
+  - Block Chance Reduction
+  - Mirror Arrow
+
 MagicDivinations: # 1c+
   - Atziri's Arsenal
   - Chaotic Disposition
