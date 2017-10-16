@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.0'
-FilterVersion      = '3.3'
+FilterVersion      = '3.4'
 
 # Font Size
 SmallFontSize      = 32
@@ -162,83 +162,6 @@ Variables = {
         e.set_text_color       = CurrencyColor
         e.base_type            = 'NormalCurrencies'
         e.set_font_size        = DefaultFontSize
-      end
-    end
-
-    # Chisel Recipe ############################################################
-    f.group 'Chisel Recipe' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
-        e.corrupted            = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChiselRecipeColor} 200"
-        e.set_border_color     = "#{ChiselRecipeColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-
-      g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
-          e.set_background_color = HighTierColor
-        end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
-          e.set_background_color = MiddleTierColor
-        end
-      end
-    end
-
-    # Special Gear #############################################################
-    f.group 'Special Gear' do |g|
-      g.element do |e|
-        e.showable             = true
-        e.base_type            = 'SpecialGears'
-        e.set_background_color = SpecialGearColor
-        e.set_border_color     = MagicColor
-        e.set_font_size        = DefaultFontSize
-        e.play_alert_sound_positional = LowLevelAlertSound
-      end
-    end
-
-    # Special Accessory #############################################################
-    f.group 'Special Accessory' do |g|
-      g.element do |e|
-        e.showable             = true
-        e.base_type            = 'SpecialAccessories'
-        e.set_background_color = SpecialAccessoryColor
-        e.set_border_color     = UniqueColor
-        e.set_font_size        = ExtraLargeFontSize
-        e.play_alert_sound_positional = HighLevelAlertSound
-      end
-    end
-
-    # Good Accessory ###########################################################
-    f.group 'Good Accessory' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.base_type      = 'GoodAccessories'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodAccessoryColor} 200"
-        e.set_border_color     = "#{GoodAccessoryColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Chance Item ##############################################################
-    f.group 'Chance Item' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = 'ChanceItems'
-        e.corrupted = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChanceItemColor} 200"
-        e.set_border_color     = "#{ChanceItemColor} 200"
-        e.set_background_color = "#{Black} 200"
       end
     end
 
@@ -481,6 +404,83 @@ Variables = {
         e.set_border_color     = UniqueColor
         e.set_font_size        = ExtraLargeFontSize
         e.play_alert_sound_positional = HighLevelAlertSound
+      end
+    end
+
+    # Special Gear #############################################################
+    f.group 'Special Gear' do |g|
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = 'SpecialGears'
+        e.set_background_color = SpecialGearColor
+        e.set_border_color     = MagicColor
+        e.set_font_size        = DefaultFontSize
+        e.play_alert_sound_positional = LowLevelAlertSound
+      end
+    end
+
+    # Special Accessory #############################################################
+    f.group 'Special Accessory' do |g|
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = 'SpecialAccessories'
+        e.set_background_color = SpecialAccessoryColor
+        e.set_border_color     = UniqueColor
+        e.set_font_size        = ExtraLargeFontSize
+        e.play_alert_sound_positional = HighLevelAlertSound
+      end
+    end
+
+    # Good Accessory ###########################################################
+    f.group 'Good Accessory' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity         = '= Normal'
+        e.base_type      = 'GoodAccessories'
+        e.corrupted      = 'False'
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{GoodAccessoryColor} 200"
+        e.set_border_color     = "#{GoodAccessoryColor} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+    end
+
+    # Chance Item ##############################################################
+    f.group 'Chance Item' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = 'ChanceItems'
+        e.corrupted = 'False'
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{ChanceItemColor} 200"
+        e.set_border_color     = "#{ChanceItemColor} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+    end
+
+    # Chisel Recipe ############################################################
+    f.group 'Chisel Recipe' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = '= Normal'
+        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.corrupted            = 'False'
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{ChiselRecipeColor} 200"
+        e.set_border_color     = "#{ChiselRecipeColor} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+
+      g.mixin do |m|
+        m.element 'High Quality' do |e|
+          e.quality              = '>= 10'
+          e.set_background_color = HighTierColor
+        end
+        m.element 'Middle Quality' do |e|
+          e.quality              = '> 0'
+          e.set_background_color = MiddleTierColor
+        end
       end
     end
 
