@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.0'
-FilterVersion      = '3.2'
+FilterVersion      = '3.3'
 
 # Font Size
 SmallFontSize      = 32
@@ -484,6 +484,38 @@ Variables = {
       end
     end
 
+    # Chromatic Recipe #########################################################
+    unless variable[:show_large_rgb_equipement]
+      f.group 'Chromatic Recipe' do |g|
+        g.element do |e|
+          e.showable         = true
+          e.klass            = 'Weapons Gears'
+          e.height           = '<= 3'
+          e.width            = '<= 1'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
+        end
+        g.element do |e|
+          e.showable         = true
+          e.klass            = 'Weapons Gears'
+          e.height           = '<= 2'
+          e.width            = '<= 2'
+          e.sockets          = "< 6"
+          e.linked_sockets   = '< 5'
+          e.socket_group     = 'RGB'
+          e.rarity           = "< Unique"
+          e.set_font_size    = SmallFontSize
+          e.set_text_color   = "#{ChaosRecipeColor} 200"
+          e.set_border_color = "#{ChaosRecipeColor} 200"
+        end
+      end
+    end
+
     # Regal Recipe #############################################################
     unless variable[:show_rare_equipement]
       f.group 'Regal Recipe' do |g|
@@ -546,36 +578,6 @@ Variables = {
           e.set_text_color       = "#{ChaosRecipeColor} 200"
           e.set_border_color     = "#{ChaosRecipeColor} 200"
           e.set_background_color = "#{MiddleTierColor} 200"
-        end
-      end
-    end
-
-    # Chromatic Recipe #########################################################
-    unless variable[:show_large_rgb_equipement]
-      f.group 'Chromatic Recipe' do |g|
-        g.element do |e|
-          e.showable         = true
-          e.klass            = '"Gloves" "Boots" "Helmets" "Claws" "Daggers" "Wands"'
-          e.sockets          = "< 6"
-          e.linked_sockets   = '< 5'
-          e.socket_group     = 'RGB'
-          e.rarity           = "< Unique"
-          e.set_font_size    = SmallFontSize
-          e.set_text_color   = "#{ChaosRecipeColor} 200"
-          e.set_border_color = "#{ChaosRecipeColor} 200"
-        end
-        g.element do |e|
-          e.showable         = true
-          e.klass            = 'Shields'
-          e.height           = '<= 2'
-          e.width            = '<= 2'
-          e.sockets          = "< 6"
-          e.linked_sockets   = '< 5'
-          e.socket_group     = 'RGB'
-          e.rarity           = "< Unique"
-          e.set_font_size    = SmallFontSize
-          e.set_text_color   = "#{ChaosRecipeColor} 200"
-          e.set_border_color = "#{ChaosRecipeColor} 200"
         end
       end
     end
@@ -648,7 +650,9 @@ Variables = {
       f.group 'Hide Large RGB Equipment' do |g|
         g.element do |e|
           e.showable       = false
-          e.klass          = 'SixSockets'
+          e.klass          = 'Weapons Gears'
+          e.height         = '>= 3'
+          e.width          = '>= 2'
           e.sockets        = "< 6"
           e.linked_sockets = '< 5'
           e.socket_group   = 'RGB'
@@ -656,9 +660,9 @@ Variables = {
         end
         g.element do |e|
           e.showable       = false
-          e.klass          = 'Shields'
-          e.height         = '> 2'
-          e.width          = '> 2'
+          e.klass          = 'Weapons Gears'
+          e.height         = '>= 4'
+          e.width          = '>= 1'
           e.sockets        = "< 6"
           e.linked_sockets = '< 5'
           e.socket_group   = 'RGB'
