@@ -169,17 +169,6 @@ Variables = {
       end
     end
 
-    # Hide Flask ###############################################################
-    f.group 'Hide Flask' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
-        e.quality              = '= 0' if variable[:show_quality_flask]
-        e.rarity               = '< Unique'
-        e.drop_level           = "< #{variable[:show_flask_drop_level]}"
-      end
-    end
-
     # Utility Flask ############################################################
     f.group 'Utility Flask' do |g|
       g.element 'Utility' do |e|
@@ -218,21 +207,24 @@ Variables = {
     # Flask ####################################################################
     f.group 'Flask' do |g|
       g.element 'Flask' do |e|
-        e.showable             = true
-        e.klass                = 'Flasks'
+        e.showable             = false
+        e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
         e.set_font_size        = DefaultFontSize
       end
 
       g.mixin do |m|
         m.element 'Life' do |e|
+          e.showable             = false
           e.klass                = '"Life Flasks"'
           e.set_text_color       = LifeFlaskColor
         end
         m.element 'Mana' do |e|
+          e.showable             = false
           e.klass                = '"Mana Flasks"'
           e.set_text_color       = ManaFlaskColor
         end
         m.element 'Hybrid' do |e|
+          e.showable             = false
           e.klass                = '"Hybrid Flasks"'
           e.set_text_color       = HybridFlaskColor
         end
@@ -240,12 +232,14 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Magic' do |e|
-          e.rarity               = '= Magic'
+          e.showable             = false
+          e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
           e.set_font_size        = DefaultFontSize
         end
         m.element 'Unique' do |e|
-          e.rarity               = '= Unique'
+          e.showable             = true
+          e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = LowLevelAlertSound
@@ -253,12 +247,22 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'Drop Level' do |e|
+          e.showable             = true
+          e.rarity               = 'Magic'
+          e.drop_level           = ">= #{variable[:show_flask_drop_level]}"
+        end
+      end
+
+      g.mixin do |m|
         m.element 'High Quality' do |e|
-          e.quality = '>= 10'
+          e.showable             = variable[:show_quality_flask]
+          e.quality              = '>= 10'
           e.set_background_color = HighTierColor
         end
         m.element 'Middle Quality' do |e|
-          e.quality = '> 0'
+          e.showable             = variable[:show_quality_flask]
+          e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
         end
       end
