@@ -184,6 +184,65 @@ SpecialAccessories:
   - Opal Ring
   - Steel Ring
 
+GoodDPSTowHandAxes: &GoodDPSTowHandAxes
+  - Siege Axe
+  - Despot Axe
+GoodDPSOneHandAxes: &GoodDPSOneHandAxes
+  - Siege Axe
+GoodDPSBows: &GoodDPSBows
+  - Harbinger Bow
+GoodDPSClaws: &GoodDPSClaws
+  - Gemini Claw
+  - Imperial Claw
+GoodDPSDaggers: &GoodDPSDaggers
+  - Demon Dagger
+  - Ambusher
+  - Skean
+GoodDPSTowHandMaces: &GoodDPSTowHandMaces
+  - Coronal Maul
+GoodDPSTwoHandSwords: &GoodDPSTwoHandSwords
+  - Exquisite Blade
+GoodDPSThrustingOneHandSwords: &GoodDPSThrustingOneHandSwords
+  - Spiraled Foil
+  - Jewelled Foil
+  - Harpy Rapier
+GoodDPSWepons:
+  - *GoodDPSTowHandAxes
+  - *GoodDPSOneHandAxes
+  - *GoodDPSBows
+  - *GoodDPSClaws
+  - *GoodDPSDaggers
+  - *GoodDPSTowHandMaces
+  - *GoodDPSTwoHandSwords
+  - *GoodDPSThrustingOneHandSwords
+
+GoodCriticalDaggers:
+  - Copper Kris
+  - Golden Kris
+
+GoodWands:
+  - Profane Wand
+
+GoodSceptres:
+  - Sambar Sceptre
+  - Void Sceptre
+
+GoodSTRArmours:
+  - Pinnacle Tower Shield
+  - Astral Plate
+
+GoodDEXArmours:
+  - Assassin's Garb
+
+GoodINTArmours:
+  - Vaal Regalia
+  - Saintly Chainmail
+  - Sorcerer Boots
+  - Sorcerer Gloves
+  - Titanium Spirit Shield
+  - Harmonic Spirit Shield
+  - Fossilised Spirit Shield
+
 GoodAmulets: &GoodAmulets
   - Amber Amulet
   - Jade Amulet
@@ -202,18 +261,12 @@ GoodRings: &GoodRings
   - Coral Ring
   - Diamond Ring
   - Two-Stone Ring
+  - Prismatic Ring
 
 GoodAccessories:
   - *GoodAmulets
   - *GoodBelts
   - *GoodRings
-
-GoodESArmours:
-  - Vaal Regalia
-  - Sorcerer Boots
-  - Sorcerer Gloves
-  - Hubris Circlet
-  - Titanium Spirit Shield
 
 GoodUniquBaseTypes:
   - Abyssal Axe
