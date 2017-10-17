@@ -191,17 +191,18 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Magic' do |e|
-          e.rarity               = '= Magic'
+          e.rarity               = 'Magic'
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
         end
         m.element 'Unique' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = LowLevelAlertSound
         end
       end
+
       g.mixin do |m|
         m.element 'High Quality' do |e|
           e.quality              = '>= 10'
@@ -309,11 +310,11 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Unique' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
         end
         m.element 'Rare' do |e|
-          e.rarity               = '= Rare'
+          e.rarity               = 'Rare'
           e.set_font_size        = LargeFontSize
         end
       end
@@ -340,18 +341,18 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Unique' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound_positional = LowLevelAlertSound
         end
         m.element 'Rare' do |e|
-          e.rarity               = '= Rare'
+          e.rarity               = 'Rare'
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
         end
         m.element 'Magic' do |e|
-          e.rarity               = '= Magic'
+          e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
           e.set_font_size        = DefaultFontSize
         end
@@ -570,27 +571,27 @@ Variables = {
     f.group 'Unique Equipment' do |g|
       g.element 'Unique Equipment' do |e|
         e.showable             = true
-        e.rarity               = '= Unique'
+        e.rarity               = 'Unique'
         e.klass                = 'Equipments'
       end
 
       g.mixin do |m|
         m.element 'Best' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.base_type            = 'BestUniquBaseTypes'
           e.set_font_size        = ExtraLargeFontSize
           e.set_background_color = HighTierColor
           e.play_alert_sound_positional = HighLevelAlertSound
         end
         m.element 'Good' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.base_type            = 'GoodUniquBaseTypes'
           e.set_font_size        = ExtraLargeFontSize
           e.set_background_color = MiddleTierColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Normal' do |e|
-          e.rarity               = '= Unique'
+          e.rarity               = 'Unique'
           e.set_font_size        = LargeFontSize
           e.play_alert_sound_positional = LowLevelAlertSound
         end
