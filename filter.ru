@@ -143,7 +143,7 @@ Variables = {
         e.base_type            = 'UniqueCurrencies'
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
-        e.play_alert_sound_positional = HighLevelAlertSound
+        e.play_alert_sound     = HighLevelAlertSound
       end
       g.element 'Rare Currency' do |e|
         e.showable             = true
@@ -189,7 +189,7 @@ Variables = {
           e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
       end
 
@@ -243,7 +243,7 @@ Variables = {
           e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
       end
 
@@ -283,13 +283,13 @@ Variables = {
           e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueGems'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
       end
       g.mixin do |m|
@@ -349,7 +349,7 @@ Variables = {
           e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = 'Rare'
@@ -377,19 +377,19 @@ Variables = {
           e.base_type            = 'UniqueDivinations'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = HighLevelAlertSound
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Rare Divination' do |e|
           e.base_type            = 'RareDivinations'
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Magic Divination' do |e|
           e.base_type            = 'MagicDivinations'
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Normal Divination' do |e|
           e.set_font_size        = DefaultFontSize
@@ -415,7 +415,7 @@ Variables = {
         e.klass                = '"Fishing Rods"'
         e.set_border_color     = UniqueColor
         e.set_font_size        = ExtraLargeFontSize
-        e.play_alert_sound_positional = HighLevelAlertSound
+        e.play_alert_sound     = HighLevelAlertSound
       end
     end
 
@@ -476,7 +476,7 @@ Variables = {
           e.set_background_color = SpecialAccessoryColor
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound_positional = HighLevelAlertSound
+          e.play_alert_sound     = HighLevelAlertSound
         end
 
         m.element 'Rare Good' do |e|
@@ -577,7 +577,7 @@ Variables = {
           e.set_background_color = GoodDPSWeponColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
@@ -586,7 +586,7 @@ Variables = {
           e.set_background_color = GoodCriticalDaggerColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
@@ -595,7 +595,7 @@ Variables = {
           e.set_background_color = GoodSTRArmourColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
@@ -604,7 +604,7 @@ Variables = {
           e.set_background_color = GoodDEXArmourColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
@@ -613,14 +613,14 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.set_background_color = GoodINTArmourColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialGears'
           e.set_background_color = SpecialGearColor
           e.set_font_size        = DefaultFontSize
-          e.play_alert_sound_positional = LowLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
       end
 
@@ -630,14 +630,14 @@ Variables = {
           e.linked_sockets       = '= 6'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = HighLevelAlertSound
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Linked Sockets L' do |e|
           e.showable             = true
           e.linked_sockets       = '= 5'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
+          e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Sockets L' do |e|
           e.showable             = true
@@ -695,11 +695,11 @@ Variables = {
         e.set_background_color = OriathItemColor
       end
       g.element do |e|
-        e.showable                    = true
-        e.base_type                   = 'OriathItems'
-        e.set_font_size               = DefaultFontSize
-        e.set_background_color        = OriathItemColor
-        e.play_alert_sound_positional = LowLevelAlertSound
+        e.showable             = true
+        e.base_type            = 'OriathItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = OriathItemColor
+        e.play_alert_sound     = LowLevelAlertSound
       end
     end
 
@@ -776,8 +776,8 @@ Variables = {
     f.group 'Error' do |g|
       g.element do |e|
         e.showable = true
-        e.set_font_size               = DefaultFontSize
-        e.play_alert_sound_positional = ErrorAlertSound
+        e.set_font_size        = DefaultFontSize
+        e.play_alert_sound     = ErrorAlertSound
       end
     end
   end
