@@ -56,15 +56,16 @@ MapFragmentColor   = Brown3
 ChiselRecipeColor  = Red3
 ChaosRecipeColor   = Blue3
 RegalRecipeColor   = Blue3
-GoodAccessoryColor      = Purple1
-GoodDPSWeponColor       = MossGreen1
-GoodCriticalDaggerColor = Yellow1
-GoodSTRArmourColor      = Red1
-GoodDEXArmourColor      = Green1
-GoodINTArmourColor      = BluePurple1
 ChanceItemColor    = BluePurple3
-SpecialGearColor      = Blue1
-SpecialAccessoryColor = Blue1
+AccessoryColor          = Purple3
+GoodAccessoryColor      = Purple2
+GoodDPSWeponColor       = MossGreen2
+GoodCriticalDaggerColor = Yellow2
+GoodSTRArmourColor      = Red2
+GoodDEXArmourColor      = Green2
+GoodINTArmourColor      = BluePurple2
+SpecialGearColor        = Blue1
+SpecialAccessoryColor   = Blue1
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
 OriathItemColor    = Purple3
@@ -418,159 +419,6 @@ Variables = {
       end
     end
 
-    # Special Gear #############################################################
-    f.group 'Special Gear' do |g|
-      g.element do |e|
-        e.showable             = true
-        e.base_type            = 'SpecialGears'
-        e.set_background_color = SpecialGearColor
-        e.set_border_color     = MagicColor
-        e.set_font_size        = DefaultFontSize
-        e.play_alert_sound_positional = LowLevelAlertSound
-      end
-    end
-
-    # Special Accessory ########################################################
-    f.group 'Special Accessory' do |g|
-      g.element do |e|
-        e.showable             = true
-        e.base_type            = 'SpecialAccessories'
-        e.set_background_color = SpecialAccessoryColor
-        e.set_border_color     = UniqueColor
-        e.set_font_size        = ExtraLargeFontSize
-        e.play_alert_sound_positional = HighLevelAlertSound
-      end
-    end
-
-    # Good Accessory ########################@##################################
-    f.group 'Good Accessory' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 83'
-        e.base_type      = 'GoodAccessories'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodAccessoryColor} 200"
-        e.set_border_color     = "#{GoodAccessoryColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Good DPS Wepon ###########################################################
-    f.group 'Good DPS Wepon' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 75'
-        e.base_type      = 'GoodDPSWepons'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodDPSWeponColor} 200"
-        e.set_border_color     = "#{GoodDPSWeponColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Good Critical Dagger #####################################################
-    f.group 'Good Critical Dagger' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 84'
-        e.base_type      = 'GoodCriticalDaggers'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodCriticalDaggerColor} 200"
-        e.set_border_color     = "#{GoodCriticalDaggerColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Good STR Armour ##########################################################
-    f.group 'Good STR Armour' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 84'
-        e.base_type      = 'GoodSTRArmours'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodSTRArmourColor} 200"
-        e.set_border_color     = "#{GoodSTRArmourColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Good DEX Armour ##########################################################
-    f.group 'Good DEX Armour' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 84'
-        e.base_type      = 'GoodDEXArmours'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodDEXArmourColor} 200"
-        e.set_border_color     = "#{GoodDEXArmourColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Good INT Armour ##########################################################
-    f.group 'Good INT Armour' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity         = '= Normal'
-        e.item_level     = '>= 84'
-        e.base_type      = 'GoodINTArmours GoodWands GoodSceptres'
-        e.corrupted      = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{GoodINTArmourColor} 200"
-        e.set_border_color     = "#{GoodINTArmourColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Chance Item ##############################################################
-    f.group 'Chance Item' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = 'ChanceItems'
-        e.corrupted = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChanceItemColor} 200"
-        e.set_border_color     = "#{ChanceItemColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-    end
-
-    # Chisel Recipe ############################################################
-    f.group 'Chisel Recipe' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = '= Normal'
-        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
-        e.corrupted            = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChiselRecipeColor} 200"
-        e.set_border_color     = "#{ChiselRecipeColor} 200"
-        e.set_background_color = "#{Black} 200"
-      end
-
-      g.mixin do |m|
-        m.element 'High Quality' do |e|
-          e.quality              = '>= 10'
-          e.set_background_color = HighTierColor
-        end
-        m.element 'Middle Quality' do |e|
-          e.quality              = '> 0'
-          e.set_background_color = MiddleTierColor
-        end
-      end
-    end
-
     # Unique Equipment #########################################################
     f.group 'Unique Equipment' do |g|
       g.element 'Unique Equipment' do |e|
@@ -602,72 +450,6 @@ Variables = {
       end
     end
 
-    # Regal Recipe #############################################################
-    unless variable[:show_rare_equipement]
-      f.group 'Regal Recipe' do |g|
-        g.element do |e|
-          e.showable             = true
-          e.rarity               = 'Rare'
-          e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
-          e.item_level           = '>= 75'
-          e.sockets              = "< 6"
-          e.linked_sockets       = '< 5'
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{RegalRecipeColor} 200"
-          e.set_border_color     = "#{RegalRecipeColor} 200"
-          e.set_background_color = "#{HighTierColor} 200"
-        end
-
-        g.element do |e|
-          e.showable             = true
-          e.rarity               = 'Rare'
-          e.klass                = '"Shields"'
-          e.height               = '<= 2'
-          e.width                = '<= 2'
-          e.item_level           = '>= 75'
-          e.sockets              = "< 6"
-          e.linked_sockets       = '< 5'
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{RegalRecipeColor} 200"
-          e.set_border_color     = "#{RegalRecipeColor} 200"
-          e.set_background_color = "#{HighTierColor} 200"
-        end
-      end
-    end
-
-    # Chaos Recipe #############################################################
-    unless variable[:show_rare_equipement]
-      f.group 'Chaos Recipe' do |g|
-        g.element do |e|
-          e.showable             = true
-          e.rarity               = 'Rare'
-          e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
-          e.item_level           = '>= 60'
-          e.sockets              = "< 6"
-          e.linked_sockets       = '< 5'
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{ChaosRecipeColor} 200"
-          e.set_border_color     = "#{ChaosRecipeColor} 200"
-          e.set_background_color = "#{MiddleTierColor} 200"
-        end
-
-        g.element do |e|
-          e.showable             = true
-          e.rarity               = 'Rare'
-          e.klass                = '"Shields"'
-          e.height               = '<= 2'
-          e.width                = '<= 2'
-          e.item_level           = '>= 60'
-          e.sockets              = "< 6"
-          e.linked_sockets       = '< 5'
-          e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{ChaosRecipeColor} 200"
-          e.set_border_color     = "#{ChaosRecipeColor} 200"
-          e.set_background_color = "#{MiddleTierColor} 200"
-        end
-      end
-    end
-
     # Accessory ################################################################
     f.group 'Accessory' do |g|
       g.element 'Accessory' do |e|
@@ -677,27 +459,38 @@ Variables = {
       end
 
       g.mixin do |m|
-        m.element 'Magic Accessory' do |e|
+        m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
         end
-        m.element 'Rare Accessory' do |e|
+        m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
         end
       end
 
       g.mixin do |m|
-        m.element 'Good' do |e|
-          e.showable             = false
-          e.base_type            = 'GoodAccessories'
-          e.set_background_color = HighTierColor
+        m.element 'Special' do |e|
+          e.showable             = true
+          e.base_type            = 'SpecialAccessories'
+          e.set_background_color = SpecialAccessoryColor
+          e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound_positional = HighLevelAlertSound
         end
 
-        m.element 'Belt Amulet Ring' do |e|
-          e.showable             = false
+        m.element 'Rare Good' do |e|
+          e.showable             = true
+          e.base_type            = 'GoodAccessories'
+          e.rarity               = 'Rare'
+          e.set_background_color = GoodAccessoryColor
+        end
+
+        m.element 'Rare Belt, Amulet, Ring' do |e|
+          e.showable             = true
           e.klass                = '"Belts" "Amulets" "Rings"'
-          e.set_background_color = MiddleTierColor
+          e.rarity               = 'Rare'
+          e.set_background_color = AccessoryColor
         end
       end
     end
@@ -711,22 +504,79 @@ Variables = {
       end
 
       g.mixin do |m|
-        m.element 'Magic Equipment' do |e|
+        m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
         end
-        m.element 'Rare Equipment' do |e|
-          e.showable             = variable[:show_rare_equipement]
-          e.rarity               = 'Rare'
+        if variable[:show_rare_equipement]
+          m.element 'Rare' do |e|
+            e.showable             = true
+            e.rarity               = 'Rare'
+          end
+        else
+          m.element 'Regal Recipe1' do |e|
+            e.showable             = true
+            e.rarity               = 'Rare'
+            e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+            e.item_level           = '>= 75'
+            e.sockets              = "< 6"
+            e.linked_sockets       = '< 5'
+            e.set_font_size        = SmallFontSize
+            e.set_text_color       = "#{RegalRecipeColor} 200"
+            e.set_border_color     = "#{RegalRecipeColor} 200"
+            e.set_background_color = "#{HighTierColor} 200"
+          end
+          m.element 'Regal Recipe2' do |e|
+            e.showable             = true
+            e.rarity               = 'Rare'
+            e.klass                = '"Shields"'
+            e.height               = '<= 2'
+            e.width                = '<= 2'
+            e.item_level           = '>= 75'
+            e.sockets              = "< 6"
+            e.linked_sockets       = '< 5'
+            e.set_font_size        = SmallFontSize
+            e.set_text_color       = "#{RegalRecipeColor} 200"
+            e.set_border_color     = "#{RegalRecipeColor} 200"
+            e.set_background_color = "#{HighTierColor} 200"
+          end
+          m.element 'Chaos Recipe1' do |e|
+            e.showable             = true
+            e.rarity               = 'Rare'
+            e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+            e.item_level           = '>= 60'
+            e.sockets              = "< 6"
+            e.linked_sockets       = '< 5'
+            e.set_font_size        = SmallFontSize
+            e.set_text_color       = "#{ChaosRecipeColor} 200"
+            e.set_border_color     = "#{ChaosRecipeColor} 200"
+            e.set_background_color = "#{MiddleTierColor} 200"
+          end
+          m.element 'Chaos Recipe2' do |e|
+            e.showable             = true
+            e.rarity               = 'Rare'
+            e.klass                = '"Shields"'
+            e.height               = '<= 2'
+            e.width                = '<= 2'
+            e.item_level           = '>= 60'
+            e.sockets              = "< 6"
+            e.linked_sockets       = '< 5'
+            e.set_font_size        = SmallFontSize
+            e.set_text_color       = "#{ChaosRecipeColor} 200"
+            e.set_border_color     = "#{ChaosRecipeColor} 200"
+            e.set_background_color = "#{MiddleTierColor} 200"
+          end
         end
       end
 
       g.mixin do |m|
         m.element 'Good DPS Wepon' do |e|
           e.showable             = true
-          e.item_level           = '>= 75'
+          e.item_level           = '>= 84'
           e.base_type            = 'GoodDPSWepons'
           e.set_background_color = GoodDPSWeponColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
@@ -734,6 +584,8 @@ Variables = {
           e.item_level           = '>= 84'
           e.base_type            = 'GoodCriticalDaggers'
           e.set_background_color = GoodCriticalDaggerColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Good STR Armour' do |e|
@@ -741,6 +593,8 @@ Variables = {
           e.item_level           = '>= 84'
           e.base_type            = 'GoodSTRArmours'
           e.set_background_color = GoodSTRArmourColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Good DEX Armour' do |e|
@@ -748,14 +602,25 @@ Variables = {
           e.item_level           = '>= 84'
           e.base_type            = 'GoodDEXArmours'
           e.set_background_color = GoodDEXArmourColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = UniqueColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
+          e.set_font_size        = ExtraLargeFontSize
+          e.set_border_color     = UniqueColor
           e.set_background_color = GoodINTArmourColor
           e.play_alert_sound_positional = MiddleLevelAlertSound
+        end
+        m.element 'Special' do |e|
+          e.showable             = true
+          e.base_type            = 'SpecialGears'
+          e.set_background_color = SpecialGearColor
+          e.set_font_size        = DefaultFontSize
+          e.play_alert_sound_positional = LowLevelAlertSound
         end
       end
 
