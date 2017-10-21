@@ -250,7 +250,6 @@ Variables = {
       g.mixin do |m|
         m.element 'Drop Level' do |e|
           e.showable             = true
-          e.rarity               = 'Magic'
           e.drop_level           = ">= #{variable[:show_flask_drop_level]}"
         end
       end
@@ -373,25 +372,25 @@ Variables = {
       end
 
       g.mixin do |m|
-        m.element 'Unique Divination' do |e|
+        m.element 'Unique' do |e|
           e.base_type            = 'UniqueDivinations'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = HighLevelAlertSound
         end
-        m.element 'Rare Divination' do |e|
+        m.element 'Rare' do |e|
           e.base_type            = 'RareDivinations'
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
           e.play_alert_sound     = MiddleLevelAlertSound
         end
-        m.element 'Magic Divination' do |e|
+        m.element 'Magic' do |e|
           e.base_type            = 'MagicDivinations'
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
           e.play_alert_sound     = LowLevelAlertSound
         end
-        m.element 'Normal Divination' do |e|
+        m.element 'Normal' do |e|
           e.set_font_size        = DefaultFontSize
         end
       end
@@ -574,6 +573,7 @@ Variables = {
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodDPSWepons'
+          e.rarity               = 'Rare'
           e.set_background_color = GoodDPSWeponColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
@@ -583,6 +583,7 @@ Variables = {
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodCriticalDaggers'
+          e.rarity               = 'Rare'
           e.set_background_color = GoodCriticalDaggerColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
@@ -592,6 +593,7 @@ Variables = {
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodSTRArmours'
+          e.rarity               = 'Rare'
           e.set_background_color = GoodSTRArmourColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
@@ -601,6 +603,7 @@ Variables = {
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodDEXArmours'
+          e.rarity               = 'Rare'
           e.set_background_color = GoodDEXArmourColor
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
@@ -610,6 +613,7 @@ Variables = {
           e.showable             = true
           e.item_level           = '>= 84'
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
+          e.rarity               = 'Rare'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.set_background_color = GoodINTArmourColor
