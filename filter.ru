@@ -89,6 +89,7 @@ Variables = {
     show_socket_num: 4,
     show_normal_currency: true,
     show_gem: true,
+    show_good_base_item_level: 0,
   },
   B: {
     show_flask_drop_level: 30,
@@ -98,6 +99,7 @@ Variables = {
     show_socket_num: 6,
     show_normal_currency: true,
     show_gem: true,
+    show_good_base_item_level: 30,
   },
   A: {
     show_flask_drop_level: 60,
@@ -107,6 +109,7 @@ Variables = {
     show_socket_num: 6,
     show_normal_currency: true,
     show_gem: false,
+    show_good_base_item_level: 63,
   },
   S: {
     show_flask_drop_level: 100,
@@ -116,6 +119,7 @@ Variables = {
     show_socket_num: 6,
     show_normal_currency: false,
     show_gem: false,
+    show_good_base_item_level: 84,
   }
 }
 
@@ -571,7 +575,7 @@ Variables = {
       g.mixin do |m|
         m.element 'Good DPS Wepon' do |e|
           e.showable             = true
-          e.item_level           = '>= 84'
+          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDPSWepons'
           e.rarity               = 'Rare'
           e.set_background_color = GoodDPSWeponColor
@@ -581,7 +585,7 @@ Variables = {
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
-          e.item_level           = '>= 84'
+          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodCriticalDaggers'
           e.rarity               = 'Rare'
           e.set_background_color = GoodCriticalDaggerColor
@@ -591,7 +595,7 @@ Variables = {
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
-          e.item_level           = '>= 84'
+          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodSTRArmours'
           e.rarity               = 'Rare'
           e.set_background_color = GoodSTRArmourColor
@@ -601,7 +605,7 @@ Variables = {
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
-          e.item_level           = '>= 84'
+          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDEXArmours'
           e.rarity               = 'Rare'
           e.set_background_color = GoodDEXArmourColor
@@ -611,7 +615,7 @@ Variables = {
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
-          e.item_level           = '>= 84'
+          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
           e.rarity               = 'Rare'
           e.set_font_size        = ExtraLargeFontSize
