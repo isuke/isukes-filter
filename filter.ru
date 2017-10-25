@@ -59,11 +59,11 @@ RegalRecipeColor   = Blue3
 ChanceItemColor    = BluePurple3
 AccessoryColor          = Red3
 GoodAccessoryColor      = Red2
-GoodDPSWeponColor       = Yellow1
-GoodCriticalDaggerColor = Yellow1
-GoodSTRArmourColor      = Yellow1
-GoodDEXArmourColor      = Yellow1
-GoodINTArmourColor      = Yellow1
+GoodDPSWeponColor       = Green1
+GoodCriticalDaggerColor = Green1
+GoodSTRArmourColor      = MossGreen1
+GoodDEXArmourColor      = MossGreen1
+GoodINTArmourColor      = MossGreen1
 SpecialGearColor        = Blue1
 SpecialAccessoryColor   = Blue1
 LabyrinthItemColor = Green1
@@ -485,7 +485,7 @@ Variables = {
         m.element 'Rare Good' do |e|
           e.showable             = true
           e.base_type            = 'GoodAccessories'
-          e.rarity               = 'Rare'
+          # e.rarity               = 'Rare'
           e.set_background_color = GoodAccessoryColor
         end
 
@@ -577,50 +577,40 @@ Variables = {
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDPSWepons'
-          e.rarity               = 'Rare'
           e.set_background_color = GoodDPSWeponColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodCriticalDaggers'
-          e.rarity               = 'Rare'
           e.set_background_color = GoodCriticalDaggerColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodSTRArmours'
-          e.rarity               = 'Rare'
           e.set_background_color = GoodSTRArmourColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDEXArmours'
-          e.rarity               = 'Rare'
           e.set_background_color = GoodDEXArmourColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
-          e.rarity               = 'Rare'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
           e.set_background_color = GoodINTArmourColor
+          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Special' do |e|
