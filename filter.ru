@@ -127,6 +127,11 @@ Variables = {
 %i(C B A S).each do |level|
   variable = Variables[level]
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
+    f.comment "isuke's filter"
+    f.comment "PoE Version: #{PoeVersion}"
+    f.comment "Filter Version: #{FilterVersion}"
+    f.comment "Filter Level: #{level}"
+
     # Hide Currency ############################################################
     unless variable[:show_normal_currency]
       f.group 'Hide Currency' do |g|
