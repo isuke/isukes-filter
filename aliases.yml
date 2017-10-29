@@ -185,7 +185,6 @@ SpecialAccessories:
   - Steel Ring
 
 GoodDPSTowHandAxes: &GoodDPSTowHandAxes
-  - Siege Axe
   - Despot Axe
 GoodDPSOneHandAxes: &GoodDPSOneHandAxes
   - Siege Axe
