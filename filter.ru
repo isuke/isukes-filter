@@ -453,6 +453,20 @@ Variables = {
       end
     end
 
+    # Chance Item ##############################################################
+    f.group 'Chance Item' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = 'Normal'
+        e.base_type = 'ChanceItems'
+        e.corrupted = 'False'
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{ChanceItemColor} 200"
+        e.set_border_color     = "#{ChanceItemColor} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+    end
+
     # Chisel Recipe ############################################################
     f.group 'Chisel Recipe' do |g|
       g.element do |e|
