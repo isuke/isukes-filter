@@ -453,6 +453,31 @@ Variables = {
       end
     end
 
+    # Chisel Recipe ############################################################
+    f.group 'Chisel Recipe' do |g|
+      g.element do |e|
+        e.showable = true
+        e.rarity    = 'Normal'
+        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.corrupted            = 'False'
+        e.set_font_size        = SmallFontSize
+        e.set_text_color       = "#{ChiselRecipeColor} 200"
+        e.set_border_color     = "#{ChiselRecipeColor} 200"
+        e.set_background_color = "#{Black} 200"
+      end
+
+      g.mixin do |m|
+        m.element 'High Quality' do |e|
+          e.quality              = '>= 10'
+          e.set_background_color = HighTierColor
+        end
+        m.element 'Middle Quality' do |e|
+          e.quality              = '> 0'
+          e.set_background_color = MiddleTierColor
+        end
+      end
+    end
+
     # Accessory ################################################################
     f.group 'Accessory' do |g|
       g.element 'Accessory' do |e|
