@@ -483,17 +483,23 @@ Variables = {
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
-        e.set_font_size        = DefaultFontSize
       end
 
       g.mixin do |m|
+        m.element 'Normal' do |e|
+          e.showable             = false
+          e.rarity               = 'Normal'
+          e.set_font_size        = SmallFontSize
+        end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
+          e.set_font_size        = SmallFontSize
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
+          e.set_font_size        = DefaultFontSize
         end
       end
 
@@ -507,17 +513,15 @@ Variables = {
           e.play_alert_sound     = HighLevelAlertSound
         end
 
-        m.element 'Rare Good' do |e|
+        m.element 'Good' do |e|
           e.showable             = true
           e.base_type            = 'GoodAccessories'
-          # e.rarity               = 'Rare'
           e.set_background_color = GoodAccessoryColor
         end
 
         m.element 'Rare Belt, Amulet, Ring' do |e|
           e.showable             = true
           e.klass                = '"Belts" "Amulets" "Rings"'
-          e.rarity               = 'Rare'
           e.set_background_color = AccessoryColor
         end
       end
@@ -532,16 +536,25 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'Normal' do |e|
+          e.showable             = false
+          e.rarity               = 'Normal'
+          e.set_font_size        = SmallFontSize
+        end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
+          e.set_font_size        = SmallFontSize
         end
-        if variable[:show_rare_equipement]
-          m.element 'Rare' do |e|
-            e.showable             = true
-            e.rarity               = 'Rare'
-          end
-        else
+        m.element 'Rare' do |e|
+          e.showable             = variable[:show_rare_equipement]
+          e.rarity               = 'Rare'
+          e.set_font_size        = DefaultFontSize
+        end
+      end
+
+      g.mixin do |m|
+        unless variable[:show_rare_equipement]
           m.element 'Regal Recipe1' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
@@ -595,54 +608,46 @@ Variables = {
             e.set_background_color = "#{MiddleTierColor} 200"
           end
         end
-      end
-
-      g.mixin do |m|
         m.element 'Good DPS Wepon' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDPSWepons'
           e.set_background_color = GoodDPSWeponColor
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodCriticalDaggers'
           e.set_background_color = GoodCriticalDaggerColor
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodSTRArmours'
           e.set_background_color = GoodSTRArmourColor
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDEXArmours'
           e.set_background_color = GoodDEXArmourColor
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
           e.set_background_color = GoodINTArmourColor
-          e.set_font_size        = LargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialGears'
+          e.set_font_size        = ExtraLargeFontSize
           e.set_background_color = SpecialGearColor
-          e.set_font_size        = DefaultFontSize
           e.play_alert_sound     = LowLevelAlertSound
         end
       end
@@ -675,6 +680,7 @@ Variables = {
             e.height               = '<= 3'
             e.width                = '<= 1'
           end
+          e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
         end
         m.element 'RGB 2' do |e|
@@ -684,6 +690,7 @@ Variables = {
             e.height               = '<= 2'
             e.width                = '<= 2'
           end
+          e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
         end
       end
