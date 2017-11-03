@@ -4,6 +4,8 @@ Isuke's Filter if simple and useful poe filter.
 
 created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 
+[Try It](http://filterblast.oversoul.xyz/advanced/Template/1hkc0eb)
+
 [DOWNLOAD](https://github.com/isuke/isukes-filter/releases)
 
 ## Screenshots
@@ -21,13 +23,13 @@ created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 filter is exist 4 types (`C`/`B`/`A`/`S`).
 You can use it properly by your level.
 
-| Your Level                                 | Filer file                                                           |
-| ------------------------------------------ | -------------------------------------------------------------------- |
-| From start to the Lioneye's Watch          | not use filter or use `<default>`.                                   |
-| From The Lioneye's Watch to about Level 30 | use `C.filter`. display magic items.                                 |
-| From about Level 30 to about Level 65      | use `B.filter`. hide magic items. hide small flasks.                 |
-| From about Level 65 to about Level 90      | use `A.filter`. hide non quality life and magic flasks.              |
-| Level 90 or later                          | use `S.filter`. hide Scroll. Hide Rare Equipment.                    |
+| Your Level                                 | Filer file                         |
+| ------------------------------------------ | ---------------------------------- |
+| From start to the Lioneye's Watch          | not use filter or use `<default>`. |
+| From The Lioneye's Watch to about Level 30 | use `C.filter`.                    |
+| From about Level 30 to about Level 65      | use `B.filter`.                    |
+| From about Level 65 to about Level 90      | use `A.filter`.                    |
+| Level 90 or later                          | use `S.filter`.                    |
 
 ## Explain
 
@@ -73,14 +75,14 @@ The meaning of *item reality* depends on the item.
 ##### Currencies
 
 - Normal
+  - Armourer's Scrap
+  - Blacksmith's Whetstone
   - Scroll Fragment
   - Scroll of Wisdom
   - Portal Scroll
 - Magic
   - Alteration Shard
   - Transmutation Shard
-  - Armourer's Scrap
-  - Blacksmith's Whetstone
   - Orb of Transmutation
   - Orb of Augmentation
   - Orb of Alteration
@@ -109,6 +111,7 @@ The meaning of *item reality* depends on the item.
   - Divine Orb
   - Exalted Orb
   - Mirror of Kalandra
+  - Albino Rhoa Feather
 
 ##### Gems
 
@@ -146,7 +149,7 @@ Value when selling.
 
 ### Background Color
 
-#### Red/Yellow Background Color Represents Quality/Tier/Drop Level
+#### Red/Yellow Background Color Represents Quality/Tier
 
 | Background Color | Class                | Represents           |
 | ---------------- | -------------------- | -------------------- |
@@ -154,25 +157,73 @@ Value when selling.
 | Rad              | Flask/Gem            | High Quality (10-20) |
 | Yellow           | Map                  | Middle Tier          |
 | Rad              | Map                  | High Tier            |
-| Yellow           | Equipment            | Middle Drop Level    |
-| Rad              | Equipment            | High Drop Level      |
-| Yellow           | Accessory            | Amulets, Rings and Belts |
-| Rad              | Accessory            | Good Accessory       |
 
 #### Other Background Color Represents Kind of Items
 
-| Background Color | Represents                                |
-| ---------------- | ----------------------------------------- |
-| Dark Blue        | Special Gear                              |
-| Dark Blue        | Special Accessory                         |
-| Dark Green       | Labyrinth Items                           |
-| Brown            | Atlas Items                               |
-| Light Purple     | Oriath Items                              |
-| Purple           | Prophecy Items                            |
-| Bule Purple      | Essence Items                             |
-| Dark Brown       | Breach Items                              |
-| Light Moss Green | Harbinger Items                           |
+| Background Color | Represents           |
+| ---------------- | -------------------- |
+| Light Red        | Accessory            |
+| Red              | Good Accessory       |
+| Geen             | Good DPS Wepon       |
+| Geen             | Good Critical Dagger |
+| Moss Geen        | Good STR Armour      |
+| Moss Geen        | Good DEX Armour      |
+| Moss Geen        | Good INT Armour      |
+| Dark Blue        | Special Gear         |
+| Dark Blue        | Special Accessory    |
+| Dark Green       | Labyrinth Items      |
+| Brown            | Atlas Items          |
+| Light Purple     | Oriath Items         |
+| Purple           | Prophecy Items       |
+| Bule Purple      | Essence Items        |
+| Dark Brown       | Breach Items         |
+| Light Moss Green | Harbinger Items      |
 
+- GoodAccessory
+  - Amber Amulet
+  - Jade Amulet
+  - Lapis Amulet
+  - Agate Amulet
+  - Citrine Amulet
+  - Turquoise Amulet
+  - Onyx Amulet
+  - Rustic Sash
+  - Heavy Belt
+  - Leather Belt
+  - Coral Ring
+  - Diamond Ring
+  - Two-Stone Ring
+  - Prismatic Ring
+- Good DPS Wepon
+  - Despot Axe
+  - Siege Axe
+  - Harbinger Bow
+  - Gemini Claw
+  - Imperial Claw
+  - Demon Dagger
+  - Ambusher
+  - Skean
+  - Coronal Maul
+  - Exquisite Blade
+  - Spiraled Foil
+  - Jewelled Foil
+  - Harpy Rapier
+- Good Critical Dagger
+  - Copper Kris
+  - Golden Kris
+- Good STR Armour
+  - Pinnacle Tower Shield
+  - Astral Plate
+- Good DEX Armour
+  - Assassin's Garb
+- Good INT Armour
+  - Vaal Regalia
+  - Saintly Chainmail
+  - Sorcerer Boots
+  - Sorcerer Gloves
+  - Titanium Spirit Shield
+  - Harmonic Spirit Shield
+  - Fossilised Spirit Shield
 - Special Gear
   - Two-Toned Boots
   - Spiked Gloves
@@ -204,7 +255,7 @@ Value when selling.
   - Shaper's Orb
   - Cartographer's Sextant
   - Cartographer's Seal
-- OriathItems:
+- Oriath Items
   - Divine Vessel
   - Pantheon Soul
 - Prophecy Items
@@ -241,26 +292,6 @@ Value when selling.
   - Ancient Shard
 
 ### Others
-
-#### Good accessories
-
-Normal Good accessories displeyed small and purple.
-You can use essence to this item for chaos receipe or craft.
-
-- Good Accessories
-  - Amber Amulet
-  - Jade Amulet
-  - Lapis Amulet
-  - Agate Amulet
-  - Citrine Amulet
-  - Turquoise Amulet
-  - Onyx Amulet
-  - Rustic Sash
-  - Heavy Belt
-  - Leather Belt
-  - Coral Ring
-  - Diamond Ring
-  - Two-Stone Ring
 
 #### Chance Items
 
