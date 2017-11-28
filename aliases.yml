@@ -19,6 +19,7 @@ RareCurrencies:
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
+  - Annulment Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -31,6 +32,7 @@ RareCurrencies:
   - Vaal Orb
   - Perandus Coin
   - Regal Orb
+  - Orb of Annulment
 
 UniqueCurrencies:
   - Mirror Shard
@@ -499,13 +501,11 @@ BreachItems:
   - Chayula's Breachstone
 
 HarbingerItems:
-  - Orb of Annulment
   - Orb of Binding
   - Orb of Horizons
   - Harbinger's Orb
   - Engineer's Orb
   - Ancient Orb
-  - Annulment Shard
   - Binding Shard
   - Horizon Shard
   - Harbinger's Shard
