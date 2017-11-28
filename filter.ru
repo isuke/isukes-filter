@@ -69,7 +69,7 @@ SpecialGearColor        = Blue1
 SpecialAccessoryColor   = Blue1
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
-OriathItemColor    = Purple3
+OriathItemColor    = BluePurple3
 ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
@@ -758,7 +758,7 @@ Variables = {
       end
     end
 
-    # Oriath Item ###############################################################
+    # Oriath Item ##############################################################
     f.group 'Oriath Item' do |g|
       g.element do |e|
         e.showable             = true
@@ -769,9 +769,9 @@ Variables = {
       g.element do |e|
         e.showable             = true
         e.base_type            = 'OriathItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = LargeFontSize
         e.set_background_color = OriathItemColor
-        e.play_alert_sound     = LowLevelAlertSound
+        e.play_alert_sound     = MiddleLevelAlertSound
       end
     end
 
