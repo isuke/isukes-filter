@@ -1,6 +1,6 @@
 # Verson
-PoeVersion         = '3.0'
-FilterVersion      = '4.0'
+PoeVersion         = '3.1'
+FilterVersion      = '4.1'
 
 # Font Size
 SmallFontSize      = 32
@@ -57,6 +57,7 @@ ChiselRecipeColor  = Red3
 ChaosRecipeColor   = Blue3
 RegalRecipeColor   = Blue3
 ChanceItemColor    = BluePurple3
+FarmEquipmentBorderColor = Purple2
 AccessoryColor          = Red3
 GoodAccessoryColor      = Red2
 GoodDPSWeponColor       = Green1
@@ -86,6 +87,7 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
+    show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
     show_gem: true,
@@ -96,7 +98,8 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: false,
     show_rare_equipement: true,
-    show_socket_num: 6,
+    show_linked_num: 4,
+    show_socket_num: 5,
     show_normal_currency: true,
     show_gem: true,
     show_good_base_item_level: 30,
@@ -106,7 +109,8 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: false,
     show_rare_equipement: true,
-    show_socket_num: 6,
+    show_linked_num: false,
+    show_socket_num: false,
     show_normal_currency: true,
     show_gem: false,
     show_good_base_item_level: 63,
@@ -116,7 +120,8 @@ Variables = {
     show_quality_flask: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
-    show_socket_num: 6,
+    show_linked_num: false,
+    show_socket_num: false,
     show_normal_currency: false,
     show_gem: false,
     show_good_base_item_level: 84,
@@ -681,16 +686,32 @@ Variables = {
         end
         m.element 'Linked Sockets L' do |e|
           e.showable             = true
-          e.linked_sockets       = '= 5'
+          e.linked_sockets       = "= 5"
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = MiddleLevelAlertSound
         end
-        m.element 'Sockets L' do |e|
+        m.element 'Sockets LL' do |e|
           e.showable             = true
-          e.sockets              = ">= #{variable[:show_socket_num]}"
+          e.sockets              = "= 6"
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
+        end
+        if variable[:show_linked_num]
+          m.element 'Linked Sockets L' do |e|
+            e.showable             = true
+            e.linked_sockets       = ">= #{variable[:show_linked_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
+        end
+        if variable[:show_socket_num]
+          m.element 'Sockets L' do |e|
+            e.showable             = true
+            e.sockets              = ">= #{variable[:show_socket_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
         end
         m.element 'RGB 1' do |e|
           e.showable             = true
