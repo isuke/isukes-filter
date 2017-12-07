@@ -4,7 +4,7 @@ Isuke's Filter if simple and useful poe filter.
 
 created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 
-[Try It](http://filterblast.oversoul.xyz/advanced/Template/1hkc0eb)
+[Try It](http://filterblast.oversoul.xyz/advanced/Template/edtii2)
 
 [DOWNLOAD](https://github.com/isuke/isukes-filter/releases)
 
@@ -93,6 +93,7 @@ The meaning of *item reality* depends on the item.
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
+  - Annulment Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -105,6 +106,7 @@ The meaning of *item reality* depends on the item.
   - Vaal Orb
   - Perandus Coin
   - Regal Orb
+  - Orb of Annulment
 - Unique
   - Mirror Shard
   - Exalted Shard
@@ -139,11 +141,14 @@ Value when selling.
 
 ##### Equipments
 
-- Magic
+- Magic Color
   - RGB Sockets (for Chromatic Orb)
-- Rare
+- Rare Color
   - 6S (for Jeweller's Orb)
-- Unique
+- Purple
+  - 3L or more(`C` filter only)
+  - 4L or more(`B` filter only)
+- Unique Color
   - 5L
   - 6L
 
@@ -160,24 +165,27 @@ Value when selling.
 
 #### Other Background Color Represents Kind of Items
 
-| Background Color | Represents           |
-| ---------------- | -------------------- |
-| Light Red        | Accessory            |
-| Red              | Good Accessory       |
-| Geen             | Good DPS Wepon       |
-| Geen             | Good Critical Dagger |
-| Moss Geen        | Good STR Armour      |
-| Moss Geen        | Good DEX Armour      |
-| Moss Geen        | Good INT Armour      |
-| Dark Blue        | Special Gear         |
-| Dark Blue        | Special Accessory    |
-| Dark Green       | Labyrinth Items      |
-| Brown            | Atlas Items          |
-| Light Purple     | Oriath Items         |
-| Purple           | Prophecy Items       |
-| Bule Purple      | Essence Items        |
-| Dark Brown       | Breach Items         |
-| Light Moss Green | Harbinger Items      |
+| Background Color   | Represents           |
+| ------------------ | -------------------- |
+| Light Red          | Accessory            |
+| Red                | Good Accessory       |
+| Geen               | Good DPS Wepon       |
+| Geen               | Good Critical Dagger |
+| Moss Geen          | Good STR Armour      |
+| Moss Geen          | Good DEX Armour      |
+| Moss Geen          | Good INT Armour      |
+| Dark Blue          | Special Gear         |
+| Dark Blue          | Special Accessory    |
+| Dark Green         | Labyrinth Items      |
+| Brown              | Atlas Items          |
+| Light Blue Purple  | Oriath Items         |
+| Blue Purple Shaper | Items                |
+| Dark Blue Purple   | Elder Items          |
+| Purple             | Prophecy Items       |
+| Bule Purple        | Essence Items        |
+| Dark Brown         | Breach Items         |
+| Light Moss Green   | Harbinger Items      |
+| Dark Yellow        | Abyss Items          |
 
 - GoodAccessory
   - Amber Amulet

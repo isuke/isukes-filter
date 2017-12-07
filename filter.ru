@@ -1,6 +1,6 @@
 # Verson
-PoeVersion         = '3.0'
-FilterVersion      = '4.0'
+PoeVersion         = '3.1'
+FilterVersion      = '4.1'
 
 # Font Size
 SmallFontSize      = 32
@@ -46,6 +46,7 @@ GemColor        = ' 27 162 155'
 CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
+
 LifeFlaskColor     = Red2
 ManaFlaskColor     = Red2
 HybridFlaskColor   = Red2
@@ -57,6 +58,7 @@ ChiselRecipeColor  = Red3
 ChaosRecipeColor   = Blue3
 RegalRecipeColor   = Blue3
 ChanceItemColor    = BluePurple3
+FarmEquipmentBorderColor = Purple2
 AccessoryColor          = Red3
 GoodAccessoryColor      = Red2
 GoodDPSWeponColor       = Green1
@@ -66,18 +68,24 @@ GoodDEXArmourColor      = MossGreen1
 GoodINTArmourColor      = MossGreen1
 SpecialGearColor        = Blue1
 SpecialAccessoryColor   = Blue1
+
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
-OriathItemColor    = Purple3
+OriathItemColor    = BluePurple3
+ShaperItemColor    = BluePurple2
+ElderItemColor     = BluePurple1
+
 ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
+AbyssItemColor     = Yellow1
 
 # Sound
 HighLevelAlertSound   =  '6 300'
 MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
+TrivialAlertSound     =  '9 200'
 ErrorAlertSound       = '12 300'
 
 Variables = {
@@ -86,6 +94,7 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
+    show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
     show_gem: true,
@@ -96,7 +105,8 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: false,
     show_rare_equipement: true,
-    show_socket_num: 6,
+    show_linked_num: 4,
+    show_socket_num: 5,
     show_normal_currency: true,
     show_gem: true,
     show_good_base_item_level: 30,
@@ -106,7 +116,8 @@ Variables = {
     show_quality_flask: true,
     show_magic_equipement: false,
     show_rare_equipement: true,
-    show_socket_num: 6,
+    show_linked_num: false,
+    show_socket_num: false,
     show_normal_currency: true,
     show_gem: false,
     show_good_base_item_level: 63,
@@ -116,7 +127,8 @@ Variables = {
     show_quality_flask: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
-    show_socket_num: 6,
+    show_linked_num: false,
+    show_socket_num: false,
     show_normal_currency: false,
     show_gem: false,
     show_good_base_item_level: 84,
@@ -353,6 +365,13 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'Abyss' do |m|
+          m.klass                = '"Abyss Jewel"'
+          m.set_background_color = AbyssItemColor
+        end
+      end
+
+      g.mixin do |m|
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
@@ -410,9 +429,10 @@ Variables = {
       g.element 'Stacked Deck' do |e|
         e.showable             = true
         e.base_type            = 'Stacked Deck'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = ExtraLargeFontSize
         e.set_text_color       = DivinationCardColor
         e.set_border_color     = DivinationCardColor
+        e.play_alert_sound     = HighLevelAlertSound
       end
     end
 
@@ -532,16 +552,39 @@ Variables = {
           e.play_alert_sound     = HighLevelAlertSound
         end
 
-        m.element 'Good' do |e|
+        m.element 'Good Accessories' do |e|
           e.showable             = true
           e.base_type            = 'GoodAccessories'
+          unless variable[:show_magic_equipement]
+            e.rarity               = 'Rare'
+          end
+          e.set_font_size        = DefaultFontSize
           e.set_background_color = GoodAccessoryColor
         end
 
         m.element 'Rare Belt, Amulet, Ring' do |e|
           e.showable             = true
           e.klass                = '"Belts" "Amulets" "Rings"'
-          e.set_background_color = AccessoryColor
+          e.rarity               = 'Rare'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{RareColor} 200"
+          e.set_background_color = "#{AccessoryColor} 200"
+        end
+
+        m.element 'Shaper' do |e|
+          e.showable             = true
+          e.shaper_item          = true
+          e.set_background_color = ShaperItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
+
+        m.element 'Elder' do |e|
+          e.showable             = true
+          e.elder_item           = true
+          e.set_background_color = ElderItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
         end
       end
     end
@@ -632,35 +675,35 @@ Variables = {
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDPSWepons'
           e.set_background_color = GoodDPSWeponColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodCriticalDaggers'
           e.set_background_color = GoodCriticalDaggerColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodSTRArmours'
           e.set_background_color = GoodSTRArmourColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDEXArmours'
           e.set_background_color = GoodDEXArmourColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
           e.set_background_color = GoodINTArmourColor
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Special' do |e|
           e.showable             = true
@@ -681,16 +724,32 @@ Variables = {
         end
         m.element 'Linked Sockets L' do |e|
           e.showable             = true
-          e.linked_sockets       = '= 5'
+          e.linked_sockets       = "= 5"
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = MiddleLevelAlertSound
         end
-        m.element 'Sockets L' do |e|
+        m.element 'Sockets LL' do |e|
           e.showable             = true
-          e.sockets              = ">= #{variable[:show_socket_num]}"
+          e.sockets              = "= 6"
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
+        end
+        if variable[:show_linked_num]
+          m.element 'Linked Sockets L' do |e|
+            e.showable             = true
+            e.linked_sockets       = ">= #{variable[:show_linked_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
+        end
+        if variable[:show_socket_num]
+          m.element 'Sockets L' do |e|
+            e.showable             = true
+            e.sockets              = ">= #{variable[:show_socket_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
         end
         m.element 'RGB 1' do |e|
           e.showable             = true
@@ -711,6 +770,21 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+        end
+      end
+
+      g.mixin do |m|
+        m.element 'Shaper' do |e|
+          e.shaper_item          = true
+          e.set_background_color = ShaperItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
+        m.element 'Elder' do |e|
+          e.elder_item           = true
+          e.set_background_color = ElderItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
         end
       end
     end
@@ -735,7 +809,7 @@ Variables = {
       end
     end
 
-    # Oriath Item ###############################################################
+    # Oriath Item ##############################################################
     f.group 'Oriath Item' do |g|
       g.element do |e|
         e.showable             = true
@@ -746,9 +820,9 @@ Variables = {
       g.element do |e|
         e.showable             = true
         e.base_type            = 'OriathItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = LargeFontSize
         e.set_background_color = OriathItemColor
-        e.play_alert_sound     = LowLevelAlertSound
+        e.play_alert_sound     = MiddleLevelAlertSound
       end
     end
 
