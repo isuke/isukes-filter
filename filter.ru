@@ -74,6 +74,7 @@ ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
+AbyssItemColor     = Yellow1
 
 # Sound
 HighLevelAlertSound   =  '6 300'
@@ -356,6 +357,13 @@ Variables = {
         e.klass                = 'Jewel'
         e.set_text_color       = JewelColor
         e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Abyss' do |m|
+          m.klass                = '"Abyss Jewel"'
+          m.set_background_color = AbyssItemColor
+        end
       end
 
       g.mixin do |m|
