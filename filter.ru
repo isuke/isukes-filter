@@ -552,16 +552,23 @@ Variables = {
           e.play_alert_sound     = HighLevelAlertSound
         end
 
-        m.element 'Good' do |e|
+        m.element 'Good Accessories' do |e|
           e.showable             = true
           e.base_type            = 'GoodAccessories'
+          unless variable[:show_magic_equipement]
+            e.rarity               = 'Rare'
+          end
+          e.set_font_size        = DefaultFontSize
           e.set_background_color = GoodAccessoryColor
         end
 
         m.element 'Rare Belt, Amulet, Ring' do |e|
           e.showable             = true
           e.klass                = '"Belts" "Amulets" "Rings"'
-          e.set_background_color = AccessoryColor
+          e.rarity               = 'Rare'
+          e.set_font_size        = SmallFontSize
+          e.set_text_color       = "#{RareColor} 200"
+          e.set_background_color = "#{AccessoryColor} 200"
         end
 
         m.element 'Shaper' do |e|
