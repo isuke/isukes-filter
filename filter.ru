@@ -46,6 +46,7 @@ GemColor        = ' 27 162 155'
 CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
+
 LifeFlaskColor     = Red2
 ManaFlaskColor     = Red2
 HybridFlaskColor   = Red2
@@ -67,9 +68,13 @@ GoodDEXArmourColor      = MossGreen1
 GoodINTArmourColor      = MossGreen1
 SpecialGearColor        = Blue1
 SpecialAccessoryColor   = Blue1
+
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
 OriathItemColor    = BluePurple3
+ShaperItemColor    = BluePurple2
+ElderItemColor     = BluePurple1
+
 ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
@@ -558,6 +563,22 @@ Variables = {
           e.klass                = '"Belts" "Amulets" "Rings"'
           e.set_background_color = AccessoryColor
         end
+
+        m.element 'Shaper' do |e|
+          e.showable             = true
+          e.shaper_item          = true
+          e.set_background_color = ShaperItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
+
+        m.element 'Elder' do |e|
+          e.showable             = true
+          e.elder_item           = true
+          e.set_background_color = ElderItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
       end
     end
 
@@ -742,6 +763,21 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+        end
+      end
+
+      g.mixin do |m|
+        m.element 'Shaper' do |e|
+          e.shaper_item          = true
+          e.set_background_color = ShaperItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
+        m.element 'Elder' do |e|
+          e.elder_item           = true
+          e.set_background_color = ElderItemColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
         end
       end
     end
