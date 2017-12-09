@@ -244,6 +244,11 @@ GoodINTArmours:
   - Harmonic Spirit Shield
   - Fossilised Spirit Shield
 
+NotGoodAmulets: &NotGoodAmulets
+  - Coral Amulet
+  - Paua Amulet
+  - Gold Amulet
+
 GoodAmulets: &GoodAmulets
   - Amber Amulet
   - Jade Amulet
@@ -253,16 +258,37 @@ GoodAmulets: &GoodAmulets
   - Turquoise Amulet
   - Onyx Amulet
 
+NotGoodBelts: &NotGoodBelts
+  - Chain Belt
+  - Cloth Belt
+  - Studded Belt
+
 GoodBelts: &GoodBelts
   - Rustic Sash
   - Heavy Belt
   - Leather Belt
+
+NotGoodRings: &NotGoodRings
+  - Iron Ring
+  - Paua Ring
+  - Unset Ring
+  - Sapphire Ring
+  - Topaz Ring
+  - Ruby Ring
+  - Gold Ring
+  - Moonstone Ring
+  - Amethyst Ring
 
 GoodRings: &GoodRings
   - Coral Ring
   - Diamond Ring
   - Two-Stone Ring
   - Prismatic Ring
+
+NotGoodAccessories:
+  - *NotGoodAmulets
+  - *NotGoodBelts
+  - *NotGoodRings
 
 GoodAccessories:
   - *GoodAmulets

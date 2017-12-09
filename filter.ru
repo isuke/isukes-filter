@@ -543,11 +543,17 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'Abyss' do |e|
+          e.showable             = true
+          e.klass                = 'Belts'
+          e.base_type            = '"Stygian Vise"'
+          e.set_background_color = AbyssItemColor
+        end
+
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialAccessories'
           e.set_background_color = SpecialAccessoryColor
-          e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
@@ -562,9 +568,9 @@ Variables = {
           e.set_background_color = GoodAccessoryColor
         end
 
-        m.element 'Rare Belt, Amulet, Ring' do |e|
+        m.element 'Not Good Accessories' do |e|
           e.showable             = true
-          e.klass                = '"Belts" "Amulets" "Rings"'
+          e.base_type            = 'NotGoodAccessories'
           e.rarity               = 'Rare'
           e.set_font_size        = SmallFontSize
           e.set_text_color       = "#{RareColor} 200"
