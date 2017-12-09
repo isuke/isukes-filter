@@ -543,6 +543,13 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'Breach' do |e|
+          e.showable             = true
+          e.klass                = 'Rings'
+          e.base_type            = '"Breach Ring"'
+          e.set_background_color = BreachItemsColor
+        end
+
         m.element 'Abyss' do |e|
           e.showable             = true
           e.klass                = 'Belts'
