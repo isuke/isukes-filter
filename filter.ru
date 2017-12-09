@@ -79,7 +79,7 @@ ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
-AbyssItemColor     = Yellow1
+AbyssItemColor     = Green2
 
 # Sound
 HighLevelAlertSound   =  '6 300'
