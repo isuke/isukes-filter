@@ -748,22 +748,6 @@ Variables = {
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
         end
-        if variable[:show_linked_num]
-          m.element 'Linked Sockets L' do |e|
-            e.showable             = true
-            e.linked_sockets       = ">= #{variable[:show_linked_num]}"
-            e.set_font_size        = LargeFontSize
-            e.set_border_color     = FarmEquipmentBorderColor
-          end
-        end
-        if variable[:show_socket_num]
-          m.element 'Sockets L' do |e|
-            e.showable             = true
-            e.sockets              = ">= #{variable[:show_socket_num]}"
-            e.set_font_size        = LargeFontSize
-            e.set_border_color     = FarmEquipmentBorderColor
-          end
-        end
         m.element 'RGB 1' do |e|
           e.showable             = true
           e.socket_group         = 'RGB'
@@ -783,6 +767,22 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+        end
+        if variable[:show_linked_num]
+          m.element 'Linked Sockets L' do |e|
+            e.showable             = true
+            e.linked_sockets       = ">= #{variable[:show_linked_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
+        end
+        if variable[:show_socket_num]
+          m.element 'Sockets L' do |e|
+            e.showable             = true
+            e.sockets              = ">= #{variable[:show_socket_num]}"
+            e.set_font_size        = LargeFontSize
+            e.set_border_color     = FarmEquipmentBorderColor
+          end
         end
       end
 
