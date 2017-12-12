@@ -85,7 +85,7 @@ AbyssItemColor     = Green2
 HighLevelAlertSound   =  '6 300'
 MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
-TrivialAlertSound     =  '9 200'
+TrivialAlertSound     =  '9 170'
 ErrorAlertSound       = '12 300'
 
 Variables = {
@@ -688,35 +688,30 @@ Variables = {
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDPSWepons'
           e.set_background_color = GoodDPSWeponColor
-          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good Critical Dagger' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodCriticalDaggers'
           e.set_background_color = GoodCriticalDaggerColor
-          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good STR Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodSTRArmours'
           e.set_background_color = GoodSTRArmourColor
-          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good DEX Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodDEXArmours'
           e.set_background_color = GoodDEXArmourColor
-          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Good INT Armour' do |e|
           e.showable             = true
           e.item_level           = ">= #{variable[:show_good_base_item_level]}"
           e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
           e.set_background_color = GoodINTArmourColor
-          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'Special' do |e|
           e.showable             = true
@@ -747,6 +742,7 @@ Variables = {
           e.sockets              = "= 6"
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
+          e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'RGB 1' do |e|
           e.showable             = true
@@ -757,6 +753,7 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+          e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'RGB 2' do |e|
           e.showable             = true
@@ -767,6 +764,7 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+          e.play_alert_sound     = TrivialAlertSound
         end
         if variable[:show_linked_num]
           m.element 'Linked Sockets L' do |e|
