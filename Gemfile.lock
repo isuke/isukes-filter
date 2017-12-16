@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/isuke/poe_filter_generator.git
-  revision: 46e0718b37c24539c7ecbdcdc3775e062fcff16f
+  revision: 4b75852d5dc35df5a888cf0dd17ed548d67e9ea8
+  tag: v0.9.8
   specs:
-    poe_filter_generator (0.9.6)
+    poe_filter_generator (0.9.8)
       activesupport (> 3.0)
       thor (~> 0.19)
 

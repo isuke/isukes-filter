@@ -81,6 +81,10 @@ BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
 
+# Alpha
+DefaultAlpha = 255
+ThinAlpha    = 200
+
 # Sound
 HighLevelAlertSound   =  '6 300'
 MiddleLevelAlertSound =  '3 300'
@@ -295,19 +299,22 @@ Variables = {
         e.showable             = true
         e.klass                = 'Gems'
         e.set_text_color       = GemColor
-        e.set_font_size        = DefaultFontSize
+        e.set_color_alpha      = ThinAlpha
+        e.set_font_size        = SmallFontSize
       end
 
       g.mixin do |m|
         m.element 'Rare' do |e|
           e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = LargeFontSize
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueGems'
           e.set_border_color     = UniqueColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = MiddleLevelAlertSound
         end
@@ -316,10 +323,14 @@ Variables = {
         m.element 'High Quality' do |e|
           e.quality              = '>= 10'
           e.set_background_color = HighTierColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
         end
         m.element 'Middle Quality' do |e|
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
         end
       end
     end
@@ -486,9 +497,10 @@ Variables = {
         e.base_type = 'ChanceItems'
         e.corrupted = 'False'
         e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChanceItemColor} 200"
-        e.set_border_color     = "#{ChanceItemColor} 200"
-        e.set_background_color = "#{Black} 200"
+        e.set_text_color       = ChanceItemColor
+        e.set_border_color     = ChanceItemColor
+        e.set_background_color = Black
+        e.set_color_alpha      = ThinAlpha
       end
     end
 
@@ -500,9 +512,10 @@ Variables = {
         e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
         e.corrupted            = 'False'
         e.set_font_size        = SmallFontSize
-        e.set_text_color       = "#{ChiselRecipeColor} 200"
-        e.set_border_color     = "#{ChiselRecipeColor} 200"
-        e.set_background_color = "#{Black} 200"
+        e.set_text_color       = ChiselRecipeColor
+        e.set_border_color     = ChiselRecipeColor
+        e.set_background_color = Black
+        e.set_color_alpha      = ThinAlpha
       end
 
       g.mixin do |m|
@@ -529,16 +542,19 @@ Variables = {
           e.showable             = false
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
+          e.set_color_alpha      = ThinAlpha
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
+          e.set_color_alpha      = ThinAlpha
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
+          e.set_color_alpha      = DefaultAlpha
         end
       end
 
@@ -548,6 +564,7 @@ Variables = {
           e.klass                = 'Rings'
           e.base_type            = '"Breach Ring"'
           e.set_background_color = BreachItemsColor
+          e.set_color_alpha      = DefaultAlpha
         end
 
         m.element 'Abyss' do |e|
@@ -555,12 +572,14 @@ Variables = {
           e.klass                = 'Belts'
           e.base_type            = '"Stygian Vise"'
           e.set_background_color = AbyssItemColor
+          e.set_color_alpha      = DefaultAlpha
         end
 
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialAccessories'
           e.set_background_color = SpecialAccessoryColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
@@ -571,23 +590,25 @@ Variables = {
           unless variable[:show_magic_equipement]
             e.rarity               = 'Rare'
           end
-          e.set_font_size        = DefaultFontSize
           e.set_background_color = GoodAccessoryColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
         end
 
         m.element 'Not Good Accessories' do |e|
           e.showable             = true
           e.base_type            = 'NotGoodAccessories'
           e.rarity               = 'Rare'
+          e.set_background_color = AccessoryColor
+          e.set_color_alpha      = ThinAlpha
           e.set_font_size        = SmallFontSize
-          e.set_text_color       = "#{RareColor} 200"
-          e.set_background_color = "#{AccessoryColor} 200"
         end
 
         m.element 'Shaper' do |e|
           e.showable             = true
           e.shaper_item          = true
           e.set_background_color = ShaperItemColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
@@ -596,6 +617,7 @@ Variables = {
           e.showable             = true
           e.elder_item           = true
           e.set_background_color = ElderItemColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
@@ -615,16 +637,19 @@ Variables = {
           e.showable             = false
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
+          e.set_color_alpha      = ThinAlpha
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
+          e.set_color_alpha      = ThinAlpha
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
+          e.set_color_alpha      = DefaultAlpha
         end
       end
 
@@ -638,9 +663,10 @@ Variables = {
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
             e.set_font_size        = SmallFontSize
-            e.set_text_color       = "#{RegalRecipeColor} 200"
-            e.set_border_color     = "#{RegalRecipeColor} 200"
-            e.set_background_color = "#{HighTierColor} 200"
+            e.set_text_color       = RegalRecipeColor
+            e.set_border_color     = RegalRecipeColor
+            e.set_background_color = HighTierColor
+            e.set_color_alpha      = ThinAlpha
           end
           m.element 'Regal Recipe2' do |e|
             e.showable             = true
@@ -652,9 +678,10 @@ Variables = {
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
             e.set_font_size        = SmallFontSize
-            e.set_text_color       = "#{RegalRecipeColor} 200"
-            e.set_border_color     = "#{RegalRecipeColor} 200"
-            e.set_background_color = "#{HighTierColor} 200"
+            e.set_text_color       = RegalRecipeColor
+            e.set_border_color     = RegalRecipeColor
+            e.set_background_color = HighTierColor
+            e.set_color_alpha      = ThinAlpha
           end
           m.element 'Chaos Recipe1' do |e|
             e.showable             = true
@@ -664,9 +691,10 @@ Variables = {
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
             e.set_font_size        = SmallFontSize
-            e.set_text_color       = "#{ChaosRecipeColor} 200"
-            e.set_border_color     = "#{ChaosRecipeColor} 200"
-            e.set_background_color = "#{MiddleTierColor} 200"
+            e.set_text_color       = ChaosRecipeColor
+            e.set_border_color     = ChaosRecipeColor
+            e.set_background_color = MiddleTierColor
+            e.set_color_alpha      = ThinAlpha
           end
           m.element 'Chaos Recipe2' do |e|
             e.showable             = true
@@ -678,9 +706,10 @@ Variables = {
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
             e.set_font_size        = SmallFontSize
-            e.set_text_color       = "#{ChaosRecipeColor} 200"
-            e.set_border_color     = "#{ChaosRecipeColor} 200"
-            e.set_background_color = "#{MiddleTierColor} 200"
+            e.set_text_color       = ChaosRecipeColor
+            e.set_border_color     = ChaosRecipeColor
+            e.set_background_color = MiddleTierColor
+            e.set_color_alpha      = ThinAlpha
           end
         end
         m.element 'Good DPS Wepon' do |e|
@@ -717,6 +746,7 @@ Variables = {
           e.showable             = true
           e.base_type            = 'SpecialGears'
           e.set_font_size        = ExtraLargeFontSize
+          e.set_color_alpha      = DefaultAlpha
           e.set_background_color = SpecialGearColor
           e.play_alert_sound     = LowLevelAlertSound
         end
@@ -728,6 +758,7 @@ Variables = {
           e.linked_sockets       = '= 6'
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
+          e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Linked Sockets L' do |e|
@@ -735,6 +766,7 @@ Variables = {
           e.linked_sockets       = "= 5"
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
+          e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = MiddleLevelAlertSound
         end
         m.element 'Sockets LL' do |e|
@@ -742,6 +774,7 @@ Variables = {
           e.sockets              = "= 6"
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
+          e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'RGB 1' do |e|
@@ -753,6 +786,7 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+          e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = TrivialAlertSound
         end
         m.element 'RGB 2' do |e|
@@ -764,6 +798,7 @@ Variables = {
           end
           e.set_font_size        = DefaultFontSize
           e.set_border_color     = MagicColor
+          e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = TrivialAlertSound
         end
         if variable[:show_linked_num]
@@ -788,12 +823,14 @@ Variables = {
         m.element 'Shaper' do |e|
           e.shaper_item          = true
           e.set_background_color = ShaperItemColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Elder' do |e|
           e.elder_item           = true
           e.set_background_color = ElderItemColor
+          e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
