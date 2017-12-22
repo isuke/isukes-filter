@@ -19,7 +19,6 @@ RareCurrencies:
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
-  - Annulment Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -32,12 +31,13 @@ RareCurrencies:
   - Vaal Orb
   - Perandus Coin
   - Regal Orb
-  - Orb of Annulment
 
 UniqueCurrencies:
   - Mirror Shard
+  - Annulment Shard
   - Exalted Shard
   - Divine Orb
+  - Orb of Annulment
   - Exalted Orb
   - Mirror of Kalandra
   - Albino Rhoa Feather
