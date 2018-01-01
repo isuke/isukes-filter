@@ -4,7 +4,7 @@ Isuke's Filter if simple and useful poe filter.
 
 created by [poe filter generator](https://github.com/isuke/poe_filter_generator)
 
-[Try It](http://filterblast.oversoul.xyz/advanced/Template/edtii2)
+[Try It](http://filterblast.oversoul.xyz/advanced/Template/1tvi96b)
 
 [DOWNLOAD](https://github.com/isuke/isukes-filter/releases)
 
@@ -93,7 +93,6 @@ The meaning of *item reality* depends on the item.
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
-  - Annulment Shard
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -106,10 +105,11 @@ The meaning of *item reality* depends on the item.
   - Vaal Orb
   - Perandus Coin
   - Regal Orb
-  - Orb of Annulment
 - Unique
   - Mirror Shard
   - Exalted Shard
+  - Annulment Shard
+  - Orb of Annulment
   - Divine Orb
   - Exalted Orb
   - Mirror of Kalandra
@@ -307,7 +307,7 @@ Normal Change Items dispalyed small and light blue purple for chance.
 
 - Chance Items
   - Sorcerer Boots
-  - Leather Belt
+  - Gold Amulet
 
 #### Chisel Recipe
 
