@@ -18,7 +18,7 @@ Isuke's Filter is simple and useful poe filter.
 
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
 
-link:http://filterblast.oversoul.xyz/advanced/Template/1tvi96b[Try It]
+link:http://filterblast.oversoul.xyz/advanced/Template/eq5k7k[Try It]
 
 link:https://github.com/isuke/isukes-filter/releases[DOWNLOAD]
 
