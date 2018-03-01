@@ -295,6 +295,9 @@ Value when selling.
 
 | Dark Yellow
 | Abyss Items
+
+| Light Brown
+| Bestiary Items
 |===
 
 * GoodAccessory

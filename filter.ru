@@ -1,6 +1,6 @@
 # Verson
-PoeVersion         = '3.1'
-FilterVersion      = '4.2'
+PoeVersion         = '3.2'
+FilterVersion      = '4.3'
 
 # Font Size
 SmallFontSize      = 32
@@ -80,6 +80,7 @@ EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
+BestiaryItemColor  = Brown3
 
 # Alpha
 DefaultAlpha = 255
@@ -918,6 +919,16 @@ Variables = {
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = HarbingerItemColor
         e.set_border_color     = UniqueColor
+      end
+    end
+
+    # Bestiary Item ############################################################
+    f.group 'Bestiary Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'BestiaryItems'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = BestiaryItemColor
       end
     end
 
