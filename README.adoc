@@ -2,7 +2,6 @@
 :icons: font
 :lang: en
 :sectanchors:
-:sectlinks:
 :sectnums:
 :sectnumlevels: 4
 :toc: left
@@ -14,6 +13,8 @@
 
 = Isuke's Filter
 
+== Summary
+
 Isuke's Filter is simple and useful poe filter.
 
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
@@ -22,14 +23,12 @@ link:http://filterblast.oversoul.xyz/advanced/Template/eq5k7k[Try It]
 
 link:https://github.com/isuke/isukes-filter/releases[DOWNLOAD]
 
-== Screenshots
+=== Screenshots
 
-=== Before
-
+.Before
 image::https://raw.githubusercontent.com/isuke/isukes-filter/images/none.jpg[none]
 
-=== After
-
+.After
 image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_S.jpg[filter_S]
 
 == Kind of Files
