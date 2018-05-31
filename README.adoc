@@ -9,7 +9,7 @@
 
 :author: isuke
 :email: isuke770@gmail.com
-:revnumber: v3.1_4.2
+:revnumber: v3.3_4.4
 
 = Isuke's Filter
 
@@ -244,19 +244,19 @@ Value when selling.
 | Red
 | Good Accessory
 
-| Geen
-| Good DPS Wepon
+| Green
+| Good DPS Weapon
 
-| Geen
+| Green
 | Good Critical Dagger
 
-| Moss Geen
+| Moss Green
 | Good STR Armour
 
-| Moss Geen
+| Moss Green
 | Good DEX Armour
 
-| Moss Geen
+| Moss Green
 | Good INT Armour
 
 | Dark Blue
@@ -283,7 +283,7 @@ Value when selling.
 | Purple
 | Prophecy Items
 
-| Bule Purple
+| Blue Purple
 | Essence Items
 
 | Dark Brown
@@ -297,6 +297,9 @@ Value when selling.
 
 | Light Brown
 | Bestiary Items
+
+| Light Red
+| Incursion Items
 |===
 
 * GoodAccessory
@@ -314,7 +317,7 @@ Value when selling.
 ** Diamond Ring
 ** Two-Stone Ring
 ** Prismatic Ring
-* Good DPS Wepon
+* Good DPS Weapon
 ** Despot Axe
 ** Siege Axe
 ** Harbinger Bow
@@ -415,7 +418,7 @@ Value when selling.
 
 ==== Chance Items
 
-Normal Change Items dispalyed small and light blue purple for chance.
+Normal Change Items displayed small and light blue purple for chance.
 
 * Chance Items
 ** Sorcerer Boots
