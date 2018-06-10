@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.3'
-FilterVersion      = '4.4'
+FilterVersion      = '4.5'
 
 # Font Size
 SmallFontSize      = 32
@@ -81,7 +81,7 @@ BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
 BestiaryItemColor  = Brown3
-IncursionItemColor = Red3
+IncursionItemColor = Red2
 
 # Alpha
 DefaultAlpha = 255
@@ -940,6 +940,7 @@ Variables = {
         e.base_type = 'IncursionItems'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = IncursionItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
       end
     end
 
