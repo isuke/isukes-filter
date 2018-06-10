@@ -836,6 +836,13 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
+        m.element 'Incursion' do |e|
+          e.has_explicit_mod     = 'IncursionMods'
+          e.set_background_color = IncursionItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
       end
     end
 
