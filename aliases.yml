@@ -552,9 +552,10 @@ BestiaryItems:
   - Strong Steel Net
   - Thaumaturgical Net
 
-IncursionItems:
+IncursionItems1:
   - Stone of Passage
   - Flashpowder Keg
+IncursionItems2:
   - Vial of Dominance
   - Vial of Summoning
   - Vial of Awakening
