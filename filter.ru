@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.3'
-FilterVersion      = '4.4'
+FilterVersion      = '4.5'
 
 # Font Size
 SmallFontSize      = 32
@@ -81,7 +81,7 @@ BreachItemsColor   = Brown1
 HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
 BestiaryItemColor  = Brown3
-IncursionItemColor = Red3
+IncursionItemColor = Red2
 
 # Alpha
 DefaultAlpha = 255
@@ -836,6 +836,13 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
         end
+        m.element 'Incursion' do |e|
+          e.has_explicit_mod     = 'IncursionMods'
+          e.set_background_color = IncursionItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+        end
       end
     end
 
@@ -934,12 +941,22 @@ Variables = {
     end
 
     # Incursion Item ###########################################################
-    f.group 'Bestiary Item' do |g|
+    f.group 'Incursion Item1' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = 'IncursionItems'
+        e.base_type = 'IncursionItems1'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = IncursionItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+      end
+    end
+    f.group 'Incursion Item2' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'IncursionItems2'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = IncursionItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
       end
     end
 

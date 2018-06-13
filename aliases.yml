@@ -552,9 +552,10 @@ BestiaryItems:
   - Strong Steel Net
   - Thaumaturgical Net
 
-IncursionItems:
+IncursionItems1:
   - Stone of Passage
   - Flashpowder Keg
+IncursionItems2:
   - Vial of Dominance
   - Vial of Summoning
   - Vial of Awakening
@@ -564,3 +565,15 @@ IncursionItems:
   - Vial of the Ghost
   - Vial of Transcendence
   - Vial of Sacrifice
+IncursionMods:
+  - Tacati's
+  - Citaqualotl's
+  - Matatl's
+  - Topotante's
+  - Xopec's
+  - Guatelitzi's
+  - of Tacati
+  - of Citaqualotl
+  - of Matatl
+  - of Puhuarte
+  - of Guatelitzi"
