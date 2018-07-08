@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.3'
-FilterVersion      = '4.5'
+FilterVersion      = '4.6'
 
 # Font Size
 SmallFontSize      = 32
@@ -298,7 +298,7 @@ Variables = {
     # Gem ######################################################################
     f.group 'Gem' do |g|
       g.element 'Gem' do |e|
-        e.showable             = true
+        e.showable             = variable[:show_gem]
         e.klass                = 'Gems'
         e.set_text_color       = GemColor
         e.set_color_alpha      = ThinAlpha
@@ -307,6 +307,7 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Rare' do |e|
+          e.showable             = true
           e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
           e.set_color_alpha      = DefaultAlpha
@@ -314,6 +315,7 @@ Variables = {
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Unique' do |e|
+          e.showable             = true
           e.base_type            = 'UniqueGems'
           e.set_border_color     = UniqueColor
           e.set_color_alpha      = DefaultAlpha
@@ -323,14 +325,25 @@ Variables = {
       end
       g.mixin do |m|
         m.element 'High Quality' do |e|
+          e.showable             = true
           e.quality              = '>= 10'
           e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
         end
         m.element 'Middle Quality' do |e|
+          e.showable             = true
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
+        end
+      end
+      g.mixin do |m|
+        m.element 'High Level' do |e|
+          e.showable             = true
+          e.gem_level            = '>= 18'
+          e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
         end
