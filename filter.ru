@@ -363,6 +363,7 @@ Variables = {
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = 'Rare'
@@ -373,10 +374,16 @@ Variables = {
         m.element 'High Tier' do |e|
           e.drop_level           = '>= 78'
           e.set_background_color = HighTierColor
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Middle Tier' do |e|
           e.drop_level           = '>= 73'
           e.set_background_color = MiddleTierColor
+          e.play_alert_sound     = LowLevelAlertSound
+        end
+        m.element 'Low Tier' do |e|
+          e.drop_level           = '< 73'
+          e.play_alert_sound     = TrivialAlertSound
         end
       end
     end
