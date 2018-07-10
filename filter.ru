@@ -93,11 +93,13 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 TrivialAlertSound     =  '9 170'
 ErrorAlertSound       = '12 300'
+MuteAlertSound        =  '1   0'
 
 Variables = {
   C: {
     show_flask_drop_level: 3,
     show_quality_flask: true,
+    show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
     show_linked_num: 3,
@@ -109,6 +111,7 @@ Variables = {
   B: {
     show_flask_drop_level: 30,
     show_quality_flask: true,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_linked_num: 4,
@@ -120,6 +123,7 @@ Variables = {
   A: {
     show_flask_drop_level: 60,
     show_quality_flask: true,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_linked_num: false,
@@ -131,6 +135,7 @@ Variables = {
   S: {
     show_flask_drop_level: 100,
     show_quality_flask: false,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
     show_linked_num: false,
@@ -557,26 +562,30 @@ Variables = {
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
+        e.play_alert_sound     = MuteAlertSound
       end
 
       g.mixin do |m|
         m.element 'Normal' do |e|
-          e.showable             = false
+          e.showable             = variable[:show_nomarl_accessory]
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
+          e.play_alert_sound     = variable[:show_nomarl_accessory] ? TrivialAlertSound : MuteAlertSound
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
+          e.play_alert_sound     = variable[:show_magic_equipement] ? TrivialAlertSound : MuteAlertSound
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
+          e.play_alert_sound     = variable[:show_magic_equipement] ? LowLevelAlertSound : MuteAlertSound
         end
       end
 
