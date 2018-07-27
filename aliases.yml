@@ -61,114 +61,61 @@ VendorOnlyGems:
   - Block Chance Reduction
   - Mirror Arrow
 
-MagicDivinations: # 1c+
-  - Atziri's Arsenal
-  - Audacity
-  - Blind Venture
+MagicDivinations: # 5c+
   - Chaotic Disposition
-  - Dialla's Subjugation
-  - Earth Drinker
-  - Emperor of Purity
-  - Emperor's Luck
-  - Gemcutter's Promise
-  - Gift of the Gemling Queen
-  - Hope
-  - Hubris
-  - Humility
-  - Hunter's Resolve
-  - Jack in the Box
-  - Lingering Remnants
-  - Lucky Connections
-  - Lucky Deck
-  - Lysah's Respite
-  - Merciless Armament
-  - Mitts
-  - Rats
-  - Scholar of the Seas
-  - Shard of Fate
-  - The Aesthete
-  - The Arena Champion
-  - The Avenger
-  - The Battle Born
-  - The Body
-  - The Calling
+  - Last Hope
+  - Left to Fate
+  - Perfection
+  - The Artist
+  - The Breach
   - The Cartographer
-  - The Cataclysm
-  - The Chains that Bind
-  - The Cursed King
-  - The Dapper Prodigy
-  - The Dark Mage
-  - The Doppelganger
-  - The Encroaching Darkness
+  - The Celestial Justicar
+  - The Dreamer
   - The Enlightened
   - The Ethereal
-  - The Formless Sea
-  - The Forsaken
-  - The Fox
-  - The Garish Power
-  - The Gentleman
-  - The Gladiator
   - The Hoarder
-  - The Inventor
-  - The Jester
-  - The Lion
-  - The Offering
-  - The One With All
-  - The Penitent
-  - The Polymath
-  - The Porcupine
-  - The Risk
-  - The Road to Power
-  - The Scavenger
-  - The Soul
-  - The Stormcaller
-  - The Throne
-  - The Traitor
-  - The Tyrant
-  - The Union
-  - The Valley of Steel Boxes
-  - The Void
-  - The Warlord
-  - The Wrath
-  - The Wretched
-  - Treasure Hunter
-  - Vinia's Token
-
-RareDivinations: # 10c+
-  - Abandoned Wealth
-  - Bowyer's Dream
-  - Heterochromia
-  - Last Hope
-  - Pride Before the Fall
-  - The Artist
-  - The Brittle Emperor
-  - The Celestial Justicar
-  - The Dragon's Heart
-  - The Fletcher
   - The Hunger
-  - The King's Heart
   - The Last One Standing
+  - The Porcupine
+  - The Professor
+  - The Risk
   - The Saint's Treasure
   - The Sephirot
-  - The Standoff
   - The Thaumaturgist
+  - The Undisputed
   - The Valkyrie
+  - The Valley of Steel Boxes
+  - The Void
+  - The World Eater
+
+RareDivinations: # 20c+
+  - Abandoned Wealth
+  - Heterochromia
+  - Mawr Blaidd
+  - Pride Before the Fall
+  - The Celestial Stone
+  - The Dragon's Heart
+  - The Iron Bard
+  - The King's Heart
+  - The Master
+  - The Mayor
+  - The Queen
+  - The Samurai's Eye
+  - The Undaunted
   - The Vast
   - The Wind
   - The Wolf
-  - The Wolven King's Bite
-  - Time-Lost Relic
   - Wealth and Power
 
 UniqueDivinations: # 1ex+
   - House of Mirrors
   - Hunter's Reward
-  - Mawr Blaidd
+  - Immortal Resolve
   - The Doctor
   - The Fiend
   - The Immortal
-  - The Queen
   - The Spark and the Flame
+  - The Wolven King's Bite
 
 SpecialGears:
   - Two-Toned Boots
@@ -576,4 +523,4 @@ IncursionMods:
   - of Citaqualotl
   - of Matatl
   - of Puhuarte
-  - of Guatelitzi"
+  - of Guatelitzi

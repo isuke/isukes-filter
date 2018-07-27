@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.3'
-FilterVersion      = '4.5'
+FilterVersion      = '4.6'
 
 # Font Size
 SmallFontSize      = 32
@@ -93,11 +93,13 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 TrivialAlertSound     =  '9 170'
 ErrorAlertSound       = '12 300'
+MuteAlertSound        =  '1   0'
 
 Variables = {
   C: {
     show_flask_drop_level: 3,
     show_quality_flask: true,
+    show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
     show_linked_num: 3,
@@ -109,6 +111,7 @@ Variables = {
   B: {
     show_flask_drop_level: 30,
     show_quality_flask: true,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_linked_num: 4,
@@ -120,6 +123,7 @@ Variables = {
   A: {
     show_flask_drop_level: 60,
     show_quality_flask: true,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_linked_num: false,
@@ -131,6 +135,7 @@ Variables = {
   S: {
     show_flask_drop_level: 100,
     show_quality_flask: false,
+    show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
     show_linked_num: false,
@@ -298,7 +303,7 @@ Variables = {
     # Gem ######################################################################
     f.group 'Gem' do |g|
       g.element 'Gem' do |e|
-        e.showable             = true
+        e.showable             = variable[:show_gem]
         e.klass                = 'Gems'
         e.set_text_color       = GemColor
         e.set_color_alpha      = ThinAlpha
@@ -307,6 +312,7 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Rare' do |e|
+          e.showable             = true
           e.base_type            = 'RareGems'
           e.set_border_color     = RareColor
           e.set_color_alpha      = DefaultAlpha
@@ -314,6 +320,7 @@ Variables = {
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Unique' do |e|
+          e.showable             = true
           e.base_type            = 'UniqueGems'
           e.set_border_color     = UniqueColor
           e.set_color_alpha      = DefaultAlpha
@@ -323,14 +330,25 @@ Variables = {
       end
       g.mixin do |m|
         m.element 'High Quality' do |e|
+          e.showable             = true
           e.quality              = '>= 10'
           e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
         end
         m.element 'Middle Quality' do |e|
+          e.showable             = true
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
+        end
+      end
+      g.mixin do |m|
+        m.element 'High Level' do |e|
+          e.showable             = true
+          e.gem_level            = '>= 18'
+          e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
         end
@@ -350,6 +368,7 @@ Variables = {
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
           e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = 'Rare'
@@ -360,10 +379,16 @@ Variables = {
         m.element 'High Tier' do |e|
           e.drop_level           = '>= 78'
           e.set_background_color = HighTierColor
+          e.play_alert_sound     = HighLevelAlertSound
         end
         m.element 'Middle Tier' do |e|
           e.drop_level           = '>= 73'
           e.set_background_color = MiddleTierColor
+          e.play_alert_sound     = LowLevelAlertSound
+        end
+        m.element 'Low Tier' do |e|
+          e.drop_level           = '< 73'
+          e.play_alert_sound     = TrivialAlertSound
         end
       end
     end
@@ -537,26 +562,30 @@ Variables = {
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
+        e.play_alert_sound     = MuteAlertSound
       end
 
       g.mixin do |m|
         m.element 'Normal' do |e|
-          e.showable             = false
+          e.showable             = variable[:show_nomarl_accessory]
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
+          e.play_alert_sound     = variable[:show_nomarl_accessory] ? TrivialAlertSound : MuteAlertSound
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
+          e.play_alert_sound     = variable[:show_magic_equipement] ? TrivialAlertSound : MuteAlertSound
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
+          e.play_alert_sound     = variable[:show_magic_equipement] ? LowLevelAlertSound : MuteAlertSound
         end
       end
 
