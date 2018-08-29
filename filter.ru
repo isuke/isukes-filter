@@ -194,6 +194,7 @@ Variables = {
         e.base_type            = 'RareCurrencies'
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
+        e.play_effect          = 'Yellow Temp'
       end
       g.element 'Magic Currency' do |e|
         e.showable             = true
@@ -397,6 +398,7 @@ Variables = {
           e.map_tier             = '>= 11'
           e.set_background_color = HighTierColor
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red Temp'
         end
         m.element 'Middle Tier' do |e|
           e.map_tier             = '>= 6'
@@ -468,6 +470,7 @@ Variables = {
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
           e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Magic' do |e|
           e.base_type            = 'MagicDivinations'
@@ -523,6 +526,7 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_background_color = HighTierColor
           e.play_alert_sound_positional = HighLevelAlertSound
+          e.play_effect          = 'Brown Temp'
         end
         m.element 'Good' do |e|
           e.rarity               = 'Unique'
@@ -676,6 +680,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
 
         m.element 'Elder' do |e|
@@ -685,6 +690,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
       end
     end
@@ -893,6 +899,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Elder' do |e|
           e.elder_item           = true
@@ -900,6 +907,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Incursion' do |e|
           e.has_explicit_mod     = 'IncursionMods'
@@ -907,6 +915,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red Temp'
         end
       end
     end
@@ -918,6 +927,7 @@ Variables = {
         e.base_type            = 'LabyrinthItems'
         e.set_font_size        = LargeFontSize
         e.set_background_color = LabyrinthItemColor
+        e.play_effect          = 'Green Temp'
       end
     end
 
@@ -945,6 +955,7 @@ Variables = {
         e.set_font_size        = LargeFontSize
         e.set_background_color = OriathItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Red Temp'
       end
     end
 
