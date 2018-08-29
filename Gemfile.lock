@@ -1,22 +1,22 @@
 GIT
   remote: https://github.com/isuke/poe_filter_generator.git
-  revision: 6258d2738eece52b50b735abb58df280b2393639
-  tag: v0.9.10
+  revision: 3e683b59caabd102575ced97d31138e1da86bc92
+  tag: v0.9.11
   specs:
-    poe_filter_generator (0.9.10)
+    poe_filter_generator (0.9.11)
       activesupport (> 3.0)
       thor (~> 0.19)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     concurrent-ruby (1.0.5)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     thor (0.20.0)
@@ -31,7 +31,7 @@ DEPENDENCIES
   poe_filter_generator!
 
 RUBY VERSION
-   ruby 2.4.2p198
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.0
+   1.16.3
