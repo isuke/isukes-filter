@@ -82,6 +82,7 @@ HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
 BestiaryItemColor  = Brown3
 IncursionItemColor = Red2
+DelveItemColor     = Blue1
 
 # Alpha
 DefaultAlpha = 255
@@ -1035,6 +1036,18 @@ Variables = {
         e.set_font_size        = DefaultFontSize
         e.set_background_color = IncursionItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
+      end
+    end
+
+    # Delve Item ###############################################################
+    f.group 'Delve Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItems'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue Temp'
       end
     end
 

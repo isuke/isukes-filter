@@ -524,3 +524,7 @@ IncursionMods:
   - of Matatl
   - of Puhuarte
   - of Guatelitzi
+
+DelveItems:
+  - Fossil
+  - Resonator
