@@ -93,7 +93,6 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 TrivialAlertSound     =  '9 170'
 ErrorAlertSound       = '12 300'
-MuteAlertSound        =  '1   0'
 
 # MinimapIconShape
 StackableItemMinimapIconShape  = 'Circle'
@@ -586,7 +585,7 @@ Variables = {
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
-        e.play_alert_sound     = MuteAlertSound
+        e.disable_drop_sound   = true
       end
 
       g.mixin do |m|
@@ -595,21 +594,30 @@ Variables = {
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          e.play_alert_sound     = variable[:show_nomarl_accessory] ? TrivialAlertSound : MuteAlertSound
+          if variable[:show_nomarl_accessory]
+            e.play_alert_sound     = TrivialAlertSound
+            e.disable_drop_sound   = false
+          end
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          e.play_alert_sound     = variable[:show_magic_equipement] ? TrivialAlertSound : MuteAlertSound
+          if variable[:show_magic_equipement]
+            e.play_alert_sound     = TrivialAlertSound
+            e.disable_drop_sound   = false
+          end
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
-          e.play_alert_sound     = variable[:show_magic_equipement] ? LowLevelAlertSound : MuteAlertSound
+          if variable[:show_rare_equipement]
+            e.play_alert_sound     = LowLevelAlertSound
+            e.disable_drop_sound   = false
+          end
         end
       end
 
