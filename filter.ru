@@ -936,9 +936,43 @@ Variables = {
     f.group 'Atlas Item' do |g|
       g.element do |e|
         e.showable             = true
-        e.base_type            = 'AtlasItems'
+        e.base_type            = "Shaper's Orb"
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Cartographer's Seal"
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Apprentice Cartographer's Sextant"
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Journeyman Cartographer's Sextant"
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Master Cartographer's Sextant"
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = AtlasItemColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Red Temp'
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Timeworn Reliquary Key"
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = AtlasItemColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Red Temp'
       end
     end
 
