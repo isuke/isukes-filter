@@ -1,6 +1,6 @@
 # Verson
-PoeVersion         = '3.3'
-FilterVersion      = '4.6'
+PoeVersion         = '3.4'
+FilterVersion      = '4.7'
 
 # Font Size
 SmallFontSize      = 32
@@ -82,6 +82,7 @@ HarbingerItemColor = MossGreen3
 AbyssItemColor     = Green2
 BestiaryItemColor  = Brown3
 IncursionItemColor = Red2
+DelveItemColor     = Blue1
 
 # Alpha
 DefaultAlpha = 255
@@ -93,7 +94,15 @@ MiddleLevelAlertSound =  '3 300'
 LowLevelAlertSound    =  '7 300'
 TrivialAlertSound     =  '9 170'
 ErrorAlertSound       = '12 300'
-MuteAlertSound        =  '1   0'
+
+# MinimapIconShape
+StackableItemMinimapIconShape  = 'Circle'
+AccessoryItemMinimapIconShape  = 'Diamond'
+MapItemMinimapIconShape        = 'Hexagon'
+EquipmentsItemMinimapIconShape = 'Square'
+LeagueItemMinimapIconShape     = 'Star'
+QuestItemMinimapIconShape      = 'Triangle'
+ErrorMinimapIconShape          = 'Triangle'
 
 Variables = {
   C: {
@@ -176,6 +185,8 @@ Variables = {
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
         e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Yellow'
+        e.minimap_icon         = "0 Yellow #{StackableItemMinimapIconShape}"
       end
       g.element 'Rare Currency' do |e|
         e.showable             = true
@@ -184,6 +195,7 @@ Variables = {
         e.base_type            = 'RareCurrencies'
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
+        e.play_effect          = 'Yellow Temp'
       end
       g.element 'Magic Currency' do |e|
         e.showable             = true
@@ -376,18 +388,26 @@ Variables = {
         end
       end
       g.mixin do |m|
-        m.element 'High Tier' do |e|
-          e.drop_level           = '>= 78'
+        m.element 'Very High Tier' do |e|
+          e.map_tier             = '>= 15'
           e.set_background_color = HighTierColor
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red'
+          e.minimap_icon         = "0 Red #{MapItemMinimapIconShape}"
+        end
+        m.element 'High Tier' do |e|
+          e.map_tier             = '>= 11'
+          e.set_background_color = HighTierColor
+          e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red Temp'
         end
         m.element 'Middle Tier' do |e|
-          e.drop_level           = '>= 73'
+          e.map_tier             = '>= 6'
           e.set_background_color = MiddleTierColor
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Low Tier' do |e|
-          e.drop_level           = '< 73'
+          e.map_tier             = '< 6'
           e.play_alert_sound     = TrivialAlertSound
         end
       end
@@ -443,12 +463,15 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "0 Blue #{StackableItemMinimapIconShape}"
         end
         m.element 'Rare' do |e|
           e.base_type            = 'RareDivinations'
           e.set_font_size        = LargeFontSize
           e.set_border_color     = RareColor
           e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Magic' do |e|
           e.base_type            = 'MagicDivinations'
@@ -471,6 +494,8 @@ Variables = {
         e.set_text_color       = DivinationCardColor
         e.set_border_color     = DivinationCardColor
         e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "0 Blue #{StackableItemMinimapIconShape}"
       end
     end
 
@@ -482,6 +507,8 @@ Variables = {
         e.set_border_color     = UniqueColor
         e.set_font_size        = ExtraLargeFontSize
         e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Brown'
+        e.minimap_icon         = "0 Brown #{EquipmentsItemMinimapIconShape}"
       end
     end
 
@@ -500,6 +527,7 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_background_color = HighTierColor
           e.play_alert_sound_positional = HighLevelAlertSound
+          e.play_effect          = 'Brown Temp'
         end
         m.element 'Good' do |e|
           e.rarity               = 'Unique'
@@ -562,7 +590,7 @@ Variables = {
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
-        e.play_alert_sound     = MuteAlertSound
+        e.disable_drop_sound   = true
       end
 
       g.mixin do |m|
@@ -571,21 +599,30 @@ Variables = {
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          e.play_alert_sound     = variable[:show_nomarl_accessory] ? TrivialAlertSound : MuteAlertSound
+          if variable[:show_nomarl_accessory]
+            e.play_alert_sound     = TrivialAlertSound
+            e.disable_drop_sound   = false
+          end
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipement]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          e.play_alert_sound     = variable[:show_magic_equipement] ? TrivialAlertSound : MuteAlertSound
+          if variable[:show_magic_equipement]
+            e.play_alert_sound     = TrivialAlertSound
+            e.disable_drop_sound   = false
+          end
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipement]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
-          e.play_alert_sound     = variable[:show_magic_equipement] ? LowLevelAlertSound : MuteAlertSound
+          if variable[:show_rare_equipement]
+            e.play_alert_sound     = LowLevelAlertSound
+            e.disable_drop_sound   = false
+          end
         end
       end
 
@@ -613,6 +650,8 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'White'
+          e.minimap_icon         = "0 White #{AccessoryItemMinimapIconShape}"
         end
 
         m.element 'Good Accessories' do |e|
@@ -642,6 +681,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
 
         m.element 'Elder' do |e|
@@ -651,6 +691,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
       end
     end
@@ -791,6 +832,8 @@ Variables = {
           e.set_border_color     = UniqueColor
           e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'White'
+          e.minimap_icon         = "0 White #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Linked Sockets L' do |e|
           e.showable             = true
@@ -857,6 +900,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Elder' do |e|
           e.elder_item           = true
@@ -864,6 +908,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue Temp'
         end
         m.element 'Incursion' do |e|
           e.has_explicit_mod     = 'IncursionMods'
@@ -871,6 +916,7 @@ Variables = {
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red Temp'
         end
       end
     end
@@ -882,6 +928,7 @@ Variables = {
         e.base_type            = 'LabyrinthItems'
         e.set_font_size        = LargeFontSize
         e.set_background_color = LabyrinthItemColor
+        e.play_effect          = 'Green Temp'
       end
     end
 
@@ -889,9 +936,43 @@ Variables = {
     f.group 'Atlas Item' do |g|
       g.element do |e|
         e.showable             = true
-        e.base_type            = 'AtlasItems'
+        e.base_type            = "Shaper's Orb"
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Cartographer's Seal"
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Apprentice Cartographer's Sextant"
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Journeyman Cartographer's Sextant"
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = AtlasItemColor
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Master Cartographer's Sextant"
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = AtlasItemColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Red Temp'
+      end
+      g.element do |e|
+        e.showable             = true
+        e.base_type            = "Timeworn Reliquary Key"
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = AtlasItemColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Red Temp'
       end
     end
 
@@ -909,6 +990,7 @@ Variables = {
         e.set_font_size        = LargeFontSize
         e.set_background_color = OriathItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Red Temp'
       end
     end
 
@@ -951,7 +1033,7 @@ Variables = {
         e.set_background_color = HarbingerItemColor
       end
       g.element do |e|
-        e.showable  = true
+        e.showable = true
         e.klass = 'Piece'
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = HarbingerItemColor
@@ -977,6 +1059,8 @@ Variables = {
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = IncursionItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "0 Red #{LeagueItemMinimapIconShape}"
       end
     end
     f.group 'Incursion Item2' do |g|
@@ -986,6 +1070,18 @@ Variables = {
         e.set_font_size        = DefaultFontSize
         e.set_background_color = IncursionItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
+      end
+    end
+
+    # Delve Item ###############################################################
+    f.group 'Delve Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItems'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue Temp'
       end
     end
 
@@ -1008,6 +1104,8 @@ Variables = {
         e.set_border_color     = QuestItemColor
         e.set_text_color       = QuestItemColor
         e.set_font_size        = LargeFontSize
+        e.play_effect          = 'Green'
+        e.minimap_icon         = "0 Green #{QuestItemMinimapIconShape}"
       end
     end
 
@@ -1017,6 +1115,8 @@ Variables = {
         e.showable = true
         e.set_font_size        = DefaultFontSize
         e.play_alert_sound     = ErrorAlertSound
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "0 Red #{ErrorMinimapIconShape}"
       end
     end
   end

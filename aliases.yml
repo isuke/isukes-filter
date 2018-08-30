@@ -444,6 +444,7 @@ AtlasItems:
   - Shaper's Orb
   - Cartographer's Sextant
   - Cartographer's Seal
+  - Timeworn Reliquary Key
 
 OriathItems:
   - Divine Vessel
@@ -524,3 +525,7 @@ IncursionMods:
   - of Matatl
   - of Puhuarte
   - of Guatelitzi
+
+DelveItems:
+  - Fossil
+  - Resonator
