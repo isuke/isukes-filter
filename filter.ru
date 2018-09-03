@@ -11,6 +11,9 @@ ExtraLargeFontSize = 45
 # Color
 Black       = '  0   0   0'
 White       = '255 255 255'
+Pink1       = '190 120 120'
+Pink2       = '205 160 160'
+Pink3       = '220 180 180'
 Brown1      = '124  81  50'
 Brown2      = '191  91   0'
 Brown3      = '254 191 128'
@@ -47,9 +50,9 @@ CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
 
-LifeFlaskColor     = Red2
-ManaFlaskColor     = Red2
-HybridFlaskColor   = Red2
+LifeFlaskColor     = Pink2
+ManaFlaskColor     = Pink2
+HybridFlaskColor   = Pink3
 UtilityFlaskColor  = Green2
 MapColor           = White
 JewelColor         = MossGreen2
@@ -288,6 +291,14 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = LowLevelAlertSound
+        end
+      end
+
+      g.mixin do |m|
+        m.element 'Divine, Eternal' do |e|
+          e.showable             = false
+          e.drop_level           = ">= 60"
+          e.set_border_color     = FarmEquipmentBorderColor
         end
       end
 
