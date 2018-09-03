@@ -3,13 +3,13 @@
 :lang: en
 :sectanchors:
 :sectnums:
-:sectnumlevels: 4
+:sectnumlevels: 3
 :toc: left
-:toclevels: 4
+:toclevels: 3
 
 :author: isuke
 :email: isuke770@gmail.com
-:revnumber: v3.3_4.4
+:revnumber: v3.4_4.8
 
 = Isuke's Filter
 
@@ -19,7 +19,7 @@ Isuke's Filter is simple and useful poe filter.
 
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
 
-link:http://filterblast.oversoul.xyz/advanced/Template/eq5k7k[Try It]
+link:http://filterblast.oversoul.xyz/advanced/Template/253i3v2[Try It by Filter Blast]
 
 link:https://github.com/isuke/isukes-filter/releases[DOWNLOAD]
 
@@ -41,7 +41,6 @@ You can use it properly by your level.
 | Your Level
 | Filer file
 
-
 | From start to the Lioneye's Watch
 | not use filter or use `<default>`.
 
@@ -51,28 +50,28 @@ You can use it properly by your level.
 | From about Level 30 to about Level 65
 | use `B.filter`.
 
-| From about Level 65 to about Level 90
+| From about Level 65 to about Level 85
 | use `A.filter`.
 
-| Level 90 or later
+| Level 85 or later
 | use `S.filter`.
 |===
 
-== Explain
-
-=== Mechanism
+== Mechanism
 
 **The following settings are merged.**
 
-==== For example, `Rare Bow of High Drop Level and 6L`
-* font color yellow
-* background color red
-* border color orange
+=== For example, `Rare Bow of High Drop Level and 6L`
+* font color: yellow
+* background color: red
+* border color: orange
 
-==== For example, `rara and high tier map`
-* font color white
-* background color red
-* border color yellow
+=== For example, `Rare and high tier map`
+* font color: white
+* background color: red
+* border color: yellow
+
+== Explain
 
 === Font Color
 
@@ -86,7 +85,7 @@ You can use it properly by your level.
 | Gray (Default Color)
 | Currency
 
-| Red
+| Pink
 | Life, Magic and Hybrid Flask
 
 | Green
@@ -121,7 +120,7 @@ You can use it properly by your level.
 
 ==== Border Color Represents Item Rarity
 
-Border Color reporesnts *item rarity*.
+Border Color represents *item rarity*.
 The meaning of *item reality* depends on the item.
 
 ===== Currencies
@@ -298,8 +297,11 @@ Value when selling.
 | Light Brown
 | Bestiary Items
 
-| Light Red
+| Red
 | Incursion Items
+
+| Dark Blue
+| Delve Items
 |===
 
 * GoodAccessory
@@ -415,14 +417,6 @@ Value when selling.
 ** Ancient Shard
 
 === Others
-
-==== Chance Items
-
-Normal Change Items displayed small and light blue purple for chance.
-
-* Chance Items
-** Sorcerer Boots
-** Gold Amulet
 
 ==== Chisel Recipe
 
