@@ -78,6 +78,7 @@ OriathItemColor    = BluePurple3
 ShaperItemColor    = BluePurple2
 ElderItemColor     = BluePurple1
 
+TalismanItemColor  = Green3
 ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
@@ -534,6 +535,53 @@ Variables = {
         e.play_alert_sound     = HighLevelAlertSound
         e.play_effect          = 'Brown'
         e.minimap_icon         = "0 Brown #{EquipmentsItemMinimapIconShape}"
+      end
+    end
+
+    # Talisman Item ############################################################
+    f.group 'Talisman Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems1'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems2'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems3'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems4'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = TalismanItemColor
+      end
+
+      g.mixin do |m|
+        m.element 'Unique' do |e|
+          e.rarity               = 'Unique'
+          e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = MiddleLevelAlertSound
+        end
+        m.element 'Rare' do |e|
+          e.rarity               = 'Rare'
+          e.set_border_color     = RareColor
+          e.set_font_size        = LargeFontSize
+        end
+        m.element 'Magic' do |e|
+          e.rarity               = 'Magic'
+          e.set_border_color     = MagicColor
+          e.set_font_size        = DefaultFontSize
+        end
       end
     end
 
