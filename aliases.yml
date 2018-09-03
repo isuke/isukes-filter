@@ -1,13 +1,15 @@
+NormalCurrencyShards:
+  - Scroll Fragment
 NormalCurrencies:
   - Armourer's Scrap
   - Blacksmith's Whetstone
-  - Scroll Fragment
   - Scroll of Wisdom
   - Portal Scroll
 
-MagicCurrencies:
+MagicCurrencyShards:
   - Alteration Shard
   - Transmutation Shard
+MagicCurrencies:
   - Orb of Transmutation
   - Orb of Augmentation
   - Orb of Alteration
@@ -15,10 +17,11 @@ MagicCurrencies:
   - Chromatic Orb
   - Jeweller's Orb
 
-RareCurrencies:
+RareCurrencyShards:
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
+RareCurrencies:
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -32,10 +35,11 @@ RareCurrencies:
   - Perandus Coin
   - Regal Orb
 
-UniqueCurrencies:
+UniqueCurrencyShards:
   - Mirror Shard
   - Annulment Shard
   - Exalted Shard
+UniqueCurrencies:
   - Divine Orb
   - Orb of Annulment
   - Exalted Orb

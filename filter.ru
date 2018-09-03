@@ -180,16 +180,55 @@ Variables = {
           e.klass                = 'Currency'
           e.base_type            = 'NormalCurrencies'
         end
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Currency'
+          e.base_type            = 'NormalCurrencyShards'
+        end
       end
     end
 
     # Currency #################################################################
     f.group 'Currency' do |g|
+      g.element 'Unique Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'UniqueCurrencies'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_border_color     = UniqueColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Yellow'
+        e.minimap_icon         = "0 Yellow #{StackableItemMinimapIconShape}"
+      end
+      g.element 'Rare Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'RareCurrencyShards'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = DefaultFontSize
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Yellow Temp'
+      end
+      g.element 'Magic Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'MagicCurrencyShards'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = SmallFontSize
+        e.set_border_color     = MagicColor
+      end
+      g.element 'Normal Currency Shard' do |e|
+        e.showable             = false
+        e.klass                = 'Currency'
+        e.base_type            = 'NormalCurrencyShards'
+      end
+
       g.element 'Unique Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'UniqueCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
         e.play_alert_sound     = HighLevelAlertSound
@@ -199,8 +238,8 @@ Variables = {
       g.element 'Rare Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'RareCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
         e.play_effect          = 'Yellow Temp'
@@ -208,16 +247,16 @@ Variables = {
       g.element 'Magic Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'MagicCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
         e.set_border_color     = MagicColor
       end
       g.element 'Normal Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'NormalCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
       end
     end
