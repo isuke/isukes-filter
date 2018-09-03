@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '4.7'
+FilterVersion      = '4.8'
 
 # Font Size
 SmallFontSize      = 32
@@ -1081,7 +1081,8 @@ Variables = {
         e.set_font_size        = LargeFontSize
         e.set_background_color = DelveItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
-        e.play_effect          = 'Blue Temp'
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "0 Blue #{LeagueItemMinimapIconShape}"
       end
     end
 
