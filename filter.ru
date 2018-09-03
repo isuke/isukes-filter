@@ -111,6 +111,7 @@ Variables = {
   C: {
     show_flask_drop_level: 3,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
@@ -123,6 +124,7 @@ Variables = {
   B: {
     show_flask_drop_level: 30,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -135,6 +137,7 @@ Variables = {
   A: {
     show_flask_drop_level: 60,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -147,6 +150,7 @@ Variables = {
   S: {
     show_flask_drop_level: 100,
     show_quality_flask: false,
+    show_utility_flask: false,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -248,6 +252,16 @@ Variables = {
         m.element 'Middle Quality' do |e|
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
+        end
+      end
+
+      unless variable[:show_utility_flask]
+        g.mixin do |m|
+          m.element 'Hide Quality Zero' do |e|
+            e.showable             = false
+            e.quality              = '= 0'
+            e.rarity               = '< Unique'
+          end
         end
       end
     end
