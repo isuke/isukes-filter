@@ -484,6 +484,14 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'New' do |e|
+          e.base_type            = 'NewDivinations'
+          e.set_font_size        = LargeFontSize
+          e.set_border_color     = FarmEquipmentBorderColor
+          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "0 Blue #{StackableItemMinimapIconShape}"
+        end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueDivinations'
           e.set_font_size        = ExtraLargeFontSize
