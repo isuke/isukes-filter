@@ -504,9 +504,44 @@ ProphecyItems:
   - Silver Coin
   - Prophecy
 
-EssenceItems:
-  - Essence
-  - Remnant of Corruption
+EssenceItemLevels:
+  - Whispering
+  - Muttering
+  - Weeping
+  - Wailing
+  - Screaming
+  - Shrieking
+  - Deafening
+EssenceItemTiers1:
+  - Essence of Greed
+  - Essence of Contempt
+  - Essence of Hatred
+  - Essence of Woe
+EssenceItemTiers2:
+  - Essence of Fear
+  - Essence of Anger
+  - Essence of Torment
+  - Essence of Sorrow
+EssenceItemTiers3:
+  - Essence of Rage
+  - Essence of Suffering
+  - Essence of Wrath
+  - Essence of Doubt
+EssenceItemTiers4:
+  - Essence of Loathing
+  - Essence of Zeal
+  - Essence of Anguish
+  - Essence of Spite
+EssenceItemTiers5:
+  - Essence of Scorn
+  - Essence of Envy
+  - Essence of Misery
+  - Essence of Dread
+EssenceItemTiers6:
+  - Essence of Delirium
+  - Essence of Horror
+  - Essence of Hysteria
+  - Essence of Insanity
 
 BreachItems:
   - Splinter of Xoph

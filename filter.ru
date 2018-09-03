@@ -1128,9 +1128,56 @@ Variables = {
     f.group 'Essence Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = 'EssenceItems'
+        e.base_type = 'EssenceItemTiers1'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = EssenceItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers2'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = EssenceItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers3'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = MagicColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers4'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = MagicColor
+        e.play_effect          = 'Blue Temp'
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers5'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Blue Temp'
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers6'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = UniqueColor
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "0 Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'Remnant of Corruption'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "0 Red #{LeagueItemMinimapIconShape}"
       end
     end
 
