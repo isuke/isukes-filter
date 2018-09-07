@@ -1,13 +1,15 @@
+NormalCurrencyShards:
+  - Scroll Fragment
 NormalCurrencies:
   - Armourer's Scrap
   - Blacksmith's Whetstone
-  - Scroll Fragment
   - Scroll of Wisdom
   - Portal Scroll
 
-MagicCurrencies:
+MagicCurrencyShards:
   - Alteration Shard
   - Transmutation Shard
+MagicCurrencies:
   - Orb of Transmutation
   - Orb of Augmentation
   - Orb of Alteration
@@ -15,10 +17,11 @@ MagicCurrencies:
   - Chromatic Orb
   - Jeweller's Orb
 
-RareCurrencies:
+RareCurrencyShards:
   - Alchemy Shard
   - Chaos Shard
   - Regal Shard
+RareCurrencies:
   - Glassblower's Bauble
   - Cartographer's Chisel
   - Gemcutter's Prism
@@ -32,10 +35,11 @@ RareCurrencies:
   - Perandus Coin
   - Regal Orb
 
-UniqueCurrencies:
+UniqueCurrencyShards:
   - Mirror Shard
   - Annulment Shard
   - Exalted Shard
+UniqueCurrencies:
   - Divine Orb
   - Orb of Annulment
   - Exalted Orb
@@ -60,6 +64,16 @@ DropOnlyGems:
 VendorOnlyGems:
   - Block Chance Reduction
   - Mirror Arrow
+
+NewDivinations:
+  - The Innocent
+  - The Wilted Rose
+  - The Endless Darkness
+  - Beauty Through Death
+  - The Price of Protection
+  - Boon of the First Ones
+  - The Twilight Moon
+  - The Cacophony
 
 MagicDivinations: # 5c+
   - Chaotic Disposition
@@ -449,13 +463,85 @@ AtlasItems:
 OriathItems:
   - Divine Vessel
 
+
+TalismanItems1:
+- Ashscale Talisman
+- Black Maw Talisman
+- Bonespire Talisman
+- Breakrib Talisman
+- Chrysalis Talisman
+- Deadhand Talisman
+- Deep One Talisman
+- Lone Antler Talisman
+- Mandible Talisman
+- Rot Head Talisman
+- Undying Flesh Talisman
+- Writhing Talisman
+
+TalismanItems2:
+- Avian Twins Talisman
+- Clutching Talisman
+- Fangjaw Talisman
+- Hexclaw Talisman
+- Horned Talisman
+- Primal Skull Talisman
+- Splitnewt Talisman
+- Wereclaw Talisman
+
+TalismanItems3:
+- Longtooth Talisman
+- Monkey Paw Talisman
+- Monkey Twins Talisman
+- Rotfeather Talisman
+- Spinefuse Talisman
+- Three Hands Talisman
+- Three Rat Talisman
+
+TalismanItems4:
+- Greatwolf Talisman
+
 ProphecyItems:
   - Silver Coin
   - Prophecy
 
-EssenceItems:
-  - Essence
-  - Remnant of Corruption
+EssenceItemLevels:
+  - Whispering
+  - Muttering
+  - Weeping
+  - Wailing
+  - Screaming
+  - Shrieking
+  - Deafening
+EssenceItemTiers1:
+  - Essence of Greed
+  - Essence of Contempt
+  - Essence of Hatred
+  - Essence of Woe
+EssenceItemTiers2:
+  - Essence of Fear
+  - Essence of Anger
+  - Essence of Torment
+  - Essence of Sorrow
+EssenceItemTiers3:
+  - Essence of Rage
+  - Essence of Suffering
+  - Essence of Wrath
+  - Essence of Doubt
+EssenceItemTiers4:
+  - Essence of Loathing
+  - Essence of Zeal
+  - Essence of Anguish
+  - Essence of Spite
+EssenceItemTiers5:
+  - Essence of Scorn
+  - Essence of Envy
+  - Essence of Misery
+  - Essence of Dread
+EssenceItemTiers6:
+  - Essence of Delirium
+  - Essence of Horror
+  - Essence of Hysteria
+  - Essence of Insanity
 
 BreachItems:
   - Splinter of Xoph

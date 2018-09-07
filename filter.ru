@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '4.7'
+FilterVersion      = '4.8'
 
 # Font Size
 SmallFontSize      = 32
@@ -11,6 +11,9 @@ ExtraLargeFontSize = 45
 # Color
 Black       = '  0   0   0'
 White       = '255 255 255'
+Pink1       = '190 120 120'
+Pink2       = '205 160 160'
+Pink3       = '220 180 180'
 Brown1      = '124  81  50'
 Brown2      = '191  91   0'
 Brown3      = '254 191 128'
@@ -47,9 +50,9 @@ CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
 
-LifeFlaskColor     = Red2
-ManaFlaskColor     = Red2
-HybridFlaskColor   = Red2
+LifeFlaskColor     = Pink2
+ManaFlaskColor     = Pink2
+HybridFlaskColor   = Pink3
 UtilityFlaskColor  = Green2
 MapColor           = White
 JewelColor         = MossGreen2
@@ -75,6 +78,7 @@ OriathItemColor    = BluePurple3
 ShaperItemColor    = BluePurple2
 ElderItemColor     = BluePurple1
 
+TalismanItemColor  = Green3
 ProphecyItemColor  = Purple2
 EssenceItemColor   = BluePurple2
 BreachItemsColor   = Brown1
@@ -108,6 +112,7 @@ Variables = {
   C: {
     show_flask_drop_level: 3,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
@@ -120,6 +125,7 @@ Variables = {
   B: {
     show_flask_drop_level: 30,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -132,6 +138,7 @@ Variables = {
   A: {
     show_flask_drop_level: 60,
     show_quality_flask: true,
+    show_utility_flask: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -144,6 +151,7 @@ Variables = {
   S: {
     show_flask_drop_level: 100,
     show_quality_flask: false,
+    show_utility_flask: false,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -172,16 +180,55 @@ Variables = {
           e.klass                = 'Currency'
           e.base_type            = 'NormalCurrencies'
         end
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Currency'
+          e.base_type            = 'NormalCurrencyShards'
+        end
       end
     end
 
     # Currency #################################################################
     f.group 'Currency' do |g|
+      g.element 'Unique Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'UniqueCurrencies'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_border_color     = UniqueColor
+        e.play_alert_sound     = HighLevelAlertSound
+        e.play_effect          = 'Yellow'
+        e.minimap_icon         = "0 Yellow #{StackableItemMinimapIconShape}"
+      end
+      g.element 'Rare Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'RareCurrencyShards'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = DefaultFontSize
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Yellow Temp'
+      end
+      g.element 'Magic Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'MagicCurrencyShards'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = SmallFontSize
+        e.set_border_color     = MagicColor
+      end
+      g.element 'Normal Currency Shard' do |e|
+        e.showable             = false
+        e.klass                = 'Currency'
+        e.base_type            = 'NormalCurrencyShards'
+      end
+
       g.element 'Unique Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'UniqueCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
         e.play_alert_sound     = HighLevelAlertSound
@@ -191,8 +238,8 @@ Variables = {
       g.element 'Rare Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'RareCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = LargeFontSize
         e.set_border_color     = RareColor
         e.play_effect          = 'Yellow Temp'
@@ -200,16 +247,16 @@ Variables = {
       g.element 'Magic Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'MagicCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
         e.set_border_color     = MagicColor
       end
       g.element 'Normal Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.set_text_color       = CurrencyColor
         e.base_type            = 'NormalCurrencies'
+        e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
       end
     end
@@ -245,6 +292,16 @@ Variables = {
         m.element 'Middle Quality' do |e|
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
+        end
+      end
+
+      unless variable[:show_utility_flask]
+        g.mixin do |m|
+          m.element 'Hide Quality Zero' do |e|
+            e.showable             = false
+            e.quality              = '= 0'
+            e.rarity               = '< Unique'
+          end
         end
       end
     end
@@ -288,6 +345,14 @@ Variables = {
           e.set_font_size        = ExtraLargeFontSize
           e.set_border_color     = UniqueColor
           e.play_alert_sound     = LowLevelAlertSound
+        end
+      end
+
+      g.mixin do |m|
+        m.element 'Divine, Eternal' do |e|
+          e.showable             = false
+          e.drop_level           = ">= 60"
+          e.set_border_color     = FarmEquipmentBorderColor
         end
       end
 
@@ -458,6 +523,14 @@ Variables = {
       end
 
       g.mixin do |m|
+        m.element 'New' do |e|
+          e.base_type            = 'NewDivinations'
+          e.set_font_size        = LargeFontSize
+          e.set_border_color     = FarmEquipmentBorderColor
+          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "0 Blue #{StackableItemMinimapIconShape}"
+        end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueDivinations'
           e.set_font_size        = ExtraLargeFontSize
@@ -512,6 +585,53 @@ Variables = {
       end
     end
 
+    # Talisman Item ############################################################
+    f.group 'Talisman Item' do |g|
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems1'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems2'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems3'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = TalismanItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'TalismanItems4'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = TalismanItemColor
+      end
+
+      g.mixin do |m|
+        m.element 'Unique' do |e|
+          e.rarity               = 'Unique'
+          e.set_border_color     = UniqueColor
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = MiddleLevelAlertSound
+        end
+        m.element 'Rare' do |e|
+          e.rarity               = 'Rare'
+          e.set_border_color     = RareColor
+          e.set_font_size        = LargeFontSize
+        end
+        m.element 'Magic' do |e|
+          e.rarity               = 'Magic'
+          e.set_border_color     = MagicColor
+          e.set_font_size        = DefaultFontSize
+        end
+      end
+    end
+
     # Unique Equipment #########################################################
     f.group 'Unique Equipment' do |g|
       g.element 'Unique Equipment' do |e|
@@ -545,19 +665,19 @@ Variables = {
     end
 
     # Chance Item ##############################################################
-    f.group 'Chance Item' do |g|
-      g.element do |e|
-        e.showable = true
-        e.rarity    = 'Normal'
-        e.base_type = 'ChanceItems'
-        e.corrupted = 'False'
-        e.set_font_size        = SmallFontSize
-        e.set_text_color       = ChanceItemColor
-        e.set_border_color     = ChanceItemColor
-        e.set_background_color = Black
-        e.set_color_alpha      = ThinAlpha
-      end
-    end
+    # f.group 'Chance Item' do |g|
+    #   g.element do |e|
+    #     e.showable = true
+    #     e.rarity    = 'Normal'
+    #     e.base_type = 'ChanceItems'
+    #     e.corrupted = 'False'
+    #     e.set_font_size        = SmallFontSize
+    #     e.set_text_color       = ChanceItemColor
+    #     e.set_border_color     = ChanceItemColor
+    #     e.set_background_color = Black
+    #     e.set_color_alpha      = ThinAlpha
+    #   end
+    # end
 
     # Chisel Recipe ############################################################
     f.group 'Chisel Recipe' do |g|
@@ -1008,9 +1128,56 @@ Variables = {
     f.group 'Essence Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = 'EssenceItems'
+        e.base_type = 'EssenceItemTiers1'
         e.set_font_size        = DefaultFontSize
         e.set_background_color = EssenceItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers2'
+        e.set_font_size        = DefaultFontSize
+        e.set_background_color = EssenceItemColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers3'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = MagicColor
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers4'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = MagicColor
+        e.play_effect          = 'Blue Temp'
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers5'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Blue Temp'
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'EssenceItemTiers6'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = UniqueColor
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "0 Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'Remnant of Corruption'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = EssenceItemColor
+        e.set_border_color     = RareColor
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "0 Red #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1081,7 +1248,8 @@ Variables = {
         e.set_font_size        = LargeFontSize
         e.set_background_color = DelveItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
-        e.play_effect          = 'Blue Temp'
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "0 Blue #{LeagueItemMinimapIconShape}"
       end
     end
 
