@@ -186,6 +186,7 @@ Variables = {
           e.showable             = false
           e.klass                = 'Currency'
           e.base_type            = 'NormalCurrencies'
+          e.stack_size           = '< 15'
         end
         g.element do |e|
           e.showable             = false
