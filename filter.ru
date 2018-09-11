@@ -1293,12 +1293,72 @@ Variables = {
     f.group 'Delve Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.base_type = 'DelveItems'
+        e.base_type = 'DelveItemsFosilsUnique'
         e.set_font_size        = LargeFontSize
+        e.set_border_color     = UniqueColor
         e.set_background_color = DelveItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
         e.play_effect          = 'Blue'
         e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsFosilsRara'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = RareColor
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsFosilsMagic'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = MagicColor
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsFosilsNormal'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = LowLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsResonatorsUnique'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = UniqueColor
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsResonatorsRare'
+        e.set_font_size        = LargeFontSize
+        e.set_border_color     = RareColor
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsResonatorsNormal'
+        e.set_font_size        = LargeFontSize
+        e.set_background_color = DelveItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Blue'
+        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
     end
 
