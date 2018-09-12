@@ -643,13 +643,13 @@ DelveItemsFosilsNormal:
   - Serrated Fossil
 
 DelveItemsResonatorsUnique:
-  - Primitive Alchemical Resonator
-  - Primitive Chaotic Resonator
+  - Prime Alchemical Resonator
+  - Prime Chaotic Resonator
 DelveItemsResonatorsRare:
   - Powerful Chaotic Resonator
 DelveItemsResonatorsNormal:
+  - Powerful Alchemical Resonator
   - Potent Alchemical Resonator
   - Potent Chaotic Resonator
-  - Powerful Alchemical Resonator
-  - Prime Alchemical Resonator
-  - Prime Chaotic Resonator
+  - Primitive Alchemical Resonator
+  - Primitive Chaotic Resonator
