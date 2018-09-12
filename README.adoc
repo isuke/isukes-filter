@@ -9,7 +9,7 @@
 
 :author: isuke
 :email: isuke770@gmail.com
-:revnumber: v3.4_4.8
+:revnumber: v3.4_4.9
 
 = Isuke's Filter
 
