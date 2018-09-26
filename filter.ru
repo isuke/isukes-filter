@@ -279,7 +279,7 @@ Variables = {
     f.group 'Utility Flask' do |g|
       g.element 'Utility' do |e|
         e.showable             = true
-        e.klass                = '"Utility Flasks"'
+        e.klass                = %q("Utility Flasks")
         e.set_font_size        = DefaultFontSize
         e.set_text_color       = UtilityFlaskColor
       end
@@ -324,24 +324,24 @@ Variables = {
     f.group 'Flask' do |g|
       g.element 'Flask' do |e|
         e.showable             = false
-        e.klass                = '"Life Flasks" "Mana Flasks" "Hybrid Flasks"'
+        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
         e.set_font_size        = DefaultFontSize
       end
 
       g.mixin do |m|
         m.element 'Life' do |e|
           e.showable             = false
-          e.klass                = '"Life Flasks"'
+          e.klass                = %q("Life Flasks")
           e.set_text_color       = LifeFlaskColor
         end
         m.element 'Mana' do |e|
           e.showable             = false
-          e.klass                = '"Mana Flasks"'
+          e.klass                = %q("Mana Flasks")
           e.set_text_color       = ManaFlaskColor
         end
         m.element 'Hybrid' do |e|
           e.showable             = false
-          e.klass                = '"Hybrid Flasks"'
+          e.klass                = %q("Hybrid Flasks")
           e.set_text_color       = HybridFlaskColor
         end
       end
@@ -509,7 +509,7 @@ Variables = {
 
       g.mixin do |m|
         m.element 'Abyss' do |m|
-          m.klass                = '"Abyss Jewel"'
+          m.klass                = %q("Abyss Jewel")
           m.set_background_color = AbyssItemColor
         end
       end
@@ -598,7 +598,7 @@ Variables = {
     f.group 'Fishing Rod' do |g|
       g.element do |e|
         e.showable             = true
-        e.klass                = '"Fishing Rods"'
+        e.klass                = %q("Fishing Rods")
         e.set_border_color     = UniqueColor
         e.set_font_size        = ExtraLargeFontSize
         e.play_alert_sound     = HighLevelAlertSound
@@ -710,7 +710,7 @@ Variables = {
       g.element do |e|
         e.showable = true
         e.rarity    = 'Normal'
-        e.base_type = '"Stone Hammer" "Rock Breaker" "Gavel"'
+        e.base_type = %q("Stone Hammer" "Rock Breaker" "Gavel")
         e.corrupted            = 'False'
         e.set_font_size        = SmallFontSize
         e.set_text_color       = ChiselRecipeColor
@@ -776,7 +776,7 @@ Variables = {
         m.element 'Breach' do |e|
           e.showable             = true
           e.klass                = 'Rings'
-          e.base_type            = '"Breach Ring"'
+          e.base_type            = %q("Breach Ring")
           e.set_background_color = BreachItemsColor
           e.set_color_alpha      = DefaultAlpha
         end
@@ -784,7 +784,7 @@ Variables = {
         m.element 'Abyss' do |e|
           e.showable             = true
           e.klass                = 'Belts'
-          e.base_type            = '"Stygian Vise"'
+          e.base_type            = %q("Stygian Vise")
           e.set_background_color = AbyssItemColor
           e.set_color_alpha      = DefaultAlpha
         end
@@ -880,7 +880,7 @@ Variables = {
           m.element 'Regal Recipe1' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
-            e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+            e.klass                = %q("Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands")
             e.item_level           = '>= 75'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
@@ -893,7 +893,7 @@ Variables = {
           m.element 'Regal Recipe2' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
-            e.klass                = '"Shields"'
+            e.klass                = %q("Shields")
             e.height               = '<= 2'
             e.width                = '<= 2'
             e.item_level           = '>= 75'
@@ -908,7 +908,7 @@ Variables = {
           m.element 'Chaos Recipe1' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
-            e.klass                = '"Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands"'
+            e.klass                = %q("Gloves" "Boots" "Body Armours" "Helmets" "Claws" "Daggers" "Wands")
             e.item_level           = '>= 60'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
@@ -921,7 +921,7 @@ Variables = {
           m.element 'Chaos Recipe2' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
-            e.klass                = '"Shields"'
+            e.klass                = %q("Shields")
             e.height               = '<= 2'
             e.width                = '<= 2'
             e.item_level           = '>= 60'
@@ -1092,43 +1092,46 @@ Variables = {
     f.group 'Atlas Item' do |g|
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Shaper's Orb"
+        e.base_type            = %q("Shaper's Orb")
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
       end
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Cartographer's Seal"
+        e.base_type            = %q("Cartographer's Seal")
         e.set_font_size        = DefaultFontSize
         e.set_background_color = AtlasItemColor
       end
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Apprentice Cartographer's Sextant"
+        e.base_type            = %q("Apprentice Cartographer's Sextant")
         e.set_font_size        = DefaultFontSize
+        e.set_border_color     = MagicColor
         e.set_background_color = AtlasItemColor
         e.minimap_icon         = "#{SamllMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Journeyman Cartographer's Sextant"
+        e.base_type            = %q("Journeyman Cartographer's Sextant")
         e.set_font_size        = LargeFontSize
+        e.set_border_color     = RareColor
         e.set_background_color = AtlasItemColor
         e.play_effect          = 'Red Temp'
         e.minimap_icon         = "#{MediumMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Master Cartographer's Sextant"
+        e.base_type            = %q("Master Cartographer's Sextant")
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = AtlasItemColor
+        e.set_border_color     = UniqueColor
         e.play_alert_sound     = HighLevelAlertSound
         e.play_effect          = 'Red'
         e.minimap_icon         = "#{LargestMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
-        e.base_type            = "Timeworn Reliquary Key"
+        e.base_type            = %q("Timeworn Reliquary Key")
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = AtlasItemColor
         e.play_alert_sound     = HighLevelAlertSound
@@ -1141,7 +1144,7 @@ Variables = {
     f.group 'Oriath Item' do |g|
       g.element do |e|
         e.showable             = true
-        e.klass                = 'Pantheon Soul'
+        e.klass                = %q("Pantheon Soul")
         e.set_font_size        = DefaultFontSize
         e.set_background_color = OriathItemColor
       end
@@ -1219,7 +1222,7 @@ Variables = {
       end
       g.element do |e|
         e.showable  = true
-        e.base_type = '"Remnant of Corruption"'
+        e.base_type = %q("Remnant of Corruption")
         e.set_font_size        = ExtraLargeFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = RareColor
@@ -1371,7 +1374,7 @@ Variables = {
     f.group 'Map Fragment' do |g|
       g.element 'Map Fragment' do |e|
         e.showable             = true
-        e.klass                = 'Map Fragment'
+        e.klass                = %q("Map Fragment")
         e.set_text_color       = MapFragmentColor
         e.set_border_color     = MapFragmentColor
         e.set_font_size        = LargeFontSize
@@ -1383,7 +1386,7 @@ Variables = {
     f.group 'Quest Item' do |g|
       g.element do |e|
         e.showable  = true
-        e.klass = 'Quest Items'
+        e.klass = %q("Quest Items")
         e.set_border_color     = QuestItemColor
         e.set_text_color       = QuestItemColor
         e.set_font_size        = LargeFontSize
