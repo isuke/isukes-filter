@@ -3,9 +3,9 @@
 :lang: en
 :sectanchors:
 :sectnums:
-:sectnumlevels: 3
+:sectnumlevels: 2
 :toc: left
-:toclevels: 3
+:toclevels: 2
 
 :author: isuke
 :email: isuke770@gmail.com
@@ -232,7 +232,7 @@ Value when selling.
 
 ==== Other Background Color Represents Kind of Items
 
-[cols="1,1,1", options="header"]
+[cols="1,1", options="header"]
 |===
 | Background Color
 | Represents
@@ -363,58 +363,6 @@ Value when selling.
 ** Vanguard Belt
 ** Opal Ring
 ** Steel Ring
-* Labyrinth Items
-** Offering to the Goddess
-** Bane of the Loyal
-** Orb of Elemental Dispersion
-** Sand of Eternity
-** Portal Shredder
-** Heart of the Gargoyle
-** Cogs of Disruption
-** Absorption
-** Rod of Detonation
-** Golden Key
-** Silver Key
-** Treasure Key
-* Atlas Items
-** Shaper's Orb
-** Cartographer's Sextant
-** Cartographer's Seal
-* Oriath Items
-** Divine Vessel
-** Pantheon Soul
-* Prophecy Items
-** Silver Coin
-** Prophecy
-* Breach Items
-** Splinter of Xoph
-** Splinter of Tul
-** Splinter of Esh
-** Splinter of Uul-Netol
-** Splinter of Chayula
-** Blessing of Xoph
-** Blessing of Tul
-** Blessing of Esh
-** Blessing of Uul-Netol
-** Blessing of Chayula
-** Xoph's Breachstone
-** Tul's Breachstone
-** Esh's Breachstone
-** Uul-Netol's Breachstone
-** Chayula's Breachstone
-* Harbinger Items
-** Orb of Annulment
-** Orb of Binding
-** Orb of Horizons
-** Harbinger's Orb
-** Engineer's Orb
-** Ancient Orb
-** Annulment Shard
-** Binding Shard
-** Horizon Shard
-** Harbinger's Shard
-** Engineer's Shard
-** Ancient Shard
 
 === Others
 
