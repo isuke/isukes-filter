@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '4.9'
+FilterVersion      = '4.10'
 
 # Font Size
 SmallFontSize      = 32
@@ -226,6 +226,8 @@ Variables = {
         e.set_text_color       = CurrencyColor
         e.set_font_size        = SmallFontSize
         e.set_border_color     = MagicColor
+        e.play_effect          = 'Blue Temp'
+        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
       g.element 'Normal Currency Shard' do |e|
         e.showable             = false
@@ -261,6 +263,8 @@ Variables = {
         e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
         e.set_border_color     = MagicColor
+        e.play_effect          = 'Blue Temp'
+        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
       g.element 'Normal Currency' do |e|
         e.showable             = true
