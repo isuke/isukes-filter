@@ -201,7 +201,7 @@ Variables = {
       g.element 'Unique Currency Shard' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'UniqueCurrencies'
+        e.base_type            = 'UniqueCurrencyShards'
         e.set_text_color       = CurrencyColor
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
