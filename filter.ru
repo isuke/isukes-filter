@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '4.10'
+FilterVersion      = '4.11'
 
 # Font Size
 SmallFontSize      = 32
@@ -201,7 +201,7 @@ Variables = {
       g.element 'Unique Currency Shard' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'UniqueCurrencies'
+        e.base_type            = 'UniqueCurrencyShards'
         e.set_text_color       = CurrencyColor
         e.set_font_size        = ExtraLargeFontSize
         e.set_border_color     = UniqueColor
@@ -1361,12 +1361,21 @@ Variables = {
       end
       g.element do |e|
         e.showable  = true
-        e.base_type = 'DelveItemsResonatorsNormal'
+        e.base_type = 'DelveItemsResonatorsMagic'
         e.set_font_size        = LargeFontSize
         e.set_background_color = DelveItemColor
         e.play_alert_sound     = MiddleLevelAlertSound
         e.play_effect          = 'Blue'
         e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+      end
+      g.element do |e|
+        e.showable  = true
+        e.base_type = 'DelveItemsResonatorsNormal'
+        e.set_font_size        = SmallFontSize
+        e.set_background_color = DelveItemColor
+        e.set_color_alpha      = ThinAlpha
+        e.play_alert_sound     = LowLevelAlertSound
+        e.play_effect          = 'Blue Temp'
       end
     end
 
