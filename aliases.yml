@@ -647,9 +647,10 @@ DelveItemsResonatorsUnique:
   - Prime Chaotic Resonator
 DelveItemsResonatorsRare:
   - Powerful Chaotic Resonator
-DelveItemsResonatorsNormal:
+DelveItemsResonatorsMagic:
   - Powerful Alchemical Resonator
   - Potent Alchemical Resonator
   - Potent Chaotic Resonator
+DelveItemsResonatorsNormal:
   - Primitive Alchemical Resonator
   - Primitive Chaotic Resonator
