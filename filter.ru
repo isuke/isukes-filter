@@ -887,7 +887,7 @@ Variables.each do |level, variable|
         end
 
         m.element 'Good Accessories' do |e|
-          e.showable             = true
+          e.showable             = variable[:show_rare_equipement] || variable[:show_chaos_recipe]
           e.base_type            = 'GoodAccessories'
           unless variable[:show_magic_equipement]
             e.rarity               = 'Rare'
@@ -895,17 +895,17 @@ Variables.each do |level, variable|
           e.set_background_color = GoodAccessoryColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
+          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipement] || variable[:show_chaos_recipe]
         end
 
         m.element 'Not Good Accessories' do |e|
-          e.showable             = true
+          e.showable             = variable[:show_rare_equipement] || variable[:show_chaos_recipe]
           e.base_type            = 'NotGoodAccessories'
           e.rarity               = 'Rare'
           e.set_background_color = AccessoryColor
           e.set_color_alpha      = ThinAlpha
           e.set_font_size        = SmallFontSize
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
+          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipement] || variable[:show_chaos_recipe]
         end
 
         m.element 'Shaper' do |e|
