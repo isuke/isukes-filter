@@ -121,6 +121,7 @@ Variables = {
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
     show_map_tier: 1,
+    show_magic_jewel: true,
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
@@ -137,6 +138,7 @@ Variables = {
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
     show_map_tier: 1,
+    show_magic_jewel: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -153,6 +155,7 @@ Variables = {
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
     show_map_tier: 1,
+    show_magic_jewel: true,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -169,6 +172,7 @@ Variables = {
     show_utility_flask_quality: 10,
     show_flask_quality: 20,
     show_map_tier: 3,
+    show_magic_jewel: false,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -185,6 +189,7 @@ Variables = {
     show_utility_flask_quality: 20,
     show_flask_quality: 20,
     show_map_tier: 9,
+    show_magic_jewel: false,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -561,7 +566,6 @@ Variables.each do |level, variable|
     # Jewel ####################################################################
     f.group 'Jewel' do |g|
       g.element 'Jewel' do |e|
-        e.showable             = true
         e.klass                = 'Jewel'
         e.set_text_color       = JewelColor
         e.set_font_size        = DefaultFontSize
@@ -576,17 +580,20 @@ Variables.each do |level, variable|
 
       g.mixin do |m|
         m.element 'Unique' do |e|
+          e.showable             = true
           e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = LowLevelAlertSound
         end
         m.element 'Rare' do |e|
+          e.showable             = true
           e.rarity               = 'Rare'
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
         end
         m.element 'Magic' do |e|
+          e.showable             = variable[:show_magic_jewel]
           e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
           e.set_font_size        = DefaultFontSize
