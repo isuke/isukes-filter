@@ -125,6 +125,7 @@ Variables = {
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
+    show_chaos_recipe: true,
     show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
@@ -142,6 +143,7 @@ Variables = {
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
+    show_chaos_recipe: true,
     show_linked_num: 4,
     show_socket_num: 5,
     show_normal_currency: true,
@@ -159,6 +161,7 @@ Variables = {
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
+    show_chaos_recipe: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: true,
@@ -176,6 +179,7 @@ Variables = {
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
+    show_chaos_recipe: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -193,6 +197,7 @@ Variables = {
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
+    show_chaos_recipe: false,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -952,7 +957,7 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        unless variable[:show_rare_equipement]
+        if ! variable[:show_rare_equipement] && variable[:show_chaos_recipe]
           m.element 'Regal Recipe1' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
