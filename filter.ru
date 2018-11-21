@@ -126,6 +126,7 @@ Variables = {
     show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
+    show_magic_currency: true,
     show_gem: true,
     show_good_base_item_level: 0,
     show_not_good_divination: true,
@@ -140,6 +141,7 @@ Variables = {
     show_linked_num: 4,
     show_socket_num: 5,
     show_normal_currency: true,
+    show_magic_currency: true,
     show_gem: true,
     show_good_base_item_level: 30,
     show_not_good_divination: true,
@@ -154,6 +156,7 @@ Variables = {
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: true,
+    show_magic_currency: true,
     show_gem: false,
     show_good_base_item_level: 63,
     show_not_good_divination: false,
@@ -168,6 +171,22 @@ Variables = {
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
+    show_magic_currency: true,
+    show_gem: false,
+    show_good_base_item_level: 84,
+    show_not_good_divination: false,
+  },
+  SS: {
+    show_flask_drop_level: 100,
+    show_quality_flask: false,
+    show_utility_flask: false,
+    show_nomarl_accessory: false,
+    show_magic_equipement: false,
+    show_rare_equipement: false,
+    show_linked_num: false,
+    show_socket_num: false,
+    show_normal_currency: false,
+    show_magic_currency: false,
     show_gem: false,
     show_good_base_item_level: 84,
     show_not_good_divination: false,
@@ -175,8 +194,7 @@ Variables = {
 }
 
 ################################################################################
-%i(C B A S).each do |level|
-  variable = Variables[level]
+Variables.each do |level, variable|
   filter "isukes_filter_#{level}_v#{PoeVersion}_#{FilterVersion}" do |f|
     f.comment "isuke's filter"
     f.comment "PoE Version: #{PoeVersion}"
@@ -185,7 +203,7 @@ Variables = {
 
     # Hide Currency ############################################################
     unless variable[:show_normal_currency]
-      f.group 'Hide Currency' do |g|
+      f.group 'Hide Normal Currency' do |g|
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
@@ -196,6 +214,22 @@ Variables = {
           e.showable             = false
           e.klass                = 'Currency'
           e.base_type            = 'NormalCurrencyShards'
+        end
+      end
+    end
+
+    unless variable[:show_magic_currency]
+      f.group 'Hide Magic Currency' do |g|
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Currency'
+          e.base_type            = 'MagicCurrencies'
+          e.stack_size           = '< 15'
+        end
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Currency'
+          e.base_type            = 'MagicCurrencyShards'
         end
       end
     end
