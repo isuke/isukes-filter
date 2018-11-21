@@ -126,6 +126,7 @@ Variables = {
     show_magic_equipement: true,
     show_rare_equipement: true,
     show_chaos_recipe: true,
+    show_good_base_equipement: true,
     show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
@@ -144,6 +145,7 @@ Variables = {
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_chaos_recipe: true,
+    show_good_base_equipement: true,
     show_linked_num: 4,
     show_socket_num: 5,
     show_normal_currency: true,
@@ -162,6 +164,7 @@ Variables = {
     show_magic_equipement: false,
     show_rare_equipement: true,
     show_chaos_recipe: true,
+    show_good_base_equipement: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: true,
@@ -180,6 +183,7 @@ Variables = {
     show_magic_equipement: false,
     show_rare_equipement: false,
     show_chaos_recipe: true,
+    show_good_base_equipement: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -198,6 +202,7 @@ Variables = {
     show_magic_equipement: false,
     show_rare_equipement: false,
     show_chaos_recipe: false,
+    show_good_base_equipement: false,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -1015,36 +1020,40 @@ Variables.each do |level, variable|
             e.set_color_alpha      = ThinAlpha
           end
         end
-        m.element 'Good DPS Wepon' do |e|
-          e.showable             = true
-          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
-          e.base_type            = 'GoodDPSWepons'
-          e.set_background_color = GoodDPSWeponColor
+
+        if variable[:show_good_base_equipement]
+          m.element 'Good DPS Wepon' do |e|
+            e.showable             = true
+            e.item_level           = ">= #{variable[:show_good_base_item_level]}"
+            e.base_type            = 'GoodDPSWepons'
+            e.set_background_color = GoodDPSWeponColor
+          end
+          m.element 'Good Critical Dagger' do |e|
+            e.showable             = true
+            e.item_level           = ">= #{variable[:show_good_base_item_level]}"
+            e.base_type            = 'GoodCriticalDaggers'
+            e.set_background_color = GoodCriticalDaggerColor
+          end
+          m.element 'Good STR Armour' do |e|
+            e.showable             = true
+            e.item_level           = ">= #{variable[:show_good_base_item_level]}"
+            e.base_type            = 'GoodSTRArmours'
+            e.set_background_color = GoodSTRArmourColor
+          end
+          m.element 'Good DEX Armour' do |e|
+            e.showable             = true
+            e.item_level           = ">= #{variable[:show_good_base_item_level]}"
+            e.base_type            = 'GoodDEXArmours'
+            e.set_background_color = GoodDEXArmourColor
+          end
+          m.element 'Good INT Armour' do |e|
+            e.showable             = true
+            e.item_level           = ">= #{variable[:show_good_base_item_level]}"
+            e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
+            e.set_background_color = GoodINTArmourColor
+          end
         end
-        m.element 'Good Critical Dagger' do |e|
-          e.showable             = true
-          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
-          e.base_type            = 'GoodCriticalDaggers'
-          e.set_background_color = GoodCriticalDaggerColor
-        end
-        m.element 'Good STR Armour' do |e|
-          e.showable             = true
-          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
-          e.base_type            = 'GoodSTRArmours'
-          e.set_background_color = GoodSTRArmourColor
-        end
-        m.element 'Good DEX Armour' do |e|
-          e.showable             = true
-          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
-          e.base_type            = 'GoodDEXArmours'
-          e.set_background_color = GoodDEXArmourColor
-        end
-        m.element 'Good INT Armour' do |e|
-          e.showable             = true
-          e.item_level           = ">= #{variable[:show_good_base_item_level]}"
-          e.base_type            = 'GoodINTArmours GoodWands GoodSceptres'
-          e.set_background_color = GoodINTArmourColor
-        end
+
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialGears'
