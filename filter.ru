@@ -120,6 +120,7 @@ Variables = {
     show_flask_drop_level: 3,
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
+    show_map_tier: 1,
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
@@ -135,6 +136,7 @@ Variables = {
     show_flask_drop_level: 30,
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
+    show_map_tier: 1,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -150,6 +152,7 @@ Variables = {
     show_flask_drop_level: 60,
     show_utility_flask_quality: 0,
     show_flask_quality: 0,
+    show_map_tier: 1,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -165,6 +168,7 @@ Variables = {
     show_flask_drop_level: 100,
     show_utility_flask_quality: 10,
     show_flask_quality: 20,
+    show_map_tier: 3,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -180,6 +184,7 @@ Variables = {
     show_flask_drop_level: 100,
     show_utility_flask_quality: 20,
     show_flask_quality: 20,
+    show_map_tier: 9,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -492,6 +497,16 @@ Variables.each do |level, variable|
           e.set_font_size        = DefaultFontSize
           e.minimap_icon         = "#{MediumMinimapIconSize} Green #{GemItemMinimapIconShape}"
         end
+      end
+    end
+
+    # Hide Map #################################################################
+    f.group 'Hide Map' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = 'Maps'
+        e.map_tier             = "< #{variable[:show_map_tier]}"
+        e.rarity               = '< Unique'
       end
     end
 
