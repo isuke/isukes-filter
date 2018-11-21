@@ -128,6 +128,7 @@ Variables = {
     show_normal_currency: true,
     show_gem: true,
     show_good_base_item_level: 0,
+    show_not_good_divination: true,
   },
   B: {
     show_flask_drop_level: 30,
@@ -141,6 +142,7 @@ Variables = {
     show_normal_currency: true,
     show_gem: true,
     show_good_base_item_level: 30,
+    show_not_good_divination: true,
   },
   A: {
     show_flask_drop_level: 60,
@@ -154,6 +156,7 @@ Variables = {
     show_normal_currency: true,
     show_gem: false,
     show_good_base_item_level: 63,
+    show_not_good_divination: false,
   },
   S: {
     show_flask_drop_level: 100,
@@ -167,6 +170,7 @@ Variables = {
     show_normal_currency: false,
     show_gem: false,
     show_good_base_item_level: 84,
+    show_not_good_divination: false,
   }
 }
 
@@ -543,13 +547,22 @@ Variables = {
       end
 
       g.mixin do |m|
-        m.element 'New' do |e|
-          e.base_type            = 'NewDivinations'
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = FarmEquipmentBorderColor
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        # m.element 'New' do |e|
+        #   e.base_type            = 'NewDivinations'
+        #   e.set_font_size        = LargeFontSize
+        #   e.set_border_color     = FarmEquipmentBorderColor
+        #   e.play_alert_sound     = MiddleLevelAlertSound
+        #   e.play_effect          = 'Blue'
+        #   e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        # end
+        m.element 'NotGood' do |e|
+          e.base_type            = 'NotGoodDivinations'
+          if variable[:show_not_good_divination]
+            e.set_color_alpha      = ThinAlpha
+            e.set_font_size        = SmallFontSize
+          else
+            e.showable             = false
+          end
         end
         m.element 'Unique' do |e|
           e.base_type            = 'UniqueDivinations'
