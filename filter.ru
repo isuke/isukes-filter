@@ -118,8 +118,8 @@ ErrorMinimapIconShape          = 'Triangle'
 Variables = {
   C: {
     show_flask_drop_level: 3,
-    show_quality_flask: true,
-    show_utility_flask: true,
+    show_utility_flask_quality: 0,
+    show_flask_quality: 0,
     show_nomarl_accessory: true,
     show_magic_equipement: true,
     show_rare_equipement: true,
@@ -133,8 +133,8 @@ Variables = {
   },
   B: {
     show_flask_drop_level: 30,
-    show_quality_flask: true,
-    show_utility_flask: true,
+    show_utility_flask_quality: 0,
+    show_flask_quality: 0,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -148,8 +148,8 @@ Variables = {
   },
   A: {
     show_flask_drop_level: 60,
-    show_quality_flask: true,
-    show_utility_flask: true,
+    show_utility_flask_quality: 0,
+    show_flask_quality: 0,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: true,
@@ -163,8 +163,8 @@ Variables = {
   },
   S: {
     show_flask_drop_level: 100,
-    show_quality_flask: false,
-    show_utility_flask: false,
+    show_utility_flask_quality: 10,
+    show_flask_quality: 20,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -178,8 +178,8 @@ Variables = {
   },
   SS: {
     show_flask_drop_level: 100,
-    show_quality_flask: false,
-    show_utility_flask: false,
+    show_utility_flask_quality: 20,
+    show_flask_quality: 20,
     show_nomarl_accessory: false,
     show_magic_equipement: false,
     show_rare_equipement: false,
@@ -313,6 +313,25 @@ Variables.each do |level, variable|
       end
     end
 
+    # Hide Flask ###############################################################
+    f.group 'Hide Utility Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Utility Flasks")
+        e.quality              = "< #{variable[:show_utility_flask_quality]}"
+        e.rarity               = '< Unique'
+      end
+    end
+
+    f.group 'Hide Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
+        e.quality              = "< #{variable[:show_flask_quality]}"
+        e.rarity               = '< Unique'
+      end
+    end
+
     # Utility Flask ############################################################
     f.group 'Utility Flask' do |g|
       g.element 'Utility' do |e|
@@ -344,16 +363,6 @@ Variables.each do |level, variable|
         m.element 'Middle Quality' do |e|
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
-        end
-      end
-
-      unless variable[:show_utility_flask]
-        g.mixin do |m|
-          m.element 'Hide Quality Zero' do |e|
-            e.showable             = false
-            e.quality              = '= 0'
-            e.rarity               = '< Unique'
-          end
         end
       end
     end
@@ -417,12 +426,10 @@ Variables.each do |level, variable|
 
       g.mixin do |m|
         m.element 'High Quality' do |e|
-          e.showable             = variable[:show_quality_flask]
           e.quality              = '>= 10'
           e.set_background_color = HighTierColor
         end
         m.element 'Middle Quality' do |e|
-          e.showable             = variable[:show_quality_flask]
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
         end
