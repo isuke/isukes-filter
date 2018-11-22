@@ -122,11 +122,11 @@ Variables = {
     show_flask_quality: 0,
     show_map_tier: 1,
     show_magic_jewel: true,
-    show_nomarl_accessory: true,
-    show_magic_equipement: true,
-    show_rare_equipement: true,
+    show_normal_accessory: true,
+    show_magic_equipment: true,
+    show_rare_equipment: true,
     show_chaos_recipe: true,
-    show_good_base_equipement: true,
+    show_good_base_equipment: true,
     show_linked_num: 3,
     show_socket_num: 4,
     show_normal_currency: true,
@@ -141,11 +141,11 @@ Variables = {
     show_flask_quality: 0,
     show_map_tier: 1,
     show_magic_jewel: true,
-    show_nomarl_accessory: false,
-    show_magic_equipement: false,
-    show_rare_equipement: true,
+    show_normal_accessory: false,
+    show_magic_equipment: false,
+    show_rare_equipment: true,
     show_chaos_recipe: true,
-    show_good_base_equipement: true,
+    show_good_base_equipment: true,
     show_linked_num: 4,
     show_socket_num: 5,
     show_normal_currency: true,
@@ -160,11 +160,11 @@ Variables = {
     show_flask_quality: 0,
     show_map_tier: 1,
     show_magic_jewel: true,
-    show_nomarl_accessory: false,
-    show_magic_equipement: false,
-    show_rare_equipement: true,
+    show_normal_accessory: false,
+    show_magic_equipment: false,
+    show_rare_equipment: true,
     show_chaos_recipe: true,
-    show_good_base_equipement: true,
+    show_good_base_equipment: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: true,
@@ -179,11 +179,11 @@ Variables = {
     show_flask_quality: 20,
     show_map_tier: 3,
     show_magic_jewel: false,
-    show_nomarl_accessory: false,
-    show_magic_equipement: false,
-    show_rare_equipement: false,
+    show_normal_accessory: false,
+    show_magic_equipment: false,
+    show_rare_equipment: false,
     show_chaos_recipe: true,
-    show_good_base_equipement: true,
+    show_good_base_equipment: true,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -198,11 +198,11 @@ Variables = {
     show_flask_quality: 20,
     show_map_tier: 9,
     show_magic_jewel: false,
-    show_nomarl_accessory: false,
-    show_magic_equipement: false,
-    show_rare_equipement: false,
+    show_normal_accessory: false,
+    show_magic_equipment: false,
+    show_rare_equipment: false,
     show_chaos_recipe: false,
-    show_good_base_equipement: false,
+    show_good_base_equipment: false,
     show_linked_num: false,
     show_socket_num: false,
     show_normal_currency: false,
@@ -827,31 +827,31 @@ Variables.each do |level, variable|
 
       g.mixin do |m|
         m.element 'Normal' do |e|
-          e.showable             = variable[:show_nomarl_accessory]
+          e.showable             = variable[:show_normal_accessory]
           e.rarity               = 'Normal'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          if variable[:show_nomarl_accessory]
+          if variable[:show_normal_accessory]
             e.play_alert_sound     = TrivialAlertSound
             e.disable_drop_sound   = false
           end
         end
         m.element 'Magic' do |e|
-          e.showable             = variable[:show_magic_equipement]
+          e.showable             = variable[:show_magic_equipment]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
-          if variable[:show_magic_equipement]
+          if variable[:show_magic_equipment]
             e.play_alert_sound     = TrivialAlertSound
             e.disable_drop_sound   = false
           end
         end
         m.element 'Rare' do |e|
-          e.showable             = variable[:show_rare_equipement]
+          e.showable             = variable[:show_rare_equipment]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
-          if variable[:show_rare_equipement]
+          if variable[:show_rare_equipment]
             e.play_alert_sound     = LowLevelAlertSound
             e.disable_drop_sound   = false
           end
@@ -887,25 +887,25 @@ Variables.each do |level, variable|
         end
 
         m.element 'Good Accessories' do |e|
-          e.showable             = variable[:show_rare_equipement] || variable[:show_chaos_recipe]
+          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
           e.base_type            = 'GoodAccessories'
-          unless variable[:show_magic_equipement]
+          unless variable[:show_magic_equipment]
             e.rarity               = 'Rare'
           end
           e.set_background_color = GoodAccessoryColor
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipement] || variable[:show_chaos_recipe]
+          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
 
         m.element 'Not Good Accessories' do |e|
-          e.showable             = variable[:show_rare_equipement] || variable[:show_chaos_recipe]
+          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
           e.base_type            = 'NotGoodAccessories'
           e.rarity               = 'Rare'
           e.set_background_color = AccessoryColor
           e.set_color_alpha      = ThinAlpha
           e.set_font_size        = SmallFontSize
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipement] || variable[:show_chaos_recipe]
+          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
 
         m.element 'Shaper' do |e|
@@ -948,13 +948,13 @@ Variables.each do |level, variable|
           e.set_color_alpha      = ThinAlpha
         end
         m.element 'Magic' do |e|
-          e.showable             = variable[:show_magic_equipement]
+          e.showable             = variable[:show_magic_equipment]
           e.rarity               = 'Magic'
           e.set_font_size        = SmallFontSize
           e.set_color_alpha      = ThinAlpha
         end
         m.element 'Rare' do |e|
-          e.showable             = variable[:show_rare_equipement]
+          e.showable             = variable[:show_rare_equipment]
           e.rarity               = 'Rare'
           e.set_font_size        = DefaultFontSize
           e.set_color_alpha      = DefaultAlpha
@@ -962,7 +962,7 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        if ! variable[:show_rare_equipement] && variable[:show_chaos_recipe]
+        if ! variable[:show_rare_equipment] && variable[:show_chaos_recipe]
           m.element 'Regal Recipe1' do |e|
             e.showable             = true
             e.rarity               = 'Rare'
@@ -1021,7 +1021,7 @@ Variables.each do |level, variable|
           end
         end
 
-        if variable[:show_good_base_equipement]
+        if variable[:show_good_base_equipment]
           m.element 'Good DPS Wepon' do |e|
             e.showable             = true
             e.item_level           = ">= #{variable[:show_good_base_item_level]}"
@@ -1096,7 +1096,7 @@ Variables.each do |level, variable|
         m.element 'RGB 1' do |e|
           e.showable             = true
           e.socket_group         = 'RGB'
-          unless variable[:show_large_rgb_equipement]
+          unless variable[:show_large_rgb_equipment]
             e.height               = '<= 3'
             e.width                = '<= 1'
           end
@@ -1109,7 +1109,7 @@ Variables.each do |level, variable|
         m.element 'RGB 2' do |e|
           e.showable             = true
           e.socket_group         = 'RGB'
-          unless variable[:show_large_rgb_equipement]
+          unless variable[:show_large_rgb_equipment]
             e.height               = '<= 2'
             e.width                = '<= 2'
           end
