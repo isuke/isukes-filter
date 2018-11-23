@@ -16,17 +16,17 @@
 Isuke's Filter is simple and useful poe filter.
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
 
-.Before
-image::https://raw.githubusercontent.com/isuke/isukes-filter/images/none.jpg[none]
-
-.After
-image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_S.jpg[filter_S]
-
-
 link:https://github.com/isuke/isukes-filter/releases[DOWNLOAD]
 
-* link:http://filterblast.oversoul.xyz/advanced/Template/10adp40[Try It by Filter Blast (Filter S)]
-* link:http://filterblast.oversoul.xyz/advanced/Template/1djhs88[Try It by Filter Blast (Filter SS)]
+* Try It by Filter Blast
+** link:http://filterblast.oversoul.xyz/advanced/Template/10adp40[Filter S]
+** link:http://filterblast.oversoul.xyz/advanced/Template/1djhs88[Filter SS]
+
+.default
+image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_default.png[default]
+
+.Filter SS
+image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_SS.png[filter_SS]
 
 == Kind of Files
 
