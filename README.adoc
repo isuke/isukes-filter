@@ -4,57 +4,148 @@
 :sectanchors:
 :sectnums:
 :sectnumlevels: 2
-:toc: left
+:toc: preamble
 :toclevels: 2
 
 :author: isuke
 :email: isuke770@gmail.com
-:revnumber: v3.4_4.10
+:revnumber: v3.4_5.0
 
 = Isuke's Filter
 
-== Summary
-
 Isuke's Filter is simple and useful poe filter.
-
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
-
-link:http://filterblast.oversoul.xyz/advanced/Template/253i3v2[Try It by Filter Blast]
 
 link:https://github.com/isuke/isukes-filter/releases[DOWNLOAD]
 
-=== Screenshots
+* Try It by Filter Blast
+** link:http://filterblast.oversoul.xyz/advanced/Template/10adp40[Filter S]
+** link:http://filterblast.oversoul.xyz/advanced/Template/1djhs88[Filter SS]
 
-.Before
-image::https://raw.githubusercontent.com/isuke/isukes-filter/images/none.jpg[none]
+.default
+image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_default.png[default]
 
-.After
-image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_S.jpg[filter_S]
+.Filter SS
+image::https://raw.githubusercontent.com/isuke/isukes-filter/images/filter_SS.png[filter_SS]
 
 == Kind of Files
 
-filter is exist 4 types (`C`/`B`/`A`/`S`).
-You can use it properly by your level.
+THe filters is exist 5 types (`C`/`B`/`A`/`S`/`SS`).
 
-[cols="2,1", options="header"]
+[cols="2,1,1,1,1,1", options="header"]
 |===
-| Your Level
-| Filer file
+|
+| C
+| B
+| A
+| S
+| SS
 
-| From start to the Lioneye's Watch
-| not use filter or use `<default>`.
+| Recommend Player Level
+| 1 - 30
+| 25 - 65
+| 60 - 85
+| 80 - 95
+| 93 - 100
 
-| From The Lioneye's Watch to about Level 30
-| use `C.filter`.
+| Show link:#currencies[Currency Rarity]
+| [green]#All#
+| [green]#All#
+| [green]#All#
+| >= Magic
+| >= Rage
 
-| From about Level 30 to about Level 65
-| use `B.filter`.
+| Show Flask Item Level
+| >= 3
+| >= 30
+| >= 60
+| [red]#None#
+| [red]#None#
 
-| From about Level 65 to about Level 85
-| use `A.filter`.
+| Show Utility Flask Quality
+| [green]#All#
+| [green]#All#
+| [green]#All#
+| >= 10
+| = 20
 
-| Level 85 or later
-| use `S.filter`.
+| Show Life/Mana/Hybrid Flask Quality
+| [green]#All#
+| [green]#All#
+| [green]#All#
+| = 20
+| = 20
+
+| Show Map Tier
+| [green]#All#
+| [green]#All#
+| [green]#All#
+| >= 3
+| >= 9
+
+| Show Magic Jewels
+| [green]#Yes#
+| [green]#Yes#
+| [green]#Yes#
+| [red]#No#
+| [red]#No#
+
+| Show Unnecessary Divination Cards
+| [green]#Yes#
+| [green]#Yes#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+
+| Show Zero Quality Commonplace Gems
+| [green]#Yes#
+| [green]#Yes#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+
+| Show Normal Accessories
+| [green]#Yes#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+
+| Show Magic Equipments
+| [green]#Yes#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+| [red]#No#
+
+| Show Rare Equipments
+| [green]#Yes#
+| [green]#Yes#
+| [green]#Yes#
+| [red]#No# +
+(but show Chaos/Regal Recipe)
+| [red]#No#
+
+| Show link:#other-background-color-represents-kind-of-items[Good Base Equipments] Item Level
+| [green]#All#
+| >= 30
+| >= 63
+| >= 84
+| [red]#None#
+
+| Show Equipment's Linked Sockets
+| >= 3
+| >= 4
+| >= 5
+| >= 5
+| >= 5
+
+| Show Equipment's (Non-Linked) Sockets
+| >= 4
+| >= 5
+| >= 6
+| >= 6
+| >= 6
 |===
 
 == Mechanism
@@ -139,8 +230,8 @@ The meaning of *item reality* depends on the item.
 ** Orb of Alteration
 ** Orb of Chance
 ** Chromatic Orb
-** Jeweller's Orb
 * Rare
+** Jeweller's Orb
 ** Alchemy Shard
 ** Chaos Shard
 ** Regal Shard
