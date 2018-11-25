@@ -3,10 +3,11 @@ PoeVersion         = '3.4'
 FilterVersion      = '6.0'
 
 # Font Size
-SmallFontSize      = 32
-DefaultFontSize    = 39
-LargeFontSize      = 42
 ExtraLargeFontSize = 45
+LargeFontSize      = 40
+DefaultFontSize    = 37
+SmallFontSize      = 30
+ExtraSmallFontSize = 28
 
 # Color
 Black       = '  0   0   0'
@@ -51,11 +52,6 @@ CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
 
-SublimeColor  = Red
-LoftyColor    = UniqueColor
-PreciousColor = RareColor
-TrivialColor  = MagicColor
-
 LifeFlaskColor     = Pink2
 ManaFlaskColor     = Pink2
 HybridFlaskColor   = Pink3
@@ -98,17 +94,9 @@ DelveItemColor     = Blue1
 DefaultAlpha = 255
 ThinAlpha    = 200
 
-# Sound
-SublimeAlertSound  =  '6 300'
-LoftyAlertSound    =  '3 300'
-PreciousAlertSound =  '7 300'
-TrivialAlertSound  =  '9 170'
-ErrorAlertSound    = '12 300'
-
-# MinimapIconSize
-LargestMinimapIconSize = 0
-MediumMinimapIconSize  = 1
-SamllMinimapIconSize   = 2
+# sound
+MuteAlertSound  = ' 1   0'
+ErrorAlertSound = '12 300'
 
 # MinimapIconShape
 StackableItemMinimapIconShape  = 'Circle'
@@ -121,6 +109,35 @@ LeagueItemMinimapIconShape     = 'Star'
 QuestItemMinimapIconShape      = 'Triangle'
 ErrorMinimapIconShape          = 'Triangle'
 
+# valuable
+SublimeFontSize  = ExtraLargeFontSize
+LoftyFontSize    = LargeFontSize
+PreciousFontSize = DefaultFontSize
+TrivialFontSize  = SmallFontSize
+CheapFontSize    = ExtraSmallFontSize
+
+SublimeColor  = Red
+LoftyColor    = UniqueColor
+PreciousColor = RareColor
+TrivialColor  = MagicColor
+CheapColor    = NormalColor
+
+SublimeAlpha  = DefaultAlpha
+LoftyAlpha    = DefaultAlpha
+PreciousAlpha = DefaultAlpha
+TrivialAlpha  = DefaultAlpha
+CheaoAlpha    = ThinAlpha
+
+SublimeAlertSound  =  '6 300'
+LoftyAlertSound    =  '3 300'
+PreciousAlertSound =  '7 300'
+TrivialAlertSound  =  '9 170'
+ChepelAlertSound   = MuteAlertSound
+
+SublimeMinimapIconSize  = 0
+LoftyMinimapIconSize    = 1
+PreciousMinimapIconSize = 2
+
 Variables = {
   C: {
     show_chaos_recipe: true,
@@ -130,13 +147,13 @@ Variables = {
     show_good_base_equipment: true,
     show_good_base_item_level: 0,
     show_linked_num: 3,
-    show_magic_currency: true,
+    show_trivial_currencies: true,
     show_magic_equipment: true,
     show_magic_jewel: true,
     show_map_tier: 1,
     show_normal_accessory: true,
-    show_normal_currency: true,
-    show_not_good_divination: true,
+    show_cheap_currencies: true,
+    show_cheap_divination: true,
     show_rare_equipment: true,
     show_socket_num: 4,
     show_utility_flask_quality: 0,
@@ -149,13 +166,13 @@ Variables = {
     show_good_base_equipment: true,
     show_good_base_item_level: 30,
     show_linked_num: 4,
-    show_magic_currency: true,
+    show_trivial_currencies: true,
     show_magic_equipment: false,
     show_magic_jewel: true,
     show_map_tier: 1,
     show_normal_accessory: false,
-    show_normal_currency: true,
-    show_not_good_divination: true,
+    show_cheap_currencies: true,
+    show_cheap_divination: true,
     show_rare_equipment: true,
     show_socket_num: 5,
     show_utility_flask_quality: 0,
@@ -168,13 +185,13 @@ Variables = {
     show_good_base_equipment: true,
     show_good_base_item_level: 63,
     show_linked_num: false,
-    show_magic_currency: true,
+    show_trivial_currencies: true,
     show_magic_equipment: false,
     show_magic_jewel: true,
     show_map_tier: 1,
     show_normal_accessory: false,
-    show_normal_currency: true,
-    show_not_good_divination: false,
+    show_cheap_currencies: true,
+    show_cheap_divination: false,
     show_rare_equipment: true,
     show_socket_num: false,
     show_utility_flask_quality: 0,
@@ -187,13 +204,13 @@ Variables = {
     show_good_base_equipment: true,
     show_good_base_item_level: 84,
     show_linked_num: false,
-    show_magic_currency: true,
+    show_trivial_currencies: true,
     show_magic_equipment: false,
     show_magic_jewel: false,
     show_map_tier: 3,
     show_normal_accessory: false,
-    show_normal_currency: false,
-    show_not_good_divination: false,
+    show_cheap_currencies: false,
+    show_cheap_divination: false,
     show_rare_equipment: false,
     show_socket_num: false,
     show_utility_flask_quality: 10,
@@ -206,13 +223,13 @@ Variables = {
     show_good_base_equipment: false,
     show_good_base_item_level: 84,
     show_linked_num: false,
-    show_magic_currency: false,
+    show_trivial_currencies: false,
     show_magic_equipment: false,
     show_magic_jewel: false,
     show_map_tier: 9,
     show_normal_accessory: false,
-    show_normal_currency: false,
-    show_not_good_divination: false,
+    show_cheap_currencies: false,
+    show_cheap_divination: false,
     show_rare_equipment: false,
     show_socket_num: false,
     show_utility_flask_quality: 20,
@@ -228,114 +245,136 @@ Variables.each do |level, variable|
     f.comment "Filter Level: #{level}"
 
     # Hide Currency ############################################################
-    unless variable[:show_normal_currency]
-      f.group 'Hide Normal Currency' do |g|
+    unless variable[:show_cheap_currencies]
+      f.group 'Hide Cheap Currencies' do |g|
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
-          e.base_type            = 'NormalCurrencies'
+          e.base_type            = 'CheapCurrencies'
           e.stack_size           = '< 15'
         end
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
-          e.base_type            = 'NormalCurrencyShards'
+          e.base_type            = 'CheapCurrencyShards'
         end
       end
     end
 
-    unless variable[:show_magic_currency]
-      f.group 'Hide Magic Currency' do |g|
+    unless variable[:show_trivial_currencies]
+      f.group 'Hide Trivial Currencies' do |g|
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
-          e.base_type            = 'MagicCurrencies'
+          e.base_type            = 'TrivialCurrencies'
           e.stack_size           = '< 15'
         end
         g.element do |e|
           e.showable             = false
           e.klass                = 'Currency'
-          e.base_type            = 'MagicCurrencyShards'
+          e.base_type            = 'TrivialCurrencyShards'
         end
       end
     end
 
     # Currency #################################################################
     f.group 'Currency' do |g|
-      g.element 'Unique Currency Shard' do |e|
+      g.element 'Sublime Currency Shard' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'UniqueCurrencyShards'
+        e.base_type            = 'SublimeCurrencyShards'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = ExtraLargeFontSize
-        e.set_border_color     = UniqueColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.set_font_size        = SublimeFontSize
+        e.set_border_color     = SublimeColor
+        e.play_alert_sound     = SublimeAlertSound
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+      end
+      g.element 'Lofty Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'LoftyCurrencyShards'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = LoftyFontSize
+        e.set_border_color     = LoftyColor
+        e.play_alert_sound     = LoftyAlertSound
         e.play_effect          = 'Yellow'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
-      g.element 'Rare Currency Shard' do |e|
+      g.element 'Precious Currency Shard' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'RareCurrencyShards'
+        e.base_type            = 'PreciousCurrencyShards'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = DefaultFontSize
-        e.set_border_color     = RareColor
+        e.set_font_size        = PreciousFontSize
+        e.set_border_color     = PreciousColor
         e.play_effect          = 'Yellow Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
-      g.element 'Magic Currency Shard' do |e|
+      g.element 'Trivial Currency Shard' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'MagicCurrencyShards'
+        e.base_type            = 'TrivialCurrencyShards'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = SmallFontSize
-        e.set_border_color     = MagicColor
+        e.set_font_size        = TrivialFontSize
+        e.set_border_color     = TrivialColor
         e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
-      g.element 'Normal Currency Shard' do |e|
+      g.element 'Cheap Currency Shard' do |e|
         e.showable             = false
         e.klass                = 'Currency'
-        e.base_type            = 'NormalCurrencyShards'
+        e.base_type            = 'CheapCurrencyShards'
       end
 
-      g.element 'Unique Currency' do |e|
+      g.element 'Sublime Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'UniqueCurrencies'
+        e.base_type            = 'SublimeCurrencies'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = ExtraLargeFontSize
-        e.set_border_color     = UniqueColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.set_font_size        = SublimeFontSize
+        e.set_border_color     = SublimeColor
+        e.play_alert_sound     = SublimeAlertSound
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+      end
+      g.element 'Lofty Currency' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'LoftyCurrencies'
+        e.set_text_color       = CurrencyColor
+        e.set_font_size        = SublimeFontSize
+        e.set_border_color     = LoftyColor
+        e.play_alert_sound     = LoftyAlertSound
         e.play_effect          = 'Yellow'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
-      g.element 'Rare Currency' do |e|
+      g.element 'Precious Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'RareCurrencies'
+        e.base_type            = 'PreciousCurrencies'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = LargeFontSize
-        e.set_border_color     = RareColor
+        e.set_font_size        = LoftyFontSize
+        e.set_border_color     = PreciousColor
         e.play_effect          = 'Yellow Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
-      g.element 'Magic Currency' do |e|
+      g.element 'Trivial Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'MagicCurrencies'
+        e.base_type            = 'TrivialCurrencies'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = DefaultFontSize
-        e.set_border_color     = MagicColor
+        e.set_font_size        = PreciousFontSize
+        e.set_border_color     = TrivialColor
         e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
-      g.element 'Normal Currency' do |e|
+      g.element 'Cheap Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
-        e.base_type            = 'NormalCurrencies'
+        e.base_type            = 'CheapCurrencies'
         e.set_text_color       = CurrencyColor
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
       end
     end
 
@@ -363,21 +402,21 @@ Variables.each do |level, variable|
       g.element 'Utility' do |e|
         e.showable             = true
         e.klass                = %q("Utility Flasks")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_text_color       = UtilityFlaskColor
       end
 
       g.mixin do |m|
         m.element 'Magic' do |e|
           e.rarity               = 'Magic'
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
           e.set_border_color     = MagicColor
         end
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
-          e.set_font_size        = ExtraLargeFontSize
+          e.set_font_size        = SublimeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = PreciousAlertSound
         end
       end
 
@@ -398,7 +437,7 @@ Variables.each do |level, variable|
       g.element 'Flask' do |e|
         e.showable             = false
         e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
       end
 
       g.mixin do |m|
@@ -424,14 +463,14 @@ Variables.each do |level, variable|
           e.showable             = false
           e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
         end
         m.element 'Unique' do |e|
           e.showable             = true
           e.rarity               = 'Unique'
-          e.set_font_size        = ExtraLargeFontSize
+          e.set_font_size        = SublimeFontSize
           e.set_border_color     = UniqueColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.play_alert_sound     = PreciousAlertSound
         end
       end
 
@@ -469,26 +508,26 @@ Variables.each do |level, variable|
         e.klass                = 'Gems'
         e.set_text_color       = GemColor
         e.set_color_alpha      = ThinAlpha
-        e.set_font_size        = SmallFontSize
+        e.set_font_size        = TrivialFontSize
       end
 
       g.mixin do |m|
-        m.element 'Rare' do |e|
+        m.element 'LoftyGems' do |e|
           e.showable             = true
-          e.base_type            = 'RareGems'
-          e.set_border_color     = RareColor
+          e.base_type            = 'LoftyGemsGems'
+          e.set_border_color     = LoftyColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound     = LowLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = LoftyAlertSound
+          e.minimap_icon         = "#{SublimeMinimapIconSize} Green #{GemItemMinimapIconShape}"
         end
-        m.element 'Unique' do |e|
+        m.element 'Precious' do |e|
           e.showable             = true
-          e.base_type            = 'UniqueGems'
-          e.set_border_color     = UniqueColor
+          e.base_type            = 'PreciousGems'
+          e.set_border_color     = PreciousColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.minimap_icon         = "#{LargestMinimapIconSize} Green #{GemItemMinimapIconShape}"
+          e.set_font_size        = LoftyFontSize
+          e.play_alert_sound     = PreciousAlertSound
         end
       end
       g.mixin do |m|
@@ -497,16 +536,16 @@ Variables.each do |level, variable|
           e.quality              = '>= 10'
           e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} Green #{GemItemMinimapIconShape}"
+          e.set_font_size        = PreciousFontSize
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Green #{GemItemMinimapIconShape}"
         end
         m.element 'Middle Quality' do |e|
           e.showable             = true
           e.quality              = '> 0'
           e.set_background_color = MiddleTierColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} Green #{GemItemMinimapIconShape}"
+          e.set_font_size        = PreciousFontSize
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Green #{GemItemMinimapIconShape}"
         end
       end
       g.mixin do |m|
@@ -515,8 +554,8 @@ Variables.each do |level, variable|
           e.gem_level            = '>= 18'
           e.set_background_color = HighTierColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} Green #{GemItemMinimapIconShape}"
+          e.set_font_size        = PreciousFontSize
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Green #{GemItemMinimapIconShape}"
         end
       end
     end
@@ -537,40 +576,40 @@ Variables.each do |level, variable|
         e.showable             = true
         e.klass                = 'Maps'
         e.set_text_color       = MapColor
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
       end
 
       g.mixin do |m|
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = 'Rare'
-          e.set_font_size        = LargeFontSize
+          e.set_font_size        = LoftyFontSize
         end
       end
       g.mixin do |m|
         m.element 'Very High Tier' do |e|
           e.map_tier             = '>= 15'
           e.set_background_color = HighTierColor
-          e.play_alert_sound     = HighLevelAlertSound
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Red'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Red #{MapItemMinimapIconShape}"
+          e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{MapItemMinimapIconShape}"
         end
         m.element 'High Tier' do |e|
           e.map_tier             = '>= 11'
           e.set_background_color = HighTierColor
-          e.play_alert_sound     = HighLevelAlertSound
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Red Temp'
-          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{MapItemMinimapIconShape}"
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Red #{MapItemMinimapIconShape}"
         end
         m.element 'Middle Tier' do |e|
           e.map_tier             = '>= 6'
           e.set_background_color = MiddleTierColor
-          e.play_alert_sound     = LowLevelAlertSound
-          e.minimap_icon         = "#{SamllMinimapIconSize} Red #{MapItemMinimapIconShape}"
+          e.play_alert_sound     = PreciousAlertSound
+          e.minimap_icon         = "#{PreciousMinimapIconSize} Red #{MapItemMinimapIconShape}"
         end
         m.element 'Low Tier' do |e|
           e.map_tier             = '< 6'
@@ -584,7 +623,7 @@ Variables.each do |level, variable|
       g.element 'Jewel' do |e|
         e.klass                = 'Jewel'
         e.set_text_color       = JewelColor
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
       end
 
       g.mixin do |m|
@@ -599,20 +638,19 @@ Variables.each do |level, variable|
           e.showable             = true
           e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = LowLevelAlertSound
+          e.set_font_size        = SublimeFontSize
         end
         m.element 'Rare' do |e|
           e.showable             = true
           e.rarity               = 'Rare'
           e.set_border_color     = RareColor
-          e.set_font_size        = LargeFontSize
+          e.set_font_size        = LoftyFontSize
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_jewel]
           e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
         end
       end
     end
@@ -628,46 +666,46 @@ Variables.each do |level, variable|
       g.mixin do |m|
         # m.element 'New' do |e|
         #   e.base_type            = 'NewDivinations'
-        #   e.set_font_size        = LargeFontSize
+        #   e.set_font_size        = LoftyFontSize
         #   e.set_border_color     = FarmEquipmentBorderColor
-        #   e.play_alert_sound     = MiddleLevelAlertSound
+        #   e.play_alert_sound     = PreciousAlertSound
         #   e.play_effect          = 'Blue'
-        #   e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        #   e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
         # end
-        m.element 'NotGood' do |e|
-          e.base_type            = 'NotGoodDivinations'
-          if variable[:show_not_good_divination]
+        m.element 'Sublime' do |e|
+          e.base_type            = 'SublimeDivinations'
+          e.set_font_size        = SublimeFontSize
+          e.set_border_color     = SublimeColor
+          e.play_alert_sound     = SublimeAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        end
+        m.element 'Lofty' do |e|
+          e.base_type            = 'LoftyDivinations'
+          e.set_font_size        = LoftyFontSize
+          e.set_border_color     = LoftyColor
+          e.play_alert_sound     = LoftyAlertSound
+          e.play_effect          = 'Blue Temp'
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        end
+        m.element 'Precious' do |e|
+          e.base_type            = 'PreciousDivinations'
+          e.set_font_size        = PreciousFontSize
+          e.set_border_color     = PreciousColor
+          e.play_alert_sound     = PreciousAlertSound
+          e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        end
+        m.element 'Cheap' do |e|
+          e.base_type            = 'CheapDivinations'
+          if variable[:show_cheap_divination]
             e.set_color_alpha      = ThinAlpha
-            e.set_font_size        = SmallFontSize
+            e.set_font_size        = TrivialFontSize
           else
             e.showable             = false
           end
         end
-        m.element 'Unique' do |e|
-          e.base_type            = 'UniqueDivinations'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
-          e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        end
-        m.element 'Rare' do |e|
-          e.base_type            = 'RareDivinations'
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = RareColor
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.play_effect          = 'Blue Temp'
-          e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        end
-        m.element 'Magic' do |e|
-          e.base_type            = 'MagicDivinations'
-          e.set_font_size        = DefaultFontSize
-          e.set_border_color     = MagicColor
-          e.play_alert_sound     = LowLevelAlertSound
-          e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        end
-        m.element 'Normal' do |e|
-          e.set_font_size        = DefaultFontSize
+        m.element 'Trivial' do |e|
+          e.set_font_size        = PreciousFontSize
         end
       end
     end
@@ -677,12 +715,12 @@ Variables.each do |level, variable|
       g.element 'Stacked Deck' do |e|
         e.showable             = true
         e.base_type            = 'Stacked Deck'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_text_color       = DivinationCardColor
         e.set_border_color     = DivinationCardColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.play_alert_sound     = SublimeAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
     end
 
@@ -692,10 +730,10 @@ Variables.each do |level, variable|
         e.showable             = true
         e.klass                = %q("Fishing Rods")
         e.set_border_color     = UniqueColor
-        e.set_font_size        = ExtraLargeFontSize
-        e.play_alert_sound     = HighLevelAlertSound
+        e.set_font_size        = SublimeFontSize
+        e.play_alert_sound     = SublimeAlertSound
         e.play_effect          = 'Brown'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Brown #{EquipmentsItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Brown #{EquipmentsItemMinimapIconShape}"
       end
     end
 
@@ -704,83 +742,83 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'TalismanItems1'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = TalismanItemColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'TalismanItems2'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = TalismanItemColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'TalismanItems3'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = TalismanItemColor
-        e.minimap_icon         = "#{MediumMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'TalismanItems4'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = TalismanItemColor
-        e.minimap_icon         = "#{LargestMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Green #{AccessoryItemMinimapIconShape}"
       end
 
       g.mixin do |m|
         m.element 'Unique' do |e|
           e.rarity               = 'Unique'
           e.set_border_color     = UniqueColor
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = MiddleLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = PreciousAlertSound
         end
         m.element 'Rare' do |e|
           e.rarity               = 'Rare'
           e.set_border_color     = RareColor
-          e.set_font_size        = LargeFontSize
+          e.set_font_size        = LoftyFontSize
         end
         m.element 'Magic' do |e|
           e.rarity               = 'Magic'
           e.set_border_color     = MagicColor
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
         end
       end
     end
 
     # Unique Equipment #########################################################
-    f.group 'Unique Equipment' do |g|
-      g.element 'Unique Equipment' do |e|
-        e.showable             = true
-        e.rarity               = 'Unique'
-        e.klass                = 'Equipments'
-      end
+    # f.group 'Unique Equipment' do |g|
+    #   g.element 'Unique Equipment' do |e|
+    #     e.showable             = true
+    #     e.rarity               = 'Unique'
+    #     e.klass                = 'Equipments'
+    #   end
 
-      g.mixin do |m|
-        m.element 'Best' do |e|
-          e.rarity               = 'Unique'
-          e.base_type            = 'BestUniquBaseTypes'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_background_color = HighTierColor
-          e.play_alert_sound_positional = HighLevelAlertSound
-          e.play_effect          = 'Brown Temp'
-        end
-        m.element 'Good' do |e|
-          e.rarity               = 'Unique'
-          e.base_type            = 'GoodUniquBaseTypes'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_background_color = MiddleTierColor
-          e.play_alert_sound_positional = MiddleLevelAlertSound
-        end
-        m.element 'Normal' do |e|
-          e.rarity               = 'Unique'
-          e.set_font_size        = LargeFontSize
-          e.play_alert_sound_positional = LowLevelAlertSound
-        end
-      end
-    end
+    #   g.mixin do |m|
+    #     m.element 'Best' do |e|
+    #       e.rarity               = 'Unique'
+    #       e.base_type            = 'BestUniquBaseTypes'
+    #       e.set_font_size        = SublimeFontSize
+    #       e.set_background_color = HighTierColor
+    #       e.play_alert_sound_positional = HighLevelAlertSound
+    #       e.play_effect          = 'Brown Temp'
+    #     end
+    #     m.element 'Good' do |e|
+    #       e.rarity               = 'Unique'
+    #       e.base_type            = 'GoodUniquBaseTypes'
+    #       e.set_font_size        = SublimeFontSize
+    #       e.set_background_color = MiddleTierColor
+    #       e.play_alert_sound_positional = MiddleLevelAlertSound
+    #     end
+    #     m.element 'Normal' do |e|
+    #       e.rarity               = 'Unique'
+    #       e.set_font_size        = LoftyFontSize
+    #       e.play_alert_sound_positional = LowLevelAlertSound
+    #     end
+    #   end
+    # end
 
     # Chance Item ##############################################################
     # f.group 'Chance Item' do |g|
@@ -789,7 +827,7 @@ Variables.each do |level, variable|
     #     e.rarity    = 'Normal'
     #     e.base_type = 'ChanceItems'
     #     e.corrupted = 'False'
-    #     e.set_font_size        = SmallFontSize
+    #     e.set_font_size        = TrivialFontSize
     #     e.set_text_color       = ChanceItemColor
     #     e.set_border_color     = ChanceItemColor
     #     e.set_background_color = Black
@@ -804,7 +842,7 @@ Variables.each do |level, variable|
         e.rarity    = 'Normal'
         e.base_type = %q("Stone Hammer" "Rock Breaker" "Gavel")
         e.corrupted            = 'False'
-        e.set_font_size        = SmallFontSize
+        e.set_font_size        = TrivialFontSize
         e.set_text_color       = ChiselRecipeColor
         e.set_border_color     = ChiselRecipeColor
         e.set_background_color = Black
@@ -835,7 +873,7 @@ Variables.each do |level, variable|
         m.element 'Normal' do |e|
           e.showable             = variable[:show_normal_accessory]
           e.rarity               = 'Normal'
-          e.set_font_size        = SmallFontSize
+          e.set_font_size        = TrivialFontSize
           e.set_color_alpha      = ThinAlpha
           if variable[:show_normal_accessory]
             e.play_alert_sound     = TrivialAlertSound
@@ -845,7 +883,7 @@ Variables.each do |level, variable|
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipment]
           e.rarity               = 'Magic'
-          e.set_font_size        = SmallFontSize
+          e.set_font_size        = TrivialFontSize
           e.set_color_alpha      = ThinAlpha
           if variable[:show_magic_equipment]
             e.play_alert_sound     = TrivialAlertSound
@@ -855,10 +893,10 @@ Variables.each do |level, variable|
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipment]
           e.rarity               = 'Rare'
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
           e.set_color_alpha      = DefaultAlpha
           if variable[:show_rare_equipment]
-            e.play_alert_sound     = LowLevelAlertSound
+            e.play_alert_sound     = PreciousAlertSound
             e.disable_drop_sound   = false
           end
         end
@@ -886,32 +924,32 @@ Variables.each do |level, variable|
           e.base_type            = 'SpecialAccessories'
           e.set_background_color = SpecialAccessoryColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'White'
-          e.minimap_icon         = "#{LargestMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
+          e.minimap_icon         = "#{SublimeMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
         end
 
-        m.element 'Good Accessories' do |e|
+        m.element 'Sublime' do |e|
           e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
-          e.base_type            = 'GoodAccessories'
+          e.base_type            = 'SublimeAccessories'
           unless variable[:show_magic_equipment]
             e.rarity               = 'Rare'
           end
           e.set_background_color = GoodAccessoryColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
+          e.set_font_size        = PreciousFontSize
+          e.minimap_icon         = "#{LoftyMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
 
-        m.element 'Not Good Accessories' do |e|
+        m.element 'Trivial' do |e|
           e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
-          e.base_type            = 'NotGoodAccessories'
+          e.base_type            = 'TrivialAccessories'
           e.rarity               = 'Rare'
           e.set_background_color = AccessoryColor
           e.set_color_alpha      = ThinAlpha
-          e.set_font_size        = SmallFontSize
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
+          e.set_font_size        = TrivialFontSize
+          e.minimap_icon         = "#{PreciousMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
 
         m.element 'Shaper' do |e|
@@ -919,10 +957,10 @@ Variables.each do |level, variable|
           e.shaper_item          = true
           e.set_background_color = ShaperItemColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{AccessoryItemMinimapIconShape}"
+          e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{AccessoryItemMinimapIconShape}"
         end
 
         m.element 'Elder' do |e|
@@ -930,10 +968,10 @@ Variables.each do |level, variable|
           e.elder_item           = true
           e.set_background_color = ElderItemColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{AccessoryItemMinimapIconShape}"
+          e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{AccessoryItemMinimapIconShape}"
         end
       end
     end
@@ -943,26 +981,26 @@ Variables.each do |level, variable|
       g.element 'Weapon And Gear' do |e|
         e.showable             = false
         e.klass                = 'Weapons Gears'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
       end
 
       g.mixin do |m|
         m.element 'Normal' do |e|
           e.showable             = false
           e.rarity               = 'Normal'
-          e.set_font_size        = SmallFontSize
+          e.set_font_size        = TrivialFontSize
           e.set_color_alpha      = ThinAlpha
         end
         m.element 'Magic' do |e|
           e.showable             = variable[:show_magic_equipment]
           e.rarity               = 'Magic'
-          e.set_font_size        = SmallFontSize
+          e.set_font_size        = TrivialFontSize
           e.set_color_alpha      = ThinAlpha
         end
         m.element 'Rare' do |e|
           e.showable             = variable[:show_rare_equipment]
           e.rarity               = 'Rare'
-          e.set_font_size        = DefaultFontSize
+          e.set_font_size        = PreciousFontSize
           e.set_color_alpha      = DefaultAlpha
         end
       end
@@ -976,7 +1014,7 @@ Variables.each do |level, variable|
             e.item_level           = '>= 75'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
-            e.set_font_size        = SmallFontSize
+            e.set_font_size        = TrivialFontSize
             e.set_text_color       = RegalRecipeColor
             e.set_border_color     = RegalRecipeColor
             e.set_background_color = HighTierColor
@@ -991,7 +1029,7 @@ Variables.each do |level, variable|
             e.item_level           = '>= 75'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
-            e.set_font_size        = SmallFontSize
+            e.set_font_size        = TrivialFontSize
             e.set_text_color       = RegalRecipeColor
             e.set_border_color     = RegalRecipeColor
             e.set_background_color = HighTierColor
@@ -1004,7 +1042,7 @@ Variables.each do |level, variable|
             e.item_level           = '>= 60'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
-            e.set_font_size        = SmallFontSize
+            e.set_font_size        = TrivialFontSize
             e.set_text_color       = ChaosRecipeColor
             e.set_border_color     = ChaosRecipeColor
             e.set_background_color = MiddleTierColor
@@ -1019,7 +1057,7 @@ Variables.each do |level, variable|
             e.item_level           = '>= 60'
             e.sockets              = "< 6"
             e.linked_sockets       = '< 5'
-            e.set_font_size        = SmallFontSize
+            e.set_font_size        = TrivialFontSize
             e.set_text_color       = ChaosRecipeColor
             e.set_border_color     = ChaosRecipeColor
             e.set_background_color = MiddleTierColor
@@ -1060,13 +1098,22 @@ Variables.each do |level, variable|
           end
         end
 
-        m.element 'Special' do |e|
+        m.element 'Sublime' do |e|
           e.showable             = true
-          e.base_type            = 'SpecialGears'
-          e.set_font_size        = ExtraLargeFontSize
+          e.base_type            = 'SublimeGears'
+          e.set_font_size        = SublimeFontSize
           e.set_color_alpha      = DefaultAlpha
-          e.set_background_color = SpecialGearColor
-          e.play_alert_sound     = LowLevelAlertSound
+          e.set_background_color = SublimeColor
+          e.play_alert_sound     = PreciousAlertSound
+        end
+
+        m.element 'Lofty' do |e|
+          e.showable             = true
+          e.base_type            = 'LoftyGears'
+          e.set_font_size        = SublimeFontSize
+          e.set_color_alpha      = DefaultAlpha
+          e.set_background_color = LoftyColor
+          e.play_alert_sound     = PreciousAlertSound
         end
       end
 
@@ -1074,30 +1121,30 @@ Variables.each do |level, variable|
         m.element 'Linked Sockets LL' do |e|
           e.showable             = true
           e.linked_sockets       = '= 6'
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = SublimeFontSize
+          e.set_border_color     = SublimeColor
           e.set_color_alpha      = DefaultAlpha
-          e.play_alert_sound     = HighLevelAlertSound
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'White'
-          e.minimap_icon         = "#{LargestMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
+          e.minimap_icon         = "#{SublimeMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Linked Sockets L' do |e|
           e.showable             = true
           e.linked_sockets       = "= 5"
-          e.set_font_size        = ExtraLargeFontSize
-          e.set_border_color     = UniqueColor
+          e.set_font_size        = SublimeFontSize
+          e.set_border_color     = LoftyColor
           e.set_color_alpha      = DefaultAlpha
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.minimap_icon         = "#{LargestMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
+          e.play_alert_sound     = LoftyAlertSound
+          e.minimap_icon         = "#{SublimeMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Sockets LL' do |e|
           e.showable             = true
           e.sockets              = "= 6"
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = RareColor
+          e.set_font_size        = LoftyFontSize
+          e.set_border_color     = PreciousColor
           e.set_color_alpha      = DefaultAlpha
-          e.play_alert_sound     = LowLevelAlertSound
-          e.minimap_icon         = "#{MediumMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
+          e.play_alert_sound     = PreciousAlertSound
+          e.minimap_icon         = "#{LoftyMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'RGB 1' do |e|
           e.showable             = true
@@ -1106,11 +1153,11 @@ Variables.each do |level, variable|
             e.height               = '<= 3'
             e.width                = '<= 1'
           end
-          e.set_font_size        = DefaultFontSize
-          e.set_border_color     = MagicColor
+          e.set_font_size        = PreciousFontSize
+          e.set_border_color     = TrivialColor
           e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = TrivialAlertSound
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
+          e.minimap_icon         = "#{PreciousMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'RGB 2' do |e|
           e.showable             = true
@@ -1119,17 +1166,17 @@ Variables.each do |level, variable|
             e.height               = '<= 2'
             e.width                = '<= 2'
           end
-          e.set_font_size        = DefaultFontSize
-          e.set_border_color     = MagicColor
+          e.set_font_size        = PreciousFontSize
+          e.set_border_color     = TrivialColor
           e.set_color_alpha      = DefaultAlpha
           e.play_alert_sound     = TrivialAlertSound
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
+          e.minimap_icon         = "#{PreciousMinimapIconSize} White #{EquipmentsItemMinimapIconShape}"
         end
         if variable[:show_linked_num]
           m.element 'Linked Sockets L' do |e|
             e.showable             = true
             e.linked_sockets       = ">= #{variable[:show_linked_num]}"
-            e.set_font_size        = LargeFontSize
+            e.set_font_size        = LoftyFontSize
             e.set_border_color     = FarmEquipmentBorderColor
           end
         end
@@ -1137,7 +1184,7 @@ Variables.each do |level, variable|
           m.element 'Sockets L' do |e|
             e.showable             = true
             e.sockets              = ">= #{variable[:show_socket_num]}"
-            e.set_font_size        = LargeFontSize
+            e.set_font_size        = LoftyFontSize
             e.set_border_color     = FarmEquipmentBorderColor
           end
         end
@@ -1148,26 +1195,26 @@ Variables.each do |level, variable|
           e.shaper_item          = true
           e.set_background_color = ShaperItemColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Blue Temp'
         end
         m.element 'Elder' do |e|
           e.elder_item           = true
           e.set_background_color = ElderItemColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Blue Temp'
         end
         m.element 'Incursion' do |e|
           e.has_explicit_mod     = 'IncursionMods'
           e.set_background_color = IncursionItemColor
           e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
+          e.set_font_size        = SublimeFontSize
+          e.play_alert_sound     = SublimeAlertSound
           e.play_effect          = 'Red Temp'
-          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
+          e.minimap_icon         = "#{LoftyMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
         end
       end
     end
@@ -1177,10 +1224,10 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable             = true
         e.base_type            = 'LabyrinthItems'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = LabyrinthItemColor
         e.play_effect          = 'Green Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Green #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Green #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1189,50 +1236,50 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Shaper's Orb")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = AtlasItemColor
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Cartographer's Seal")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = AtlasItemColor
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Apprentice Cartographer's Sextant")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_border_color     = MagicColor
         e.set_background_color = AtlasItemColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Journeyman Cartographer's Sextant")
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = RareColor
         e.set_background_color = AtlasItemColor
         e.play_effect          = 'Red Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Master Cartographer's Sextant")
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = AtlasItemColor
         e.set_border_color     = UniqueColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.play_alert_sound     = SublimeAlertSound
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = %q("Timeworn Reliquary Key")
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = AtlasItemColor
-        e.play_alert_sound     = HighLevelAlertSound
+        e.play_alert_sound     = SublimeAlertSound
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
     end
 
@@ -1241,17 +1288,17 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable             = true
         e.klass                = %q("Pantheon Soul")
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = OriathItemColor
       end
       g.element do |e|
         e.showable             = true
         e.base_type            = 'OriathItems'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = OriathItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{FragmentItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{FragmentItemMinimapIconShape}"
       end
     end
 
@@ -1260,9 +1307,9 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'ProphecyItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = ProphecyItemColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1271,59 +1318,59 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers1'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = EssenceItemColor
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers2'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = EssenceItemColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers3'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = MagicColor
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers4'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = MagicColor
         e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers5'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = RareColor
         e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'EssenceItemTiers6'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = UniqueColor
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = %q("Remnant of Corruption")
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = EssenceItemColor
         e.set_border_color     = RareColor
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1332,10 +1379,10 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'BreachItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = BreachItemsColor
         e.play_effect          = 'Brown'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Brown #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Brown #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1344,19 +1391,19 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'HarbingerItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = HarbingerItemColor
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable = true
         e.klass = 'Piece'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = HarbingerItemColor
         e.set_border_color     = UniqueColor
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1365,7 +1412,7 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'BestiaryItems'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = BestiaryItemColor
       end
     end
@@ -1375,21 +1422,21 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'IncursionItems1'
-        e.set_font_size        = ExtraLargeFontSize
+        e.set_font_size        = SublimeFontSize
         e.set_background_color = IncursionItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
       end
     end
     f.group 'Incursion Item2' do |g|
       g.element do |e|
         e.showable  = true
         e.base_type = 'IncursionItems2'
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.set_background_color = IncursionItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
+        e.play_alert_sound     = PreciousAlertSound
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
       end
     end
 
@@ -1398,79 +1445,79 @@ Variables.each do |level, variable|
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsFosilsUnique'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = UniqueColor
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsFosilsRara'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = RareColor
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsFosilsMagic'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = MagicColor
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsFosilsNormal'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = LowLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
 
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsResonatorsUnique'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = UniqueColor
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsResonatorsRare'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_border_color     = RareColor
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{LoftyMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsResonatorsMagic'
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.set_background_color = DelveItemColor
-        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue'
-        e.minimap_icon         = "#{SamllMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
+        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{LeagueItemMinimapIconShape}"
       end
       g.element do |e|
         e.showable  = true
         e.base_type = 'DelveItemsResonatorsNormal'
-        e.set_font_size        = SmallFontSize
+        e.set_font_size        = TrivialFontSize
         e.set_background_color = DelveItemColor
         e.set_color_alpha      = ThinAlpha
-        e.play_alert_sound     = LowLevelAlertSound
+        e.play_alert_sound     = PreciousAlertSound
         e.play_effect          = 'Blue Temp'
       end
     end
@@ -1482,8 +1529,8 @@ Variables.each do |level, variable|
         e.klass                = %q("Map Fragment")
         e.set_text_color       = MapFragmentColor
         e.set_border_color     = MapFragmentColor
-        e.set_font_size        = LargeFontSize
-        e.minimap_icon         = "#{LargestMinimapIconSize} White #{FragmentItemMinimapIconShape}"
+        e.set_font_size        = LoftyFontSize
+        e.minimap_icon         = "#{SublimeMinimapIconSize} White #{FragmentItemMinimapIconShape}"
       end
     end
 
@@ -1494,9 +1541,9 @@ Variables.each do |level, variable|
         e.klass = %q("Quest Items")
         e.set_border_color     = QuestItemColor
         e.set_text_color       = QuestItemColor
-        e.set_font_size        = LargeFontSize
+        e.set_font_size        = LoftyFontSize
         e.play_effect          = 'Green'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Green #{QuestItemMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Green #{QuestItemMinimapIconShape}"
       end
     end
 
@@ -1504,10 +1551,10 @@ Variables.each do |level, variable|
     f.group 'Error' do |g|
       g.element do |e|
         e.showable = true
-        e.set_font_size        = DefaultFontSize
+        e.set_font_size        = PreciousFontSize
         e.play_alert_sound     = ErrorAlertSound
         e.play_effect          = 'Red'
-        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{ErrorMinimapIconShape}"
+        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{ErrorMinimapIconShape}"
       end
     end
   end

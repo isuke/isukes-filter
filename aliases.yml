@@ -67,8 +67,8 @@ PreciousGems: &PreciousGems
   - Portal
 
 DropOnlyGems:
-  - *RareGems
-  - *UniqueGems
+  - *LoftyGems
+  - *PreciousGems
 
 VendorOnlyGems:
   - Block Chance Reduction
@@ -546,9 +546,9 @@ TrivialAccessories:
 #   - Unset Ring
 #   - Wereclaw Talisman
 # LoftyUniquBaseTypes: # 5c+
-  - *LoftyUniquWeaponBaseTypes
-  - *LoftyUniquGearsBaseTypes
-  - *LoftyUniquAccessoryBaseTypes
+#   - *LoftyUniquWeaponBaseTypes
+#   - *LoftyUniquGearsBaseTypes
+#   - *LoftyUniquAccessoryBaseTypes
 
 #
 # Defines
