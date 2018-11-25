@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '5.0'
+FilterVersion      = '6.0'
 
 # Font Size
 SmallFontSize      = 32
@@ -11,6 +11,7 @@ ExtraLargeFontSize = 45
 # Color
 Black       = '  0   0   0'
 White       = '255 255 255'
+Red         = '255   0   0'
 Pink1       = '190 120 120'
 Pink2       = '205 160 160'
 Pink3       = '220 180 180'
@@ -41,14 +42,19 @@ Green3      = '128 254 128'
 
 HighTierColor   = ' 70   0   0'
 MiddleTierColor = ' 70  70   0'
-NormalColor     = '200 200 200'
-MagicColor      = '136 136 255'
-RareColor       = '255 255 119'
 UniqueColor     = '175  96  37'
+RareColor       = '255 255 119'
+MagicColor      = '136 136 255'
+NormalColor     = '200 200 200'
 GemColor        = ' 27 162 155'
 CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
+
+SublimeColor  = Red
+LoftyColor    = UniqueColor
+PreciousColor = RareColor
+TrivialColor  = MagicColor
 
 LifeFlaskColor     = Pink2
 ManaFlaskColor     = Pink2
@@ -93,11 +99,11 @@ DefaultAlpha = 255
 ThinAlpha    = 200
 
 # Sound
-HighLevelAlertSound   =  '6 300'
-MiddleLevelAlertSound =  '3 300'
-LowLevelAlertSound    =  '7 300'
-TrivialAlertSound     =  '9 170'
-ErrorAlertSound       = '12 300'
+SublimeAlertSound  =  '6 300'
+LoftyAlertSound    =  '3 300'
+PreciousAlertSound =  '7 300'
+TrivialAlertSound  =  '9 170'
+ErrorAlertSound    = '12 300'
 
 # MinimapIconSize
 LargestMinimapIconSize = 0
