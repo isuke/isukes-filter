@@ -8,6 +8,8 @@ SublimeCurrencies:
   - Exalted Orb
   - Mirror of Kalandra
   - Albino Rhoa Feather
+  - Eternal Orb
+  - Imprint
 
 LoftyCurrencyShards:
   - Annulment Shard
@@ -635,6 +637,7 @@ AtlasItems:
   - Cartographer's Sextant
   - Cartographer's Seal
   - Timeworn Reliquary Key
+  - Unshaping Orb
 
 OriathItems:
   - Divine Vessel

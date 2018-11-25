@@ -126,7 +126,7 @@ SublimeAlpha  = DefaultAlpha
 LoftyAlpha    = DefaultAlpha
 PreciousAlpha = DefaultAlpha
 TrivialAlpha  = DefaultAlpha
-CheaoAlpha    = ThinAlpha
+CheapAlpha    = ThinAlpha
 
 SublimeAlertSound  =  '6 300'
 LoftyAlertSound    =  '3 300'
@@ -265,7 +265,7 @@ def set_precious element, color1, minimap_icon_color, minimap_icon_shape
   element.set_background_color = PreciousColor
   element.set_color_alpha      = PreciousAlpha
   element.play_alert_sound     = PreciousAlertSound
-  element.play_effect          = minimap_icon_color if minimap_icon_color
+  element.play_effect          = "#{minimap_icon_color} Temp" if minimap_icon_color
   element.minimap_icon         = "#{PreciousMinimapIconSize} #{minimap_icon_color} #{minimap_icon_shape}" if minimap_icon_color && minimap_icon_shape
 end
 
@@ -348,92 +348,104 @@ Variables.each do |level, variable|
         # e.play_effect          = 'Red'
         # e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
       end
-      g.element 'Lofty Currency Shard' do |e|
-        e.showable             = true
-        e.klass                = 'Currency'
-        e.base_type            = 'LoftyCurrencyShards'
-        e.set_font_size        = LoftyFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = LoftyColor
-        e.play_alert_sound     = LoftyAlertSound
-        e.play_effect          = 'Yellow'
-        e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
-      end
-      g.element 'Precious Currency Shard' do |e|
-        e.showable             = true
-        e.klass                = 'Currency'
-        e.base_type            = 'PreciousCurrencyShards'
-        e.set_font_size        = PreciousFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = PreciousColor
-        e.play_effect          = 'Yellow Temp'
-        e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
-      end
-      g.element 'Trivial Currency Shard' do |e|
-        e.showable             = true
-        e.klass                = 'Currency'
-        e.base_type            = 'TrivialCurrencyShards'
-        e.set_font_size        = TrivialFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = TrivialColor
-        e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-      end
-      g.element 'Cheap Currency Shard' do |e|
-        e.showable             = false
-        e.klass                = 'Currency'
-        e.base_type            = 'CheapCurrencyShards'
-      end
-
       g.element 'Sublime Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.base_type            = 'SublimeCurrencies'
-        e.set_font_size        = SublimeFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = SublimeColor
-        e.set_background_color = SublimeColor
-        e.play_alert_sound     = SublimeAlertSound
-        e.play_effect          = 'Red'
-        e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+        set_sublime e, CurrencyColor, 'Red', StackableItemMinimapIconShape
+        # e.set_font_size        = SublimeFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = SublimeColor
+        # e.set_background_color = SublimeColor
+        # e.play_alert_sound     = SublimeAlertSound
+        # e.play_effect          = 'Red'
+        # e.minimap_icon         = "#{SublimeMinimapIconSize} Red #{StackableItemMinimapIconShape}"
+      end
+
+      g.element 'Lofty Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'LoftyCurrencyShards'
+        set_lofty e, CurrencyColor, 'Yellow', StackableItemMinimapIconShape
+        # e.set_font_size        = LoftyFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = LoftyColor
+        # e.play_alert_sound     = LoftyAlertSound
+        # e.play_effect          = 'Yellow'
+        # e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
       g.element 'Lofty Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.base_type            = 'LoftyCurrencies'
-        e.set_font_size        = SublimeFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = LoftyColor
-        e.play_alert_sound     = LoftyAlertSound
-        e.play_effect          = 'Yellow'
-        e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        set_lofty e, CurrencyColor, 'Yellow', StackableItemMinimapIconShape
+        # e.set_font_size        = SublimeFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = LoftyColor
+        # e.play_alert_sound     = LoftyAlertSound
+        # e.play_effect          = 'Yellow'
+        # e.minimap_icon         = "#{SublimeMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+      end
+
+      g.element 'Precious Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'PreciousCurrencyShards'
+        set_precious e, CurrencyColor, 'Yellow', StackableItemMinimapIconShape
+        # e.set_font_size        = PreciousFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = PreciousColor
+        # e.play_effect          = 'Yellow Temp'
+        # e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
       end
       g.element 'Precious Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.base_type            = 'PreciousCurrencies'
-        e.set_font_size        = LoftyFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = PreciousColor
-        e.play_effect          = 'Yellow Temp'
-        e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+        set_precious e, CurrencyColor, 'Yellow', StackableItemMinimapIconShape
+        # e.set_font_size        = LoftyFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = PreciousColor
+        # e.play_effect          = 'Yellow Temp'
+        # e.minimap_icon         = "#{LoftyMinimapIconSize} Yellow #{StackableItemMinimapIconShape}"
+      end
+
+      g.element 'Trivial Currency Shard' do |e|
+        e.showable             = true
+        e.klass                = 'Currency'
+        e.base_type            = 'TrivialCurrencyShards'
+        set_trivial e, CurrencyColor, 'Blue', StackableItemMinimapIconShape
+        # e.set_font_size        = TrivialFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = TrivialColor
+        # e.play_effect          = 'Blue Temp'
+        # e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
       end
       g.element 'Trivial Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.base_type            = 'TrivialCurrencies'
-        e.set_font_size        = PreciousFontSize
-        e.set_text_color       = CurrencyColor
-        e.set_border_color     = TrivialColor
-        e.play_effect          = 'Blue Temp'
-        e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        set_trivial e, CurrencyColor, 'Blue', StackableItemMinimapIconShape
+        # e.set_font_size        = PreciousFontSize
+        # e.set_text_color       = CurrencyColor
+        # e.set_border_color     = TrivialColor
+        # e.play_effect          = 'Blue Temp'
+        # e.minimap_icon         = "#{PreciousMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+      end
+
+      g.element 'Cheap Currency Shard' do |e|
+        e.showable             = false
+        e.klass                = 'Currency'
+        e.base_type            = 'CheapCurrencyShards'
+        set_cheap e, CurrencyColor, 'White', StackableItemMinimapIconShape
       end
       g.element 'Cheap Currency' do |e|
         e.showable             = true
         e.klass                = 'Currency'
         e.base_type            = 'CheapCurrencies'
-        e.set_font_size        = PreciousFontSize
-        e.set_text_color       = CurrencyColor
+        set_cheap e, CurrencyColor, 'White', StackableItemMinimapIconShape
+        # e.set_font_size        = PreciousFontSize
+        # e.set_text_color       = CurrencyColor
       end
     end
 
