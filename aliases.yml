@@ -581,7 +581,7 @@ Gears: &Gears
   - Body Armours
   - Helmets
   - Shields
-  - Quivers # Originally it is an accessory
+  - Quivers # Originally it is Accessories
 
 Accessories: &Accessories
   - Belts
@@ -609,9 +609,9 @@ ThreeSockets:
   - *OneHandWeapons
   - Shields
 
-ChanceItems:
-  - Sorcerer Boots
-  - Gold Amulet
+# ChanceItems:
+#   - Sorcerer Boots
+#   - Gold Amulet
 
 ################################################################################
 # Major Version                                                                #
