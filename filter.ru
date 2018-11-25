@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.4'
-FilterVersion      = '6.0'
+FilterVersion      = '6.0-Beta'
 
 # Font Size
 ExtraLargeFontSize = 45
@@ -43,6 +43,7 @@ Green3      = '128 254 128'
 
 HighTierColor   = ' 70   0   0'
 MiddleTierColor = ' 70  70   0'
+
 UniqueColor     = '175  96  37'
 RareColor       = '255 255 119'
 MagicColor      = '136 136 255'
