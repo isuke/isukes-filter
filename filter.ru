@@ -75,7 +75,7 @@ SpecialAccessoryColor   = Blue1
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
 OriathItemColor    = BluePurple3
-ShaperItemColor    = BluePurple2
+ShaperItemColor    = BluePurple1
 ElderItemColor     = BluePurple1
 
 TalismanItemColor  = Green3
