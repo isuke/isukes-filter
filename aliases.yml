@@ -65,13 +65,23 @@ VendorOnlyGems:
   - Block Chance Reduction
   - Mirror Arrow
 
-NewDivinations: []
+NewDivinations:
+  - The Sacrifice
+  - Divination Card
+  - A Dab of Ink
+  - Divination Card
+  - The Nurse
+  - Divination Card
+  - The Master Artisan
+  - Divination Card
+  - The Life Thief
+  - Divination Card
 
 NotGoodDivinations:
   - A Mother's Parting Gift
   - Death
   - Destined to Crumble
-  - Dying Anguish
+  # - Dying Anguish # it can no longer drop
   - Lantador's Lost Love
   - Struck by Lightning
   - The Betrayal
@@ -790,3 +800,26 @@ DelveItemsResonatorsMagic:
 DelveItemsResonatorsNormal:
   - Primitive Alchemical Resonator
   - Primitive Chaotic Resonator
+
+BetrayalItems:
+  - Scarab
+BetrayalMods:
+  - Leo's Veiled
+  - Catarina's Veiled
+  - Elreon's Veiled
+  - Vorici's Veiled
+  - Haku's Veiled
+  - Tora's Veiled
+  - Vagan's Veiled
+  - Guff's Veiled
+  - It That Fled's Veiled
+  - Gravicius' Veiled
+  - Korell's Veiled
+  - Rin's Veiled
+  - of the Veil
+  - of Janus' Veil
+  - of Hillock's Veil
+  - of Jorgin's Veil
+  - of Cameria's Veil
+  - of Aisling's Veil
+  - of Riker's Veil
