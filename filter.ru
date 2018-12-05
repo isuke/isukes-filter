@@ -1,6 +1,6 @@
 # Verson
-PoeVersion         = '3.4'
-FilterVersion      = '5.0'
+PoeVersion         = '3.5'
+FilterVersion      = '5.1'
 
 # Font Size
 SmallFontSize      = 32
@@ -75,7 +75,7 @@ SpecialAccessoryColor   = Blue1
 LabyrinthItemColor = Green1
 AtlasItemColor     = Brown2
 OriathItemColor    = BluePurple3
-ShaperItemColor    = BluePurple2
+ShaperItemColor    = BluePurple1
 ElderItemColor     = BluePurple1
 
 TalismanItemColor  = Green3
@@ -87,6 +87,7 @@ AbyssItemColor     = Green2
 BestiaryItemColor  = Brown3
 IncursionItemColor = Red2
 DelveItemColor     = Blue1
+BetrayalItemColor  = Red1
 
 # Alpha
 DefaultAlpha = 255
@@ -620,14 +621,14 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        # m.element 'New' do |e|
-        #   e.base_type            = 'NewDivinations'
-        #   e.set_font_size        = LargeFontSize
-        #   e.set_border_color     = FarmEquipmentBorderColor
-        #   e.play_alert_sound     = MiddleLevelAlertSound
-        #   e.play_effect          = 'Blue'
-        #   e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        # end
+        m.element 'New' do |e|
+          e.base_type            = 'NewDivinations'
+          e.set_font_size        = LargeFontSize
+          e.set_border_color     = FarmEquipmentBorderColor
+          e.play_alert_sound     = MiddleLevelAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        end
         m.element 'NotGood' do |e|
           e.base_type            = 'NotGoodDivinations'
           if variable[:show_not_good_divination]
@@ -1144,7 +1145,8 @@ Variables.each do |level, variable|
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Blue Temp'
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Elder' do |e|
           e.elder_item           = true
@@ -1152,7 +1154,8 @@ Variables.each do |level, variable|
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Blue Temp'
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Incursion' do |e|
           e.has_explicit_mod     = 'IncursionMods'
@@ -1160,7 +1163,16 @@ Variables.each do |level, variable|
           e.set_color_alpha      = DefaultAlpha
           e.set_font_size        = ExtraLargeFontSize
           e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Red Temp'
+          e.play_effect          = 'Red'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
+        end
+        m.element 'Betrayal' do |e|
+          e.has_explicit_mod     = 'BetrayalMods'
+          e.set_background_color = BetrayalItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red'
           e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
         end
       end
@@ -1466,6 +1478,19 @@ Variables.each do |level, variable|
         e.set_color_alpha      = ThinAlpha
         e.play_alert_sound     = LowLevelAlertSound
         e.play_effect          = 'Blue Temp'
+      end
+    end
+
+    # Betrayal Item ###############################################################
+    f.group 'Betrayal Item' do |g|
+      g.element 'Betrayal Item' do |e|
+        e.showable  = true
+        e.base_type = 'BetrayalItems'
+        e.set_font_size        = ExtraLargeFontSize
+        e.set_background_color = BetrayalItemColor
+        e.play_alert_sound     = MiddleLevelAlertSound
+        e.play_effect          = 'Red'
+        e.minimap_icon         = "#{LargestMinimapIconSize} Red #{LeagueItemMinimapIconShape}"
       end
     end
 
