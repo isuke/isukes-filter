@@ -606,40 +606,40 @@ OriathItems:
   - Divine Vessel
 
 TalismanItems1:
-- Ashscale Talisman
-- Black Maw Talisman
-- Bonespire Talisman
-- Breakrib Talisman
-- Chrysalis Talisman
-- Deadhand Talisman
-- Deep One Talisman
-- Lone Antler Talisman
-- Mandible Talisman
-- Rot Head Talisman
-- Undying Flesh Talisman
-- Writhing Talisman
+  - Ashscale Talisman
+  - Black Maw Talisman
+  - Bonespire Talisman
+  - Breakrib Talisman
+  - Chrysalis Talisman
+  - Deadhand Talisman
+  - Deep One Talisman
+  - Lone Antler Talisman
+  - Mandible Talisman
+  - Rot Head Talisman
+  - Undying Flesh Talisman
+  - Writhing Talisman
 
 TalismanItems2:
-- Avian Twins Talisman
-- Clutching Talisman
-- Fangjaw Talisman
-- Hexclaw Talisman
-- Horned Talisman
-- Primal Skull Talisman
-- Splitnewt Talisman
-- Wereclaw Talisman
+  - Avian Twins Talisman
+  - Clutching Talisman
+  - Fangjaw Talisman
+  - Hexclaw Talisman
+  - Horned Talisman
+  - Primal Skull Talisman
+  - Splitnewt Talisman
+  - Wereclaw Talisman
 
 TalismanItems3:
-- Longtooth Talisman
-- Monkey Paw Talisman
-- Monkey Twins Talisman
-- Rotfeather Talisman
-- Spinefuse Talisman
-- Three Hands Talisman
-- Three Rat Talisman
+  - Longtooth Talisman
+  - Monkey Paw Talisman
+  - Monkey Twins Talisman
+  - Rotfeather Talisman
+  - Spinefuse Talisman
+  - Three Hands Talisman
+  - Three Rat Talisman
 
 TalismanItems4:
-- Greatwolf Talisman
+  - Greatwolf Talisman
 
 ProphecyItems:
   - Silver Coin
