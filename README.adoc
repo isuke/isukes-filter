@@ -53,7 +53,7 @@ THe filters is exist 5 types (`C`/`B`/`A`/`S`/`SS`).
 | [green]#All#
 | [green]#All#
 | >= Magic
-| >= Rage
+| >= Rare
 
 | Show Flask Item Level
 | >= 3
