@@ -794,7 +794,7 @@ Variables.each do |level, variable|
 
     # Chisel Recipe ############################################################
     f.group 'Chisel Recipe' do |g|
-      g.element do |e|
+      g.element 'Chisel Recipe' do |e|
         e.showable = true
         e.rarity    = 'Normal'
         e.base_type = %q("Stone Hammer" "Rock Breaker" "Gavel")
