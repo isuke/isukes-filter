@@ -256,6 +256,50 @@ Variables.each do |level, variable|
       end
     end
 
+    # Hide Map #################################################################
+    f.group 'Hide Map' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = 'Maps'
+        e.map_tier             = "< #{variable[:show_map_tier]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    # Hide Flask ###############################################################
+    f.group 'Hide Utility Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Utility Flasks")
+        e.quality              = "< #{variable[:show_utility_flask_quality]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    f.group 'Hide Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
+        e.quality              = "< #{variable[:show_flask_quality]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    # Hide Jewel ###############################################################
+    unless variable[:show_magic_jewel]
+      f.group 'Hide Jewel' do |g|
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Jewel'
+          e.rarity               = 'Magic'
+          e.disable_drop_sound   = "True"
+        end
+      end
+    end
+
     # Currency #################################################################
     f.group 'Currency' do |g|
       g.element 'Unique Currency Shard' do |e|
@@ -332,25 +376,6 @@ Variables.each do |level, variable|
         e.base_type            = 'NormalCurrencies'
         e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
-      end
-    end
-
-    # Hide Flask ###############################################################
-    f.group 'Hide Utility Flask' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = %q("Utility Flasks")
-        e.quality              = "< #{variable[:show_utility_flask_quality]}"
-        e.rarity               = '< Unique'
-      end
-    end
-
-    f.group 'Hide Flask' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
-        e.quality              = "< #{variable[:show_flask_quality]}"
-        e.rarity               = '< Unique'
       end
     end
 
@@ -517,16 +542,6 @@ Variables.each do |level, variable|
       end
     end
 
-    # Hide Map #################################################################
-    f.group 'Hide Map' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = 'Maps'
-        e.map_tier             = "< #{variable[:show_map_tier]}"
-        e.rarity               = '< Unique'
-      end
-    end
-
     # Map ######################################################################
     f.group 'Map' do |g|
       g.element 'Map' do |e|
@@ -604,11 +619,13 @@ Variables.each do |level, variable|
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
         end
-        m.element 'Magic' do |e|
-          e.showable             = variable[:show_magic_jewel]
-          e.rarity               = 'Magic'
-          e.set_border_color     = MagicColor
-          e.set_font_size        = DefaultFontSize
+        if variable[:show_magic_jewel]
+          m.element 'Magic' do |e|
+            e.showable             = true
+            e.rarity               = 'Magic'
+            e.set_border_color     = MagicColor
+            e.set_font_size        = DefaultFontSize
+          end
         end
       end
     end
@@ -886,7 +903,7 @@ Variables.each do |level, variable|
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
-        e.disable_drop_sound   = true
+        e.disable_drop_sound   = "True"
       end
 
       g.mixin do |m|
