@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.5'
-FilterVersion      = '5.1'
+FilterVersion      = '5.2'
 
 # Font Size
 SmallFontSize      = 32
@@ -46,6 +46,7 @@ MagicColor      = '136 136 255'
 RareColor       = '255 255 119'
 UniqueColor     = '175  96  37'
 GemColor        = ' 27 162 155'
+CorruptedColor  = '210   0   0'
 CurrencyColor   = '170 158 130'
 DivinationCardColor = '184 218 242'
 QuestItemColor  = ' 74 230  58'
@@ -255,6 +256,50 @@ Variables.each do |level, variable|
       end
     end
 
+    # Hide Map #################################################################
+    f.group 'Hide Map' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = 'Maps'
+        e.map_tier             = "< #{variable[:show_map_tier]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    # Hide Flask ###############################################################
+    f.group 'Hide Utility Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Utility Flasks")
+        e.quality              = "< #{variable[:show_utility_flask_quality]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    f.group 'Hide Flask' do |g|
+      g.element do |e|
+        e.showable             = false
+        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
+        e.quality              = "< #{variable[:show_flask_quality]}"
+        e.rarity               = '< Unique'
+        e.disable_drop_sound   = "True"
+      end
+    end
+
+    # Hide Jewel ###############################################################
+    unless variable[:show_magic_jewel]
+      f.group 'Hide Jewel' do |g|
+        g.element do |e|
+          e.showable             = false
+          e.klass                = 'Jewel'
+          e.rarity               = 'Magic'
+          e.disable_drop_sound   = "True"
+        end
+      end
+    end
+
     # Currency #################################################################
     f.group 'Currency' do |g|
       g.element 'Unique Currency Shard' do |e|
@@ -331,25 +376,6 @@ Variables.each do |level, variable|
         e.base_type            = 'NormalCurrencies'
         e.set_text_color       = CurrencyColor
         e.set_font_size        = DefaultFontSize
-      end
-    end
-
-    # Hide Flask ###############################################################
-    f.group 'Hide Utility Flask' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = %q("Utility Flasks")
-        e.quality              = "< #{variable[:show_utility_flask_quality]}"
-        e.rarity               = '< Unique'
-      end
-    end
-
-    f.group 'Hide Flask' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = %q("Life Flasks" "Mana Flasks" "Hybrid Flasks")
-        e.quality              = "< #{variable[:show_flask_quality]}"
-        e.rarity               = '< Unique'
       end
     end
 
@@ -516,16 +542,6 @@ Variables.each do |level, variable|
       end
     end
 
-    # Hide Map #################################################################
-    f.group 'Hide Map' do |g|
-      g.element do |e|
-        e.showable             = false
-        e.klass                = 'Maps'
-        e.map_tier             = "< #{variable[:show_map_tier]}"
-        e.rarity               = '< Unique'
-      end
-    end
-
     # Map ######################################################################
     f.group 'Map' do |g|
       g.element 'Map' do |e|
@@ -603,11 +619,13 @@ Variables.each do |level, variable|
           e.set_border_color     = RareColor
           e.set_font_size        = LargeFontSize
         end
-        m.element 'Magic' do |e|
-          e.showable             = variable[:show_magic_jewel]
-          e.rarity               = 'Magic'
-          e.set_border_color     = MagicColor
-          e.set_font_size        = DefaultFontSize
+        if variable[:show_magic_jewel]
+          m.element 'Magic' do |e|
+            e.showable             = true
+            e.rarity               = 'Magic'
+            e.set_border_color     = MagicColor
+            e.set_font_size        = DefaultFontSize
+          end
         end
       end
     end
@@ -794,7 +812,7 @@ Variables.each do |level, variable|
 
     # Chisel Recipe ############################################################
     f.group 'Chisel Recipe' do |g|
-      g.element do |e|
+      g.element 'Chisel Recipe' do |e|
         e.showable = true
         e.rarity    = 'Normal'
         e.base_type = %q("Stone Hammer" "Rock Breaker" "Gavel")
@@ -818,12 +836,74 @@ Variables.each do |level, variable|
       end
     end
 
+    # Identified Rare Equipment ################################################
+    f.group 'Identified Rare Equipment' do |g|
+      g.element 'Identified Rare Equipment' do |e|
+        e.showable              = true
+        e.klass                = 'Equipments'
+        e.rarity               = 'Rare'
+        e.identified           = 'True'
+        e.set_font_size        = DefaultFontSize
+      end
+
+      g.mixin do |m|
+        m.element 'Corrupted' do |e|
+          e.corrupted            = 'True'
+          e.set_border_color     = CorruptedColor
+        end
+      end
+
+      g.mixin do |m|
+        m.element 'Breach' do |e|
+          e.showable             = true
+          e.klass                = 'Rings'
+          e.base_type            = %q("Breach Ring")
+          e.set_background_color = BreachItemsColor
+          e.set_color_alpha      = DefaultAlpha
+        end
+        m.element 'Abyss' do |e|
+          e.showable             = true
+          e.klass                = 'Belts'
+          e.base_type            = %q("Stygian Vise")
+          e.set_background_color = AbyssItemColor
+          e.set_color_alpha      = DefaultAlpha
+        end
+        m.element 'Incursion' do |e|
+          e.has_explicit_mod     = 'IncursionMods'
+          e.set_background_color = IncursionItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
+        end
+        m.element 'Delve' do |e|
+          e.has_explicit_mod     = 'DelveMods'
+          e.set_background_color = DelveItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Blue'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{EquipmentsItemMinimapIconShape}"
+        end
+        m.element 'Betrayal' do |e|
+          e.has_explicit_mod     = 'BetrayalMods'
+          e.set_background_color = BetrayalItemColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = ExtraLargeFontSize
+          e.play_alert_sound     = HighLevelAlertSound
+          e.play_effect          = 'Red'
+          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
+        end
+      end
+    end
+
     # Accessory ################################################################
     f.group 'Accessory' do |g|
       g.element 'Accessory' do |e|
         e.showable             = false
         e.klass                = 'Accessories'
-        e.disable_drop_sound   = true
+        e.disable_drop_sound   = "True"
       end
 
       g.mixin do |m|
@@ -860,22 +940,6 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        m.element 'Breach' do |e|
-          e.showable             = true
-          e.klass                = 'Rings'
-          e.base_type            = %q("Breach Ring")
-          e.set_background_color = BreachItemsColor
-          e.set_color_alpha      = DefaultAlpha
-        end
-
-        m.element 'Abyss' do |e|
-          e.showable             = true
-          e.klass                = 'Belts'
-          e.base_type            = %q("Stygian Vise")
-          e.set_background_color = AbyssItemColor
-          e.set_color_alpha      = DefaultAlpha
-        end
-
         m.element 'Special' do |e|
           e.showable             = true
           e.base_type            = 'SpecialAccessories'
@@ -885,28 +949,6 @@ Variables.each do |level, variable|
           e.play_alert_sound     = HighLevelAlertSound
           e.play_effect          = 'White'
           e.minimap_icon         = "#{LargestMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
-        end
-
-        m.element 'Good Accessories' do |e|
-          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
-          e.base_type            = 'GoodAccessories'
-          unless variable[:show_magic_equipment]
-            e.rarity               = 'Rare'
-          end
-          e.set_background_color = GoodAccessoryColor
-          e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = DefaultFontSize
-          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
-        end
-
-        m.element 'Not Good Accessories' do |e|
-          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
-          e.base_type            = 'NotGoodAccessories'
-          e.rarity               = 'Rare'
-          e.set_background_color = AccessoryColor
-          e.set_color_alpha      = ThinAlpha
-          e.set_font_size        = SmallFontSize
-          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
 
         m.element 'Shaper' do |e|
@@ -929,6 +971,28 @@ Variables.each do |level, variable|
           e.play_alert_sound     = HighLevelAlertSound
           e.play_effect          = 'Blue'
           e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{AccessoryItemMinimapIconShape}"
+        end
+
+        m.element 'Good Accessories' do |e|
+          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
+          e.base_type            = 'GoodAccessories'
+          unless variable[:show_magic_equipment]
+            e.rarity               = 'Rare'
+          end
+          e.set_background_color = GoodAccessoryColor
+          e.set_color_alpha      = DefaultAlpha
+          e.set_font_size        = DefaultFontSize
+          e.minimap_icon         = "#{MediumMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
+        end
+
+        m.element 'Not Good Accessories' do |e|
+          e.showable             = variable[:show_rare_equipment] || variable[:show_chaos_recipe]
+          e.base_type            = 'NotGoodAccessories'
+          e.rarity               = 'Rare'
+          e.set_background_color = AccessoryColor
+          e.set_color_alpha      = ThinAlpha
+          e.set_font_size        = SmallFontSize
+          e.minimap_icon         = "#{SamllMinimapIconSize} White #{AccessoryItemMinimapIconShape}" if variable[:show_rare_equipment] || variable[:show_chaos_recipe]
         end
       end
     end
@@ -1156,24 +1220,6 @@ Variables.each do |level, variable|
           e.play_alert_sound     = HighLevelAlertSound
           e.play_effect          = 'Blue'
           e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{EquipmentsItemMinimapIconShape}"
-        end
-        m.element 'Incursion' do |e|
-          e.has_explicit_mod     = 'IncursionMods'
-          e.set_background_color = IncursionItemColor
-          e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Red'
-          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
-        end
-        m.element 'Betrayal' do |e|
-          e.has_explicit_mod     = 'BetrayalMods'
-          e.set_background_color = BetrayalItemColor
-          e.set_color_alpha      = DefaultAlpha
-          e.set_font_size        = ExtraLargeFontSize
-          e.play_alert_sound     = HighLevelAlertSound
-          e.play_effect          = 'Red'
-          e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
         end
       end
     end

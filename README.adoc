@@ -7,10 +7,6 @@
 :toc: preamble
 :toclevels: 2
 
-:author: isuke
-:email: isuke770@gmail.com
-:revnumber: v3.4_5.0
-
 = Isuke's Filter
 
 Isuke's Filter is simple and useful poe filter.
@@ -53,7 +49,7 @@ THe filters is exist 5 types (`C`/`B`/`A`/`S`/`SS`).
 | [green]#All#
 | [green]#All#
 | >= Magic
-| >= Rage
+| >= Rare
 
 | Show Flask Item Level
 | >= 3

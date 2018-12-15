@@ -582,6 +582,11 @@ ChanceItems:
   - Sorcerer Boots
   - Gold Amulet
 
+BencheCraftMods:
+  - of Weaponcraft
+  - of Spellcraft
+  - of Crafting
+
 LabyrinthItems:
   - Offering to the Goddess
   - Bane of the Loyal
@@ -796,9 +801,14 @@ DelveItemsResonatorsNormal:
   - Primitive Alchemical Resonator
   - Primitive Chaotic Resonator
 
+DelveMods:
+  - Subterranean
+  - of the Underground
+
 BetrayalItems:
   - Scarab
 BetrayalMods:
+  - Veiled
   - Leo's Veiled
   - Catarina's Veiled
   - Elreon's Veiled
