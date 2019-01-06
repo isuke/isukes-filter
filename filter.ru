@@ -861,13 +861,6 @@ Variables.each do |level, variable|
           e.set_background_color = BreachItemsColor
           e.set_color_alpha      = DefaultAlpha
         end
-        m.element 'Abyss' do |e|
-          e.showable             = true
-          e.klass                = 'Belts'
-          e.base_type            = %q("Stygian Vise")
-          e.set_background_color = AbyssItemColor
-          e.set_color_alpha      = DefaultAlpha
-        end
         m.element 'Incursion' do |e|
           e.has_explicit_mod     = 'IncursionMods'
           e.set_background_color = IncursionItemColor
@@ -949,6 +942,14 @@ Variables.each do |level, variable|
           e.play_alert_sound     = HighLevelAlertSound
           e.play_effect          = 'White'
           e.minimap_icon         = "#{LargestMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
+        end
+
+        m.element 'Abyss' do |e|
+          e.showable             = true
+          e.klass                = 'Belts'
+          e.base_type            = %q("Stygian Vise")
+          e.set_background_color = AbyssItemColor
+          e.set_color_alpha      = DefaultAlpha
         end
 
         m.element 'Shaper' do |e|
