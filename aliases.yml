@@ -65,12 +65,7 @@ VendorOnlyGems:
   - Block Chance Reduction
   - Mirror Arrow
 
-NewDivinations:
-  - The Sacrifice
-  - A Dab of Ink
-  - The Nurse
-  - The Master Artisan
-  - The Life Thief
+NewDivinations: []
 
 NotGoodDivinations:
   - A Mother's Parting Gift
@@ -94,7 +89,9 @@ NotGoodDivinations:
   - Thunderous Skies
   - Turn the Other Cheek
 
-MagicDivinations:
+MagicDivinations: # Top 81 - 170
+  - A Mother's Parting Gift
+  - Assassin's Favour
   - Atziri's Arsenal
   - Audacity
   - Blessing of God
@@ -103,25 +100,32 @@ MagicDivinations:
   - Call to the First Ones
   - Cartographer's Delight
   - Coveted Possession
+  - Destined to Crumble
   - Dialla's Subjugation
+  - Doedre's Madness
   - Earth Drinker
+  - Emperor of Purity
   - Emperor's Luck
   - Forbidden Power
   - Gemcutter's Promise
   - Gift of the Gemling Queen
-  - Glimmer of Hope
+  - Grave Knowledge
   - Harmony of Souls
+  - Her Mask
   - Hope
   - Hubris
   - Hunter's Resolve
   - Jack in the Box
+  - Lantador's Lost Love
+  - Light and Truth
   - Lost Worlds
+  - Loyalty
   - Lucky Connections
   - Lysah's Respite
   - Merciless Armament
-  - Mitts
+  - Might is Right
   - No Traces
-  - Rain Tempter
+  - Rats
   - Shard of Fate
   - The Admirer
   - The Aesthete
@@ -130,70 +134,58 @@ MagicDivinations:
   - The Avenger
   - The Battle Born
   - The Beast
+  - The Betrayal
   - The Blazing Fire
-  - The Body
   - The Cacophony
-  - The Calling
   - The Cataclysm
-  - The Catalyst
-  - The Coming Storm
-  - The Conduit
+  - The Chains that Bind
   - The Cursed King
+  - The Dark Mage
   - The Darkest Dream
   - The Demoness
-  - The Dragon
-  - The Dreamland
-  - The Drunken Aristocrat
   - The Encroaching Darkness
-  - The Explorer
+  - The Endless Darkness
   - The Fathomless Depths
   - The Feast
-  - The Fletcher
   - The Formless Sea
-  - The Fox
+  - The Forsaken
   - The Garish Power
+  - The Gentleman
+  - The Gladiator
   - The Harvester
-  - The Lion
+  - The Insatiable
+  - The Jester
   - The Lord in Black
+  - The Master Artisan
   - The Mercenary
-  - The Oath
   - The One With All
   - The Pack Leader
-  - The Pact
   - The Penitent
   - The Poet
-  - The Puzzle
-  - The Realm
   - The Rite of Elements
   - The Road to Power
   - The Scavenger
   - The Siren
   - The Soul
   - The Spoiled Prince
-  - The Standoff
-  - The Stormcaller
-  - The Sun
   - The Surveyor
   - The Survivalist
-  - The Sword King's Salute
-  - The Tower
   - The Traitor
   - The Trial
-  - The Twins
+  - The Twilight Moon
   - The Tyrant
   - The Union
-  - The Visionary
+  - The Web
+  - The Wolverine
   - The Wrath
-  - Three Voices
-  - Tranquillity
   - Treasure Hunter
   - Vinia's Token
-  - Volatile Power
 
-RareDivinations:
+RareDivinations: # Top 31 - 80
+  - Boon of the First Ones
   - Bowyer's Dream
   - Chaotic Disposition
-  - Emperor of Purity
+  - Glimmer of Hope
   - Heterochromia
   - Humility
   - Last Hope
@@ -203,38 +195,35 @@ RareDivinations:
   - Perfection
   - Rebirth
   - Scholar of the Seas
+  - The Body
   - The Breach
-  - The Brittle Emperor
   - The Cartographer
   - The Celestial Justicar
-  - The Chains that Bind
   - The Dapper Prodigy
-  - The Dark Mage
   - The Dreamer
-  - The Endless Darkness
   - The Enlightened
-  - The Ethereal
+  - The Fletcher
   - The Hale Heart
-  - The Hoarder
+  - The Hunger
   - The Innocent
   - The Inventor
-  - The Jester
   - The Jeweller's Boon
-  - The King's Heart
   - The Last One Standing
+  - The Lion
   - The Master
   - The Obscured
   - The Offering
   - The Polymath
   - The Porcupine
   - The Price of Protection
-  - The Risk
+  - The Sacrifice
+  - The Sephirot
   - The Thaumaturgist
   - The Throne
-  - The Twilight Moon
   - The Undisputed
   - The Valkyrie
   - The Valley of Steel Boxes
+  - The Vast
   - The Void
   - The Warlord
   - The Wilted Rose
@@ -244,32 +233,35 @@ RareDivinations:
   - The Wretched
   - Time-Lost Relic
 
-UniqueDivinations:
+UniqueDivinations: # Top 1 - 30
+  - A Dab of Ink
   - Abandoned Wealth
   - Beauty Through Death
-  - Boon of the First Ones
   - House of Mirrors
   - Hunter's Reward
   - Immortal Resolve
   - Mawr Blaidd
   - Pride Before the Fall
   - The Artist
+  - The Brittle Emperor
   - The Celestial Stone
   - The Doctor
   - The Dragon's Heart
+  - The Ethereal
   - The Fiend
-  - The Hunger
+  - The Hoarder
   - The Immortal
   - The Iron Bard
+  - The King's Heart
   - The Mayor
+  - The Nurse
   - The Professor
   - The Queen
+  - The Risk
   - The Saint's Treasure
   - The Samurai's Eye
-  - The Sephirot
   - The Spark and the Flame
   - The Undaunted
-  - The Vast
   - The Wolven King's Bite
   - Wealth and Power
 

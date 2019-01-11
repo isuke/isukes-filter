@@ -639,14 +639,14 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        m.element 'New' do |e|
-          e.base_type            = 'NewDivinations'
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = FarmEquipmentBorderColor
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        end
+        # m.element 'New' do |e|
+        #   e.base_type            = 'NewDivinations'
+        #   e.set_font_size        = LargeFontSize
+        #   e.set_border_color     = FarmEquipmentBorderColor
+        #   e.play_alert_sound     = MiddleLevelAlertSound
+        #   e.play_effect          = 'Blue'
+        #   e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        # end
         m.element 'NotGood' do |e|
           e.base_type            = 'NotGoodDivinations'
           if variable[:show_not_good_divination]
