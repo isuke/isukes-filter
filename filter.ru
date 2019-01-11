@@ -1,6 +1,6 @@
 # Verson
 PoeVersion         = '3.5'
-FilterVersion      = '5.2'
+FilterVersion      = '5.3'
 
 # Font Size
 SmallFontSize      = 32
@@ -639,14 +639,14 @@ Variables.each do |level, variable|
       end
 
       g.mixin do |m|
-        m.element 'New' do |e|
-          e.base_type            = 'NewDivinations'
-          e.set_font_size        = LargeFontSize
-          e.set_border_color     = FarmEquipmentBorderColor
-          e.play_alert_sound     = MiddleLevelAlertSound
-          e.play_effect          = 'Blue'
-          e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
-        end
+        # m.element 'New' do |e|
+        #   e.base_type            = 'NewDivinations'
+        #   e.set_font_size        = LargeFontSize
+        #   e.set_border_color     = FarmEquipmentBorderColor
+        #   e.play_alert_sound     = MiddleLevelAlertSound
+        #   e.play_effect          = 'Blue'
+        #   e.minimap_icon         = "#{LargestMinimapIconSize} Blue #{StackableItemMinimapIconShape}"
+        # end
         m.element 'NotGood' do |e|
           e.base_type            = 'NotGoodDivinations'
           if variable[:show_not_good_divination]
@@ -836,18 +836,18 @@ Variables.each do |level, variable|
       end
     end
 
-    # Identified Rare Equipment ################################################
-    f.group 'Identified Rare Equipment' do |g|
-      g.element 'Identified Rare Equipment' do |e|
-        e.showable              = true
+    # Identified Equipment #####################################################
+    f.group 'Identified Equipment' do |g|
+      g.element 'Identified Equipment' do |e|
+        e.showable             = false
         e.klass                = 'Equipments'
-        e.rarity               = 'Rare'
         e.identified           = 'True'
         e.set_font_size        = DefaultFontSize
       end
 
       g.mixin do |m|
         m.element 'Corrupted' do |e|
+          e.showable             = true
           e.corrupted            = 'True'
           e.set_border_color     = CorruptedColor
         end
@@ -861,14 +861,8 @@ Variables.each do |level, variable|
           e.set_background_color = BreachItemsColor
           e.set_color_alpha      = DefaultAlpha
         end
-        m.element 'Abyss' do |e|
-          e.showable             = true
-          e.klass                = 'Belts'
-          e.base_type            = %q("Stygian Vise")
-          e.set_background_color = AbyssItemColor
-          e.set_color_alpha      = DefaultAlpha
-        end
         m.element 'Incursion' do |e|
+          e.showable             = true
           e.has_explicit_mod     = 'IncursionMods'
           e.set_background_color = IncursionItemColor
           e.set_color_alpha      = DefaultAlpha
@@ -878,6 +872,7 @@ Variables.each do |level, variable|
           e.minimap_icon         = "#{MediumMinimapIconSize} Red #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Delve' do |e|
+          e.showable             = true
           e.has_explicit_mod     = 'DelveMods'
           e.set_background_color = DelveItemColor
           e.set_color_alpha      = DefaultAlpha
@@ -887,6 +882,7 @@ Variables.each do |level, variable|
           e.minimap_icon         = "#{MediumMinimapIconSize} Blue #{EquipmentsItemMinimapIconShape}"
         end
         m.element 'Betrayal' do |e|
+          e.showable             = true
           e.has_explicit_mod     = 'BetrayalMods'
           e.set_background_color = BetrayalItemColor
           e.set_color_alpha      = DefaultAlpha
@@ -949,6 +945,14 @@ Variables.each do |level, variable|
           e.play_alert_sound     = HighLevelAlertSound
           e.play_effect          = 'White'
           e.minimap_icon         = "#{LargestMinimapIconSize} White #{AccessoryItemMinimapIconShape}"
+        end
+
+        m.element 'Abyss' do |e|
+          e.showable             = true
+          e.klass                = 'Belts'
+          e.base_type            = %q("Stygian Vise")
+          e.set_background_color = AbyssItemColor
+          e.set_color_alpha      = DefaultAlpha
         end
 
         m.element 'Shaper' do |e|
