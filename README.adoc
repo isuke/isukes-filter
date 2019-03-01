@@ -9,6 +9,9 @@
 
 = Isuke's Filter
 
+**This repository is not maintenance already.**
+**You can use link:https://github.com/isuke/voodoo.filter[Voodoo.filter].**
+
 Isuke's Filter is simple and useful poe filter.
 created by link:https://github.com/isuke/poe_filter_generator[poe filter generator]
 
